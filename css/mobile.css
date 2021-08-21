@@ -35,6 +35,10 @@
   margin-bottom: 0;
 }
 
+#skill .container{
+  width: 70%;
+}
+
 /* Smartphones */
 
 @media(max-width: 500px) {
@@ -61,7 +65,6 @@
   }
   #who p {
     text-align: center;
-    padding-right: 10px;
   }
   #who .who-img {
     display: none;
