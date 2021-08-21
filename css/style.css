@@ -200,7 +200,7 @@ p {
 
 #who {
     display: flex;
-    height: 90vh;
+    height: 100vh;
 }
 
 #who div {
@@ -208,11 +208,13 @@ p {
 }
 
 #who h2 {
-    padding-top: 20vh;
+    padding-left: 50px;
+    padding-top: 5vh;
 }
 
 #who p {
-    padding: 5px;
+    padding: 2px;
+    padding-left: 50px;
 }
 
 #who .who-img {
@@ -221,14 +223,18 @@ p {
     background-color: #333;
 }
 
-#who h3{
-    color:black;
+#who h3 {
+    color: black;
+    padding-left: 50px;
 }
 
 #who ul {
-    color:white;
+    color: white;
+    padding-left: 50px;
+
 }
 
+/*Skill*/
 
 /*Footer*/
 
