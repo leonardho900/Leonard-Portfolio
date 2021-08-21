@@ -244,12 +244,12 @@ p {
     background: url('../img/picture3.jpg') no-repeat center center/cover;
 }
 
-#skill  h2{
+#skill h2 {
     padding-top: 80px;
     text-align: center;
 }
 
-#skill .container{
+#skill .container {
     padding-top: 30px;
     border: black;
     border-style: solid;
@@ -307,6 +307,22 @@ p {
     transform: translateX(-50%) translateY(-50%);
 }
 
+/* COMING SOON*/
+
+#comingsoon {
+    height: 70vh;
+}
+
+#comingsoon h2 {
+    padding-top: 80px;
+    text-align: center;
+}
+
+#comingsoon .container  {
+    text-align: center;
+}
+
+
 /*Footer*/
 
 #main-footer {
@@ -316,7 +332,8 @@ p {
 }
 
 /*Animation*/
+
 .animate__animated.animate__fadeIn {
     --animate-duration: 5s;
-  }
-  
+}
+
