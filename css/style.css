@@ -110,6 +110,7 @@ p {
 #navbar .logo {
     float: left;
     padding-top: 20px;
+    cursor: pointer;
 }
 
 #navbar ul {
@@ -206,7 +207,7 @@ p {
 }
 
 #who h2 {
-    padding-top: 30vh;
+    padding-top: 20vh;
 }
 
 #who p {
@@ -219,6 +220,13 @@ p {
     background-color: #333;
 }
 
+#who h3{
+    color:black;
+}
+
+#who ul {
+    color:white;
+}
 
 
 /*Footer*/
