@@ -221,7 +221,7 @@ p {
 
 #who .who-img {
     background: url('../img/picture2.jpg') no-repeat center center/cover;
-    background-size: 500px;
+    background-size: 400px;
     background-color: #333;
 }
 
@@ -241,6 +241,7 @@ p {
 
 #skill {
     height: 70vh;
+    background: url('../img/picture3.jpg') no-repeat center center/cover;
 }
 
 #skill  h2{
@@ -254,6 +255,7 @@ p {
     border-style: solid;
     border-radius: 8px;
     width: 50%;
+    background: #727272;
 }
 
 .skillbar {
@@ -312,3 +314,9 @@ p {
     background: black;
     padding: 20px;
 }
+
+/*Animation*/
+.animate__animated.animate__fadeIn {
+    --animate-duration: 5s;
+  }
+  
