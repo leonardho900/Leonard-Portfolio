@@ -60,6 +60,7 @@
   }
   #who p {
     text-align: center;
+    padding-right: 10px;
   }
   #who .who-img {
     display: none;
