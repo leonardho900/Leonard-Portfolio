@@ -209,12 +209,14 @@ p {
 
 #who h2 {
     padding-left: 50px;
+    padding-right: 50px;
     padding-top: 5vh;
 }
 
 #who p {
     padding: 2px;
     padding-left: 50px;
+    padding-right: 50px;
 }
 
 #who .who-img {
@@ -226,12 +228,13 @@ p {
 #who h3 {
     color: black;
     padding-left: 50px;
+    padding-right: 50px;
 }
 
 #who ul {
     color: white;
     padding-left: 50px;
-
+    padding-right: 50px;
 }
 
 /*Skill*/
