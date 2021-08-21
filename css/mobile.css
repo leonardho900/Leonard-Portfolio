@@ -79,8 +79,6 @@
 
 #loader {
   position: absolute;
-  left: 55%;
-  top: 360%;
   z-index: 1;
   width: 120px;
   height: 120px;
