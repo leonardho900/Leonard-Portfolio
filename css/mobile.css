@@ -54,6 +54,7 @@
   }
   #who {
     display: flex;
+    height: 85vh;
   }
   #who h2 {
     text-align: center;

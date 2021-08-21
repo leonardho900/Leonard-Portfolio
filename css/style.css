@@ -200,7 +200,7 @@ p {
 
 #who {
     display: flex;
-    height: 100vh;
+    height: 70vh;
 }
 
 #who div {
@@ -221,7 +221,7 @@ p {
 
 #who .who-img {
     background: url('../img/picture2.jpg') no-repeat center center/cover;
-    background-size: 600px;
+    background-size: 500px;
     background-color: #333;
 }
 
