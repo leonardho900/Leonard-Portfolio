@@ -64,6 +64,12 @@
   #who .who-img {
     display: none;
   }
+  #who h3 {
+    text-align: center;
+  }
+  #who ul {
+    text-align: center;
+  }
 }
 
 @media(max-height: 568px) {
