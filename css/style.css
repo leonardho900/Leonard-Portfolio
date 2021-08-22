@@ -340,7 +340,7 @@ p {
 }
 
 .screen {
-    position: relative;
+    position: static;
     background: #3e3e3e;
     border-radius: 15px;
 }
@@ -497,32 +497,7 @@ p {
     margin: 0 5px;
 }
 
-@media screen and (max-width: 520px) {
-    .screen-body {
-        flex-direction: column;
-    }
-    .screen-body-item.left {
-        margin-bottom: 30px;
-    }
-    .app-title {
-        flex-direction: row;
-    }
-    .app-title span {
-        margin-right: 12px;
-    }
-    .app-title:after {
-        display: none;
-    }
-}
 
-@media screen and (max-width: 600px) {
-    .screen-body {
-        padding: 40px;
-    }
-    .screen-body-item {
-        padding: 0;
-    }
-}
 
 /*Footer*/
 
