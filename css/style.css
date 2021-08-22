@@ -131,7 +131,6 @@ p {
 }
 
 #navbar ul li a:hover, #navbar ul li a.current {
-    background-color: #444;
     color: #00D1D1;
     border-radius: 8px;
 }
@@ -254,7 +253,7 @@ p {
 }
 
 #skill .container {
-    padding-top: 30px;
+    padding-top: 20px;
     border: black;
     border-style: solid;
     border-radius: 8px;
