@@ -421,7 +421,7 @@ p {
 .app-title {
     display: flex;
     flex-direction: column;
-    position: relative;
+    position: static;
     color: #00D1D1;
     font-size: 26px;
 }
