@@ -141,6 +141,14 @@ p {
     cursor: pointer;
 }
 
+#navbar .checkbtn{
+    display: none;
+}
+
+#navbar #check{
+    display: none;
+}
+
 /*Showcase*/
 
 #showcase {

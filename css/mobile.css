@@ -13,37 +13,52 @@
     text-align: center;
   }
   #navbar ul {
-    display: none;
+    display: block;
     width: 100%;
-    position: absolute;
-    top: 75px;
-    right: 0;
-    z-index: 2;
-  }
+    height: 100vh;
+    position: fixed;
+    top: -100%;
+    text-align: center;
+    transition: all .5s;
 
-  #navbar #menuList{
-    display: none;
-    width: 100%;
-    position: absolute;
-    top: 75px;
-    right: 0;
-    z-index: 2;
   }
 
   #navbar ul li {
     float: none;
-    display: flexbox;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    background: rgba(1, 0, 0, 0.3);
+    display:grid;
+    background-color: rgba(0, 0, 0, 0.3);
   }
-  #navbar .menu {
+
+  nav ul li a{
+    font-size: 20px;
+  }
+
+  #navbar .checkbtn{
     display: block;
+    font-size: 30px;
     float: right;
-    color: #666;
-    padding-top: 11px;
-    padding-right: 5px;
+    padding-top: 18px;
+    padding-right: 8px;
+    cursor: pointer;
+}
+
+#navbar #check{
+  display: none;
+  font-size: 30px;
+  float: right;
+  padding-top: 18px;
+  padding-right: 8px;
+  cursor: pointer;
+}
+
+  a:hover,a:active{
+    background: none;
+    color: cyan;
   }
+  #navbar #check:checked ~ ul{
+    top: 75px;
+  }
+
 }
 
 #showcase .showcase-content {
