@@ -463,6 +463,10 @@ p {
     text-align: right;
 }
 
+.my-2{
+    padding-top:15px;
+}
+
 .app-form-control {
     width: 100%;
     padding: 10px 0;
