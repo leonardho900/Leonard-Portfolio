@@ -21,7 +21,7 @@
             <input type="checkbox" id="check">
             <label for="check" class="checkbtn">
                 <i class="fas fa-bars"></i>
-                </label>
+            </label>
             <h1 class="logo"><a href="index.html"></a><i class="fab fa-bitcoin"></i> <span
                     class="text-primary">Leo</span>nard's</h1>
             <ul id="menuList">
@@ -187,7 +187,7 @@
         <h2 class="m-heading"><span class="text-primary">Projects</span> coming soon</h2>
     </section>
 
-
+    \
     <section id="contact" class="background">
         <div class="container">
             <div class="screen">
@@ -212,24 +212,44 @@
                         <div class="app-contact">CONTACT INFO : (+60) 12-7287900</div>
                     </div>
                     <div class="screen-body-item">
-                        <div class="app-form">
-                            <div class="app-form-group">
-                                <input class="app-form-control" placeholder="NAME">
+                        <form method="POST" data-netlify="true" data-netlify-recaptcha="true">
+                            <div class="app-form">
+                                <div class="app-form-group">
+                                    <input 
+                                    type="text"
+                                    class="app-form-control" 
+                                    placeholder="NAME"
+                                    name="name">
+                                </div>
+                                <div class="app-form-group">
+                                    <input 
+                                    type="email"
+                                    class="app-form-control" 
+                                    placeholder="EMAIL"
+                                    name="email">
+                                </div>
+                                <div class="app-form-group">
+                                    <input 
+                                    type="tel"
+                                    class="app-form-control" 
+                                    placeholder="CONTACT NO"
+                                    name="contact">
+                                </div>
+                                <div class="app-form-group message">
+                                    <input 
+                                    type="text"
+                                    class="app-form-control" 
+                                    placeholder="MESSAGE"
+                                    name="message">
+                                    <div class="my-2">
+                                        <div data-netlify-recaptcha="true"></div>
+                                    </div>
+                                </div>
+                                <div class="app-form-group buttons">
+                                    <button type="submit" class="app-form-button">SEND</button>
+                                </div>
                             </div>
-                            <div class="app-form-group">
-                                <input class="app-form-control" placeholder="EMAIL">
-                            </div>
-                            <div class="app-form-group">
-                                <input class="app-form-control" placeholder="CONTACT NO">
-                            </div>
-                            <div class="app-form-group message">
-                                <input class="app-form-control" placeholder="MESSAGE">
-                            </div>
-                            <div class="app-form-group buttons">
-                                <button class="app-form-button">CANCEL</button>
-                                <button class="app-form-button">SEND</button>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

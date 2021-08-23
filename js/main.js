@@ -93,16 +93,3 @@ function init() {
   new TypeWriter(txtElement, words, wait);
 }
 
-/*toggle nav list*/
-
-function togglemenu() {
-  var menuList = document.getElementById("menuList");
-  if(menuList.style.display === "none")
-    {
-      menuList.style.display = "block";
-    }
-  else
-    {
-      menuList.style.maxHeight = "none";
-    }
-}
