@@ -5,91 +5,147 @@
     flex-direction: column;
     align-items: center;
   }
+  #navbar .github-corner {
+    display: none;
+  }
   #navbar .logo {
     margin-bottom: 0.5rem;
     text-align: center;
   }
   #navbar ul {
-    padding: 0.5rem;
-  }
-  #showcase .showcase-content {
-    top: 110px;
-  }
-  #who {
-    display: flex;
-    height: 100%;
-  }
-  #who h2 {
-    text-align: center;
-  }
-  #who p {
-    text-align: center;
-  }
-  #who .who-img {
     display: none;
+    width: 100%;
+    position: absolute;
+    top: 75px;
+    right: 0;
+    z-index: 2;
   }
-  #who h3 {
-    text-align: center;
+
+  #navbar #menuList{
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 75px;
+    right: 0;
+    z-index: 2;
   }
-  #who ul {
-    text-align: center;
-    padding-bottom: 30px;
+
+  #navbar ul li {
+    float: none;
+    display: flexbox;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: rgba(1, 0, 0, 0.3);
   }
-  #showcase {
-    background: url('../img/picture1.jpg') no-repeat center center/cover;
-    height: 100vh;
-  }
-  #showcase .showcase-content h1 {
-    font-size: 20px;
-    line-height: 1.2cm;
-    padding-bottom: 10px;
-  }
-  #showcase .showcase-content p {
-    font-size: 15px;
-    padding-bottom: 10px;
-    line-height: 1.7cm;
-  }
-  #what .items {
+  #navbar .menu {
     display: block;
-    padding: 1rem;
-  }
-  /* Align icon to left */
-  #what .items .item {
-    display: flex;
-    text-align: center;
-  }
-  /* Position icon */
-  #what .items .item i {
-    margin-right: 1.3rem;
-    align-self: center;
-    margin-bottom: 0;
-  }
-  #skill {
-    height: 70vh;
-  }
-  #skill .container {
-    width: 70%;
-  }
-  .screen-body {
-    flex-direction: column;
-    padding: 40px;
-  }
-  .screen-body-item {
-    padding: 0;
-  }
-  .screen-body-item.left {
-    margin-bottom: 30px;
-  }
-  .app-title {
-    flex-direction: row;
-  }
-  .app-title span {
-    margin-right: 12px;
-  }
-  .app-title:after {
-    display: none;
+    float: right;
+    color: #666;
+    padding-top: 11px;
+    padding-right: 5px;
   }
 }
+
+#showcase .showcase-content {
+  top: 110px;
+}
+
+#who {
+  display: flex;
+  height: 100%;
+}
+
+#who h2 {
+  text-align: center;
+}
+
+#who p {
+  text-align: center;
+}
+
+#who .who-img {
+  display: none;
+}
+
+#who h3 {
+  text-align: center;
+}
+
+#who ul {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+#showcase {
+  background: url('../img/picture1.jpg') no-repeat center center/cover;
+  height: 100vh;
+}
+
+#showcase .showcase-content h1 {
+  font-size: 20px;
+  line-height: 1.2cm;
+  padding-bottom: 10px;
+}
+
+#showcase .showcase-content p {
+  font-size: 15px;
+  padding-bottom: 10px;
+  line-height: 1.7cm;
+}
+
+#what .items {
+  display: block;
+  padding: 1rem;
+}
+
+/* Align icon to left */
+
+#what .items .item {
+  display: flex;
+  text-align: center;
+}
+
+/* Position icon */
+
+#what .items .item i {
+  margin-right: 1.3rem;
+  align-self: center;
+  margin-bottom: 0;
+}
+
+#skill {
+  height: 70vh;
+}
+
+#skill .container {
+  width: 70%;
+}
+
+.screen-body {
+  flex-direction: column;
+  padding: 40px;
+}
+
+.screen-body-item {
+  padding: 0;
+}
+
+.screen-body-item.left {
+  margin-bottom: 30px;
+}
+
+.app-title {
+  flex-direction: row;
+}
+
+.app-title span {
+  margin-right: 12px;
+}
+
+.app-title:after {
+  display: none;
+}
+
 
 @media(max-height: 568px) {
   #showcase .showcase-content {
@@ -103,4 +159,3 @@
     font-size: 1rem;
   }
 }
-
