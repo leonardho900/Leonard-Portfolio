@@ -17,48 +17,42 @@
     width: 100%;
     height: 100vh;
     position: fixed;
-    top: -100%;
+    top: 75px;
+    left: -100%;
     text-align: center;
     transition: all .5s;
-
   }
-
   #navbar ul li {
     float: none;
     display:grid;
     background-color: rgba(0, 0, 0, 0.3);
   }
-
-  nav ul li a{
+  nav ul li a {
     font-size: 20px;
   }
-
-  #navbar .checkbtn{
+  #navbar .checkbtn {
     display: block;
     font-size: 30px;
     float: right;
     padding-top: 18px;
     padding-right: 8px;
     cursor: pointer;
-}
-
-#navbar #check{
-  display: none;
-  font-size: 30px;
-  float: right;
-  padding-top: 18px;
-  padding-right: 8px;
-  cursor: pointer;
-}
-
-  a:hover,a:active{
+  }
+  #navbar #check {
+    display: none;
+    font-size: 30px;
+    float: right;
+    padding-top: 18px;
+    padding-right: 8px;
+    cursor: pointer;
+  }
+  a:hover, a:active {
     background: none;
     color: cyan;
   }
-  #navbar #check:checked ~ ul{
-    top: 75px;
+  #navbar #check:checked~ul {
+    left: 0px;
   }
-
 }
 
 #showcase .showcase-content {
@@ -160,7 +154,6 @@
 .app-title:after {
   display: none;
 }
-
 
 @media(max-height: 568px) {
   #showcase .showcase-content {
