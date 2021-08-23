@@ -117,6 +117,7 @@ p {
 #navbar ul {
     list-style: none;
     float: right;
+    max-height: 0px;
 }
 
 #navbar ul li {
@@ -133,6 +134,11 @@ p {
 #navbar ul li a:hover, #navbar ul li a.current {
     color: #00D1D1;
     border-radius: 8px;
+}
+#navbar .menu {
+    display: none;
+    color: #666;
+    cursor: pointer;
 }
 
 /*Showcase*/
@@ -313,7 +319,7 @@ p {
 /* COMING SOON*/
 
 #comingsoon {
-    height: 90vh;
+    height: 100vh;
     background: url('../img/picture4.jpg') no-repeat center center/cover;
 }
 
@@ -330,7 +336,10 @@ p {
 .background {
     display: flex;
     min-height: 100vh;
-    background: url('../img/picture1.jpg') no-repeat center center/cover;
+    background: url('../img/picture5.jpg') no-repeat center center/cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 
 .container {
@@ -426,16 +435,6 @@ p {
     font-size: 26px;
 }
 
-.app-title:after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 65px;
-    height: 4px;
-    background: #ea1d6f;
-}
 
 .app-contact {
     margin-top: auto;

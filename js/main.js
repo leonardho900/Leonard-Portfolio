@@ -44,7 +44,7 @@ class TypeWriter {
     const fullTxt = this.words[current];
 
     // Check if deleting
-    if(this.isDeleting) {
+    if (this.isDeleting) {
       // Remove char
       this.txt = fullTxt.substring(0, this.txt.length - 1);
     } else {
@@ -58,17 +58,17 @@ class TypeWriter {
     // Initial Type Speed
     let typeSpeed = 300;
 
-    if(this.isDeleting) {
+    if (this.isDeleting) {
       typeSpeed /= 2;
     }
 
     // If word is complete
-    if(!this.isDeleting && this.txt === fullTxt) {
+    if (!this.isDeleting && this.txt === fullTxt) {
       // Make pause at end
       typeSpeed = this.wait;
       // Set delete to true
       this.isDeleting = true;
-    } else if(this.isDeleting && this.txt === '') {
+    } else if (this.isDeleting && this.txt === '') {
       this.isDeleting = false;
       // Move to next word
       this.wordIndex++;
@@ -93,3 +93,16 @@ function init() {
   new TypeWriter(txtElement, words, wait);
 }
 
+/*toggle nav list*/
+
+function togglemenu() {
+  var menuList = document.getElementById("menuList");
+  if(menuList.style.display === "none")
+    {
+      menuList.style.display = "block";
+    }
+  else
+    {
+      menuList.style.maxHeight = "none";
+    }
+}
