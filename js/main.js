@@ -93,3 +93,8 @@ function init() {
   new TypeWriter(txtElement, words, wait);
 }
 
+//captcha dark theme 
+document.addEventListener('DOMContentLoaded', (event) => {
+  const recaptcha = document.querySelector('.g-recaptcha');
+  recaptcha.setAttribute("data-theme", "dark");
+});
