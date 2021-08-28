@@ -187,19 +187,27 @@ p {
     text-align: center;
 }
 
+#what .items h3 {
+    padding: 15px;
+    text-align: center;
+}
+
 #what .items {
     display: flex;
     padding: 1rem;
+    flex: 3 3 100px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #what .items .item {
-    flex: 1;
+    flex: 1 1 100px;
     text-align: center;
     padding: 1rem;
     border: #333;
     border-style: ridge;
     border-radius: 8px;
-    margin-right: 5px;
+    margin: 10px;
 }
 
 #what .items .item i {
@@ -218,6 +226,7 @@ p {
 
 #who div {
     flex: 1;
+    flex-wrap: wrap;
 }
 
 #who h2 {
