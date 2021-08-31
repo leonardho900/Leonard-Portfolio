@@ -102,6 +102,7 @@ p {
     top: 0;
     background: black;
     color: #fff;
+    height: 70px;
 }
 
 #navbar a {
@@ -110,7 +111,7 @@ p {
 
 #navbar .logo {
     float: left;
-    padding-top: 20px;
+    padding-top: 10px;
     cursor: pointer;
 }
 
@@ -126,7 +127,7 @@ p {
 
 #navbar ul li a {
     display: block;
-    padding: 8px;
+    padding: 2px;
     text-align: center;
     margin: 10px 0.25rem;
 }
@@ -531,3 +532,27 @@ p {
 .animate__animated.animate__fadeIn {
     --animate-duration: 5s;
 }
+
+.github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out
+}
+
+/*github-corner*/
+@keyframes octocat-wave {
+
+    0%,
+    100% {
+        transform: rotate(0)
+    }
+
+    20%,
+    60% {
+        transform: rotate(-25deg)
+    }
+
+    40%,
+    80% {
+        transform: rotate(10deg)
+    }
+}
+
