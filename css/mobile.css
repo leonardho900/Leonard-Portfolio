@@ -14,18 +14,17 @@
   }
   #navbar ul {
     display: block;
-    width: 100%;
-    height: 100vh;
+    width: 50%;
     position: fixed;
-    top: 80px;
-    left: -100%;
+    top: 70px;
+    right: -50%;
     text-align: center;
     transition: all .5s;
   }
   #navbar ul li {
     float: none;
     display:grid;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.9);
   }
   nav ul li a {
     font-size: 20px;
@@ -52,7 +51,7 @@
     color: cyan;
   }
   #navbar #check:checked~ul {
-    left: 0px;
+    right: 0px;
   }
 }
 
