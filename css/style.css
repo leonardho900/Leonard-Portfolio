@@ -222,11 +222,12 @@ p {
 
 #who {
     display: flex;
-    height: 70vh;
+    background-color: #333;
+    height:700px;
 }
 
 #who div {
-    flex: 1;
+    flex: 1 1 700px;
     flex-wrap: wrap;
 }
 
@@ -234,6 +235,8 @@ p {
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 5vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
 }
 
 #who p {
@@ -244,7 +247,7 @@ p {
 
 #who .who-img {
     background: url('../img/picture2.jpg') no-repeat center center/cover;
-    background-size: 400px;
+    background-size: 500px;
     background-color: #333;
 }
 
@@ -263,7 +266,7 @@ p {
 /*Skill*/
 
 #skill {
-    height: 70vh;
+    height: 700px;
     background: url('../img/picture3.jpg') no-repeat center center/cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -337,7 +340,7 @@ p {
 /* COMING SOON*/
 
 #comingsoon {
-    height: 100vh;
+    height: 700px;
     background: url('../img/picture4.jpg') no-repeat center center/cover;
 }
 
