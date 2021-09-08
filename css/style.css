@@ -236,13 +236,14 @@ p {
     padding-right: 50px;
     padding-top: 5vh;
     margin-top: 5vh;
-    margin-bottom: 5vh;
+    color: #ddd;
 }
 
 #who p {
     padding: 2px;
     padding-left: 50px;
     padding-right: 50px;
+    color:#aaa
 }
 
 #who .who-img {
@@ -252,13 +253,13 @@ p {
 }
 
 #who h3 {
-    color: black;
+    color: #ddd;
     padding-left: 50px;
     padding-right: 50px;
 }
 
 #who ul {
-    color: white;
+    color: #aaa;
     padding-left: 50px;
     padding-right: 50px;
 }
@@ -313,7 +314,7 @@ p {
 
 .skillbar-title {
     color: #323232;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
     display: inline-block;
@@ -323,7 +324,7 @@ p {
     float: right;
     display: inline-block;
     color: #323232;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -339,18 +340,18 @@ p {
 
 /* COMING SOON*/
 
-#comingsoon {
+#project {
     height: 700px;
     background: url('../img/picture4.jpg') no-repeat center center/cover;
 }
 
-#comingsoon h2 {
+#project h2 {
     color: #eee;
     padding-top: 80px;
     text-align: center;
 }
 
-#comingsoon .container {
+#project .container {
     text-align: center;
 }
 
@@ -458,9 +459,9 @@ p {
 
 
 .app-contact {
-    margin-top: auto;
-    font-size: 15px;
-    color: #727272;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #ddd;
 }
 
 .app-form-group {
@@ -485,15 +486,15 @@ p {
     padding: 10px 0;
     background: none;
     border: none;
-    border-bottom: 1px solid #666;
-    color: #ddd;
+    border-bottom: 1px solid #4d4d4f;
+    color: #999;
     font-size: 14px;
     outline: none;
     transition: border-color .2s;
 }
 
 .app-form-control::placeholder {
-    color: #666;
+    color: #999;
 }
 
 .app-form-control:focus {
