@@ -357,6 +357,8 @@ p {
     transform-style: preserve-3d;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 #project .container .box {
@@ -366,7 +368,8 @@ p {
     margin: 20px;
     transform-style: preserve-3d;
     perspective: 1000px;
-    cursor: pointer
+    cursor: pointer;
+
 }
 
 #project .container .box .body {
