@@ -61,11 +61,9 @@
     height: 50%;
     flex-direction: column;
     flex-wrap: wrap;
-
   }
   #who h2 {
     text-align: center;
-    
   }
   #who p {
     text-align: center;
@@ -135,7 +133,10 @@
   }
   #project {
     height: 100%;
-}
+  }
+  #project .container .box {
+    size: 50%;
+  }
 }
 
 @media(max-height: 568px) {
@@ -157,5 +158,4 @@
   #who .who-img {
     display: none;
   }
-
 }
