@@ -228,7 +228,6 @@ p {
 
 #who div {
     flex: 1 1 700px;
-    flex-wrap: wrap;
 }
 
 #who h2 {
