@@ -370,7 +370,6 @@ p {
     transform-style: preserve-3d;
     perspective: 1000px;
     cursor: pointer;
-
 }
 
 #project .container .box .body {
@@ -435,6 +434,8 @@ p {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    min-height: 100vh;
+    max-height: 100%;
 }
 
 .container {
