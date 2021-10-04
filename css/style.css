@@ -103,6 +103,8 @@ p {
     background: black;
     color: #fff;
     height: 70px;
+    z-index: 9999;
+
 }
 
 #navbar a {
@@ -340,7 +342,7 @@ p {
 /* COMING SOON*/
 
 #project {
-    height: 700px;
+    height: 100vh;
     background: url('../img/picture4.jpg') no-repeat center center/cover;
 }
 
@@ -352,6 +354,74 @@ p {
 
 #project .container {
     text-align: center;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#project .container .box {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    cursor: pointer
+}
+
+#project .container .box .body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: 0.9s ease
+}
+
+#project .container .box .body .imgContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d
+}
+
+#project .container .box .body .imgContainer img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+#project .container .box .body .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg)
+}
+
+#project .container .box:hover .body {
+    transform: rotateY(180deg)
+}
+
+#project .container .box .body .content div {
+    transform-style: preserve-3d;
+    padding: 20px;
+    background: linear-gradient(45deg, #FE0061, #FFEB3B);
+    transform: translateZ(100px)
+}
+
+#project .container .box .body .content div h3 {
+    letter-spacing: 1px
 }
 
 .background {
