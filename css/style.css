@@ -342,7 +342,8 @@ p {
 /* COMING SOON*/
 
 #project {
-    height: 100vh;
+    min-height: 100vh;
+    max-height: 100%;
     background: url('../img/picture4.jpg') no-repeat center center/cover;
 }
 
@@ -429,7 +430,7 @@ p {
 
 .background {
     display: flex;
-    min-height: 100vh;
+    min-height: 100%;
     background: url('../img/picture5.jpg') no-repeat center center/cover;
     background-repeat: no-repeat;
     background-size: cover;
