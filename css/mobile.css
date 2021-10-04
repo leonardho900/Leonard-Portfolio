@@ -58,17 +58,21 @@
   }
   #who {
     display: flex;
-    height: 100%;
+    height: 50%;
     flex-direction: column;
+    flex-wrap: wrap;
+
   }
   #who h2 {
     text-align: center;
+    
   }
   #who p {
     text-align: center;
   }
   #who .who-img {
-    display: none;
+    height: auto;
+    margin: 30px;
   }
   #who h3 {
     text-align: center;
