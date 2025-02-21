@@ -68,6 +68,11 @@
   #who h2 {
     text-align: center;
   }
+  #who h2 {
+    text-align: center;
+    padding-top: 0px;
+    margin-top: 0px;
+  }
   #who p {
     text-align: center;
   }
