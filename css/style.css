@@ -265,6 +265,66 @@ p {
     padding-right: 50px;
 }
 
+div.gallery {
+    border: 1px solid #ccc;
+  }
+  
+  div.gallery:hover {
+    border: 1px solid #777;
+  }
+  
+  div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+  div.desc {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+  }
+
+  
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  @media only screen and (max-width: 700px) {
+    .responsive {
+      width: 49.99999%;
+      margin: 6px 0;
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .responsive {
+      width: 100%;
+    }
+  }
+  
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
 /*Skill*/
 
 #skill {
@@ -339,92 +399,48 @@ p {
     transform: translateX(-50%) translateY(-50%);
 }
 
-/* COMING SOON*/
+/*gallery*/
 
-#project {
+#gallery {
     min-height: 100vh;
     max-height: 100%;
     background: url('../img/picture4.jpg') no-repeat center center/cover;
 }
 
-#project h2 {
+#gallery h2 {
     color: #eee;
     padding-top: 80px;
     text-align: center;
 }
 
-#project .container {
+#gallery .container {
     text-align: center;
-    transform-style: preserve-3d;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-#project .container .box {
+#gallery .text {
+    color: #020000;
+}
+
+#gallery .container .box {
     position: relative;
     width: 300px;
     height: 300px;
     margin: 20px;
-    transform-style: preserve-3d;
     perspective: 1000px;
     cursor: pointer;
 }
 
-#project .container .box .body {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: 0.9s ease
-}
-
-#project .container .box .body .imgContainer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d
-}
-
-#project .container .box .body .imgContainer img {
+#gallery .container .box .body .imgContainer img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover
-}
-
-#project .container .box .body .content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #333;
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
-    transform: rotateY(180deg)
-}
-
-#project .container .box:hover .body {
-    transform: rotateY(180deg)
-}
-
-#project .container .box .body .content div {
-    transform-style: preserve-3d;
-    padding: 20px;
-    background: linear-gradient(45deg, #FE0061, #FFEB3B);
-    transform: translateZ(100px)
-}
-
-#project .container .box .body .content div h3 {
-    letter-spacing: 1px
 }
 
 .background {

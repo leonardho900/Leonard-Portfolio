@@ -1,0 +1,245 @@
+/*RESET*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Main Styling*/
+
+html, body {
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7em;
+    background-color: black;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    padding-bottom: 20px;
+}
+
+p {
+    margin: 10px 0;
+    color: #fff;
+}
+
+/*Utility Classes*/
+
+.container {
+    margin: auto;
+    max-width: 1100px;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+.text-primary {
+    color: #00D1D1;
+}
+
+.lead {
+    font-size: 20px;
+}
+
+.btn {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    background: #333;
+    padding: 13px 20px;
+    border: #333;
+    border-radius: 10px;
+    border-style: inset;
+    border-color: #333;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.footer-btn {
+    display: inline-block;
+    font-size: 12px;
+    color: #fff;
+    background: #333;
+    padding: 4px 13px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    border-radius: 8px;
+}
+
+.btn:hover, .footer-btn:hover {
+    background: #00D1D1;
+    color: #333;
+}
+
+.bg-dark {
+    background: #333;
+    ;
+}
+
+.bg-light {
+    background: #727272;
+}
+
+.bg-primary {
+    background: #808080;
+    ;
+}
+
+.clr {
+    clear: both;
+}
+
+/*Navbar*/
+
+#navbar {
+    position: sticky;
+    top: 0;
+    background: black;
+    color: #fff;
+    height: 70px;
+    z-index: 9999;
+
+}
+
+#navbar a {
+    color: #aaa;
+}
+
+#navbar .logo {
+    float: left;
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+#navbar ul {
+    list-style: none;
+    float: right;
+    max-height: 0px;
+}
+
+#navbar ul li {
+    float: left;
+}
+
+#navbar ul li a {
+    display: block;
+    padding: 2px;
+    text-align: center;
+    margin: 10px 0.25rem;
+}
+
+#navbar ul li a:hover, #navbar ul li a.current {
+    color: #00D1D1;
+    border-radius: 8px;
+}
+#navbar .menu {
+    display: none;
+    color: #666;
+    cursor: pointer;
+}
+
+#navbar .checkbtn{
+    display: none;
+}
+
+#navbar #check{
+    display: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/*Footer*/
+
+#main-footer {
+    text-align: center;
+    background: black;
+    padding: 20px;
+}
+
+/*Animation*/
+
+.animate__animated.animate__fadeIn {
+    --animate-duration: 5s;
+}
+
+.github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out
+}
+
+/*github-corner*/
+@keyframes octocat-wave {
+
+    0%,
+    100% {
+        transform: rotate(0)
+    }
+
+    20%,
+    60% {
+        transform: rotate(-25deg)
+    }
+
+    40%,
+    80% {
+        transform: rotate(10deg)
+    }
+}
+
