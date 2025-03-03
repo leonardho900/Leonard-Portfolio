@@ -251,6 +251,19 @@ p {
     background: url('../img/picture2.jpg') no-repeat center center/cover;
     background-size: 500px;
     background-color: #333;
+    transition: background-position 0.1s ease-in-out;
+}
+
+#who .who-img:hover {
+    animation: bg-shake 0.3s ease-in-out;
+}
+
+@keyframes bg-shake {
+    0% { background-position: center; }
+    25% { background-position: 48% 50%; }
+    50% { background-position: 52% 50%; }
+    75% { background-position: 48% 50%; }
+    100% { background-position: center; }
 }
 
 #who h3 {
@@ -277,7 +290,7 @@ div.gallery {
     width: 100%;
     height: auto;
   }
-  
+
   div.desc {
     padding: 15px;
     text-align: center;
@@ -422,7 +435,10 @@ div.gallery {
 }
 
 #gallery .text {
-    color: #020000;
+    display: inline-block; /* Ensures proper background sizing */
+    background: rgba(0, 0, 0, 0.1); /* Always visible 50% black background */
+    color: #fff; /* White text for better readability */
+    transition: transform 0.3s ease-in-out;
 }
 
 #gallery .container .box {
@@ -432,6 +448,7 @@ div.gallery {
     margin: 20px;
     perspective: 1000px;
     cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
 
 #gallery .container .box .body .imgContainer img {
@@ -440,8 +457,26 @@ div.gallery {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
 }
+
+/* Hover Effect on the Whole Box */
+#gallery .container .box:hover {
+    transform: scale(1.05);
+}
+
+/* Sync Image with Box */
+#gallery .container .box:hover .body .imgContainer img {
+    transform: scale(1.05);
+}
+
+/* Sync Text with Box */
+#gallery .container .box:hover ~ .text {
+    transform: translateY(-5px);
+    color: #ebff33; /* Change text color on hover */
+}
+
 
 .background {
     display: flex;
