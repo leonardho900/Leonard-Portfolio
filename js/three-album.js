@@ -4,6 +4,7 @@ const container = document.querySelector("#album-three");
 const params = new URLSearchParams(window.location.search);
 const albumId = params.get("album") || "japan23";
 const album = (window.portfolioAlbums || []).find((item) => item.id === albumId);
+const previewSrc = (src) => `img/thumbs/${src.replace(/^img\//, "")}`;
 
 if (container && album) {
     window.albumThreeState = { frames: 0, rotationY: 0 };
@@ -48,7 +49,7 @@ if (container && album) {
         backing.position.z = -0.035;
         holder.add(backing);
 
-        const texture = loader.load(src);
+        const texture = loader.load(previewSrc(src));
         texture.colorSpace = THREE.SRGBColorSpace;
         texture.minFilter = THREE.LinearFilter;
         texture.magFilter = THREE.LinearFilter;

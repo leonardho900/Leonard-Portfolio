@@ -19,12 +19,13 @@
     }
 
     const albums = window.portfolioAlbums || [];
+    const previewSrc = (src) => `img/thumbs/${src.replace(/^img\//, "")}`;
     const albumGrid = document.querySelector("#album-grid");
 
     if (albumGrid) {
         albumGrid.innerHTML = albums.map((album) => `
             <a class="album-card" href="album.html?album=${album.id}" aria-label="Open ${album.title}">
-                <img src="${album.cover}" alt="${album.title}" loading="lazy">
+                <img src="${previewSrc(album.cover)}" alt="${album.title}" loading="lazy">
                 <div class="album-info">
                     <span class="album-meta">${album.meta}</span>
                     <h3>${album.title}</h3>
@@ -55,7 +56,7 @@
 
         const frame = frames[index % frames.length];
         currentFrameIndex = index % frames.length;
-        surpriseImage.src = frame.src;
+        surpriseImage.src = previewSrc(frame.src);
         surpriseImage.alt = frame.label;
         surpriseCaption.textContent = frame.label;
         surpriseAlbumLink.href = `album.html?album=${frame.album.id}`;
