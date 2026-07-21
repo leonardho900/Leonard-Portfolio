@@ -191,12 +191,24 @@ h1 {
 .hero h1 {
     width: max-content;
     max-width: 100%;
-    background: linear-gradient(90deg, var(--text), var(--accent-2), var(--text));
-    background-size: 220% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: var(--text);
+    white-space: nowrap;
     animation: title-glow 7s ease-in-out infinite;
+}
+
+.hero h1 .letter {
+    display: inline-block;
+    transform-origin: 50% 80%;
+    transition: transform 180ms ease;
+}
+
+.hero h1:hover .letter {
+    animation: letter-wave 720ms ease-in-out both;
+    animation-delay: calc(var(--i) * 42ms);
+}
+
+.hero h1 .space {
+    width: 0.22em;
 }
 
 h2 {
@@ -267,6 +279,33 @@ h3 {
     50% {
         background-position: 100% 50%;
         text-shadow: 0 0 34px rgba(230, 189, 99, 0.18);
+    }
+}
+
+@keyframes letter-wave {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    35% {
+        transform: translateY(-0.16em) rotate(-2deg);
+    }
+
+    70% {
+        transform: translateY(0.03em) rotate(1.4deg);
+    }
+}
+
+@keyframes letter-jump {
+    0%,
+    72%,
+    100% {
+        transform: translateY(0);
+    }
+
+    84% {
+        transform: translateY(-0.13em);
     }
 }
 
@@ -808,6 +847,16 @@ h3 {
         padding-top: 7rem;
     }
 
+    .hero h1 {
+        font-size: clamp(3.35rem, 16vw, 5.6rem);
+        line-height: 0.94;
+    }
+
+    .hero h1 .letter {
+        animation: letter-jump 2.6s ease-in-out infinite;
+        animation-delay: calc(var(--i) * 70ms);
+    }
+
     .hero-focus {
         right: -4rem;
         top: 10vh;
@@ -846,7 +895,11 @@ h3 {
 
 @media (max-width: 460px) {
     h1 {
-        font-size: 4rem;
+        font-size: 3.2rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.85rem, 14.2vw, 3.9rem);
     }
 
     .hero-actions,
@@ -860,5 +913,13 @@ h3 {
 
     .gallery-grid {
         column-count: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero h1,
+    .hero h1 .letter,
+    .hero h1:hover .letter {
+        animation: none;
     }
 }
