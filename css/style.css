@@ -327,6 +327,21 @@ h3 {
     font-size: 1.05rem;
 }
 
+.about-intro {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.about-photo {
+    width: min(100%, 420px);
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
 .facts-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
