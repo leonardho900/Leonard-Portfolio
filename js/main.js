@@ -48,15 +48,46 @@
         }))
     );
     let currentFrameIndex = 0;
+    let nextFrameIndex = 0;
+    let nextFrame = null;
 
-    const showSurpriseFrame = (index) => {
+    const frameIndex = (index) => (index + frames.length) % frames.length;
+
+    const randomFrameIndex = () => {
+        if (frames.length < 2) {
+            return 0;
+        }
+        return (currentFrameIndex + 1 + Math.floor(Math.random() * (frames.length - 1))) % frames.length;
+    };
+
+    const preloadFrame = (index) => {
+        const safeIndex = frameIndex(index);
+        const frame = frames[safeIndex];
+        const image = new Image();
+        image.decoding = "async";
+
+        nextFrameIndex = safeIndex;
+        nextFrame = { frame, image };
+
+        shuffleButton.disabled = true;
+        image.onload = () => {
+            shuffleButton.disabled = false;
+        };
+        image.onerror = () => {
+            shuffleButton.disabled = false;
+        };
+        image.src = previewSrc(frame.src);
+    };
+
+    const showSurpriseFrame = (index, preloadedImage) => {
         if (!frames.length || !surpriseImage || !surpriseCaption || !surpriseAlbumLink) {
             return;
         }
 
-        const frame = frames[index % frames.length];
-        currentFrameIndex = index % frames.length;
-        surpriseImage.src = previewSrc(frame.src);
+        const safeIndex = frameIndex(index);
+        const frame = frames[safeIndex];
+        currentFrameIndex = safeIndex;
+        surpriseImage.src = preloadedImage?.src || previewSrc(frame.src);
         surpriseImage.alt = frame.label;
         surpriseCaption.textContent = frame.label;
         surpriseAlbumLink.href = `album.html?album=${frame.album.id}`;
@@ -64,9 +95,13 @@
 
     if (shuffleButton && frames.length) {
         showSurpriseFrame(Math.floor(Math.random() * frames.length));
+        preloadFrame(randomFrameIndex());
         shuffleButton.addEventListener("click", () => {
-            const nextIndex = (currentFrameIndex + 1 + Math.floor(Math.random() * (frames.length - 1))) % frames.length;
-            showSurpriseFrame(nextIndex);
+            if (shuffleButton.disabled || !nextFrame) {
+                return;
+            }
+
+            showSurpriseFrame(nextFrameIndex, nextFrame.image);
             surpriseImage.animate(
                 [
                     { opacity: 0.25, transform: "scale(0.985) rotate(-1deg)" },
@@ -74,6 +109,7 @@
                 ],
                 { duration: 420, easing: "ease-out" }
             );
+            preloadFrame(randomFrameIndex());
         });
     }
 })();

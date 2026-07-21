@@ -195,6 +195,11 @@ h3 {
     background: rgba(255, 255, 255, 0.08);
 }
 
+.button:disabled {
+    opacity: 0.58;
+    cursor: wait;
+}
+
 .section {
     padding: 6.5rem 6vw;
     border-top: 1px solid var(--line);
