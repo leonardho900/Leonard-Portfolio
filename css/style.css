@@ -390,6 +390,7 @@ h3 {
 
 .facts-grid div,
 .work-card,
+.project-card,
 .contact-panel {
     background: var(--surface);
     border: 1px solid var(--line);
@@ -445,6 +446,64 @@ h3 {
 
 .work-card {
     padding: 1.35rem;
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: stretch;
+    margin-top: 1rem;
+    padding: 1.35rem;
+}
+
+.project-preview {
+    min-height: 260px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 0.8rem;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.project-preview img {
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.project-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-card h3 {
+    font-size: clamp(1.7rem, 3vw, 2.65rem);
+}
+
+.project-copy > p:last-of-type {
+    max-width: 760px;
+    color: var(--muted);
+}
+
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: 1.2rem;
+}
+
+.project-meta span {
+    padding: 0.48rem 0.68rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--accent-2);
+    font-size: 0.76rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .skills-list {
@@ -801,6 +860,10 @@ h3 {
     .work-grid,
     .album-grid {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .project-card {
+        grid-template-columns: 1fr;
     }
 
     .gallery-grid {
