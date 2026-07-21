@@ -26,7 +26,8 @@ body {
     line-height: 1.6;
 }
 
-body.nav-open {
+body.nav-open,
+body.modal-open {
     overflow: hidden;
 }
 
@@ -458,6 +459,7 @@ h3 {
 }
 
 .project-preview {
+    position: relative;
     aspect-ratio: 4 / 3;
     max-height: 360px;
     overflow: hidden;
@@ -472,6 +474,31 @@ h3 {
     object-fit: cover;
     object-position: top center;
     display: block;
+}
+
+.project-demo-trigger {
+    position: absolute;
+    right: 0.9rem;
+    bottom: 0.9rem;
+    min-height: 42px;
+    padding: 0.7rem 0.95rem;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+    background: rgba(15, 17, 16, 0.82);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+    transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.project-preview:hover .project-demo-trigger,
+.project-demo-trigger:focus-visible {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    background: rgba(22, 37, 31, 0.95);
 }
 
 .project-copy {
@@ -522,6 +549,80 @@ h3 {
     color: var(--muted);
     font-size: 0.9rem;
     font-weight: 700;
+}
+
+.demo-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 6vw;
+}
+
+.demo-modal.is-open {
+    display: flex;
+}
+
+.demo-backdrop {
+    position: absolute;
+    inset: 0;
+    border: 0;
+    background: rgba(0, 0, 0, 0.84);
+    cursor: zoom-out;
+}
+
+.demo-panel {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 1040px);
+    max-height: 86vh;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 0.9rem;
+    background: #0b0d16;
+    box-shadow: var(--shadow);
+}
+
+.demo-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.demo-header h2 {
+    margin-top: 0.2rem;
+    font-size: clamp(1.35rem, 3vw, 2rem);
+}
+
+.demo-close {
+    min-height: 42px;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.84rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.demo-screen {
+    height: min(64vh, 580px);
+    background: #020615;
+}
+
+.demo-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .photo-section {
@@ -867,6 +968,10 @@ h3 {
         grid-template-columns: 1fr;
     }
 
+    .demo-panel {
+        max-height: 82vh;
+    }
+
     .gallery-grid {
         column-count: 3;
     }
@@ -948,6 +1053,18 @@ h3 {
 
     .lightbox {
         padding: 4.5rem 1rem 5rem;
+    }
+
+    .demo-modal {
+        padding: 4.5rem 1rem 1rem;
+    }
+
+    .demo-header {
+        flex-direction: column;
+    }
+
+    .demo-close {
+        width: 100%;
     }
 
     .lightbox-nav {

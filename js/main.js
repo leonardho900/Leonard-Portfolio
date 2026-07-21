@@ -112,4 +112,52 @@
             preloadFrame(randomFrameIndex());
         });
     }
+
+    const demoModal = document.querySelector("#reefradar-demo");
+    const demoTrigger = document.querySelector(".project-demo-trigger");
+    const demoCloseButtons = document.querySelectorAll(".demo-close, .demo-backdrop");
+    const demoVideo = document.querySelector(".demo-video");
+    let activeDemoTrigger = null;
+
+    const openDemo = () => {
+        if (!demoModal || !demoTrigger) {
+            return;
+        }
+
+        activeDemoTrigger = document.activeElement;
+        demoModal.hidden = false;
+        demoModal.classList.add("is-open");
+        document.body.classList.add("modal-open");
+        demoTrigger.setAttribute("aria-expanded", "true");
+        demoModal.querySelector(".demo-close")?.focus();
+        demoVideo?.play().catch(() => {});
+    };
+
+    const closeDemo = () => {
+        if (!demoModal || !demoTrigger || demoModal.hidden) {
+            return;
+        }
+
+        demoModal.classList.remove("is-open");
+        demoModal.hidden = true;
+        document.body.classList.remove("modal-open");
+        demoTrigger.setAttribute("aria-expanded", "false");
+        if (demoVideo) {
+            demoVideo.pause();
+            demoVideo.currentTime = 0;
+        }
+        activeDemoTrigger?.focus();
+        activeDemoTrigger = null;
+    };
+
+    if (demoModal && demoTrigger) {
+        demoTrigger.setAttribute("aria-expanded", "false");
+        demoTrigger.addEventListener("click", openDemo);
+        demoCloseButtons.forEach((button) => button.addEventListener("click", closeDemo));
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                closeDemo();
+            }
+        });
+    }
 })();

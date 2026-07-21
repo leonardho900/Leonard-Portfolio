@@ -108,6 +108,9 @@
             <article class="project-card">
                 <figure class="project-preview">
                     <img src="img/reefradar-screenshot.jpg" alt="ReefRadar app showing dive-site filters and location cards">
+                    <button class="project-demo-trigger" type="button" aria-haspopup="dialog" aria-controls="reefradar-demo">
+                        <span>Watch Demo</span>
+                    </button>
                 </figure>
                 <div class="project-copy">
                     <p class="eyebrow">Featured Project</p>
@@ -185,6 +188,25 @@
             </div>
         </section>
     </main>
+
+    <div id="reefradar-demo" class="demo-modal" role="dialog" aria-modal="true" aria-labelledby="reefradar-demo-title" hidden>
+        <button class="demo-backdrop" type="button" aria-label="Close ReefRadar demo"></button>
+        <div class="demo-panel">
+            <div class="demo-header">
+                <div>
+                    <p class="eyebrow">ReefRadar Demo</p>
+                    <h2 id="reefradar-demo-title">Dive-site discovery flow</h2>
+                </div>
+                <button class="demo-close" type="button" aria-label="Close ReefRadar demo">Close</button>
+            </div>
+            <div class="demo-screen">
+                <video class="demo-video" controls preload="metadata" poster="img/reefradar-screenshot.jpg" aria-label="ReefRadar demo video">
+                    <source src="img/reefradar-demo.webm" type="video/webm">
+                    Your browser does not support the demo video.
+                </video>
+            </div>
+        </div>
+    </div>
 
     <footer class="site-footer">
         <span>Leonard Ho</span>
