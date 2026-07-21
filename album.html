@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Film photography album by Leonard Ho.">
+    <title>Film Album | Leonard Ho</title>
+    <link rel="icon" href="img/menu.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.js"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">Leonard Ho</a>
+        <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Album navigation">
+            <a href="index.html#about">About</a>
+            <a href="index.html#work">Work</a>
+            <a href="index.html#photography">Photography</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div id="album-three" class="album-three" aria-hidden="true"></div>
+
+    <main class="album-page">
+        <a class="back-link" href="index.html#photography">Back to albums</a>
+        <section id="album-hero" class="album-hero" aria-live="polite"></section>
+        <section id="gallery-grid" class="gallery-grid" aria-label="Photo gallery"></section>
+    </main>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox-close" type="button" aria-label="Close picture">Close</button>
+        <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous picture">Prev</button>
+        <img src="" alt="">
+        <button class="lightbox-nav lightbox-next" type="button" aria-label="Next picture">Next</button>
+    </div>
+
+    <footer class="site-footer">
+        <span>Leonard Ho</span>
+        <span>© 2026</span>
+    </footer>
+
+    <script src="js/portfolio-data.js"></script>
+    <script src="js/main.js"></script>
+    <script type="module" src="js/three-album.js?v=3"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const albumId = params.get("album") || "japan23";
+        const album = (window.portfolioAlbums || []).find((item) => item.id === albumId);
+        const hero = document.querySelector("#album-hero");
+        const grid = document.querySelector("#gallery-grid");
+
+        if (!album) {
+            document.title = "Album Not Found | Leonard Ho";
+            hero.innerHTML = `
+                <div>
+                    <p class="eyebrow">Photography</p>
+                    <h1>Album not found</h1>
+                </div>
+                <p>The album link does not match an available gallery.</p>
+            `;
+            grid.innerHTML = '<p class="empty-state">Return to the photography section and choose another album.</p>';
+        } else {
+            document.title = `${album.title} | Leonard Ho`;
+            hero.innerHTML = `
+                <div>
+                    <p class="eyebrow">${album.meta}</p>
+                    <h1>${album.title}</h1>
+                </div>
+                <div>
+                    <p>${album.description}</p>
+                    <p><strong>Camera:</strong> ${album.camera}</p>
+                    <p><strong>Film:</strong> ${album.film}</p>
+                </div>
+            `;
+            grid.innerHTML = album.images.map((src, index) => `
+                <button class="photo-button" type="button" data-index="${index}" aria-label="View ${album.title} frame ${index + 1}">
+                    <img src="${src}" alt="${album.title} frame ${index + 1}" loading="lazy">
+                </button>
+            `).join("");
+
+            const lightbox = document.querySelector("#lightbox");
+            const lightboxImage = lightbox.querySelector("img");
+            const closeButton = lightbox.querySelector(".lightbox-close");
+            const previousButton = lightbox.querySelector(".lightbox-prev");
+            const nextButton = lightbox.querySelector(".lightbox-next");
+            let activeIndex = 0;
+
+            const showImage = (index) => {
+                activeIndex = (index + album.images.length) % album.images.length;
+                lightboxImage.src = album.images[activeIndex];
+                lightboxImage.alt = `${album.title} frame ${activeIndex + 1}`;
+            };
+
+            const openLightbox = (index) => {
+                showImage(index);
+                lightbox.classList.add("is-open");
+                lightbox.setAttribute("aria-hidden", "false");
+                document.body.classList.add("nav-open");
+                closeButton.focus();
+            };
+
+            const closeLightbox = () => {
+                lightbox.classList.remove("is-open");
+                lightbox.setAttribute("aria-hidden", "true");
+                document.body.classList.remove("nav-open");
+            };
+
+            grid.addEventListener("click", (event) => {
+                const button = event.target.closest(".photo-button");
+                if (button) {
+                    openLightbox(Number(button.dataset.index));
+                }
+            });
+
+            closeButton.addEventListener("click", closeLightbox);
+            previousButton.addEventListener("click", () => showImage(activeIndex - 1));
+            nextButton.addEventListener("click", () => showImage(activeIndex + 1));
+            lightbox.addEventListener("click", (event) => {
+                if (event.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+            document.addEventListener("keydown", (event) => {
+                if (!lightbox.classList.contains("is-open")) {
+                    return;
+                }
+                if (event.key === "Escape") {
+                    closeLightbox();
+                }
+                if (event.key === "ArrowLeft") {
+                    showImage(activeIndex - 1);
+                }
+                if (event.key === "ArrowRight") {
+                    showImage(activeIndex + 1);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

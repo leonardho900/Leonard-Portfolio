@@ -1,101 +1,78 @@
+(function () {
+    const navToggle = document.querySelector(".nav-toggle");
+    const siteNav = document.querySelector("#site-nav");
 
+    if (navToggle && siteNav) {
+        navToggle.addEventListener("click", () => {
+            const isOpen = siteNav.classList.toggle("is-open");
+            document.body.classList.toggle("nav-open", isOpen);
+            navToggle.setAttribute("aria-expanded", String(isOpen));
+        });
 
-// Sticky menu background
-window.addEventListener('scroll', function () {
-  if (window.scrollY > 1) {
-    document.querySelector('#navbar').style.opacity = 0.8;
-  } else {
-    document.querySelector('#navbar').style.opacity = 1;
-  }
-});
+        siteNav.addEventListener("click", (event) => {
+            if (event.target.tagName === "A") {
+                siteNav.classList.remove("is-open");
+                document.body.classList.remove("nav-open");
+                navToggle.setAttribute("aria-expanded", "false");
+            }
+        });
+    }
 
+    const albums = window.portfolioAlbums || [];
+    const albumGrid = document.querySelector("#album-grid");
 
-// Smooth Scrolling
-$('#navbar a, .btn').on('click', function (event) {
-  if (this.hash !== '') {
-    event.preventDefault();
+    if (albumGrid) {
+        albumGrid.innerHTML = albums.map((album) => `
+            <a class="album-card" href="album.html?album=${album.id}" aria-label="Open ${album.title}">
+                <img src="${album.cover}" alt="${album.title}" loading="lazy">
+                <div class="album-info">
+                    <span class="album-meta">${album.meta}</span>
+                    <h3>${album.title}</h3>
+                    <p>${album.description}</p>
+                    <span class="album-count">${album.images.length} frames</span>
+                </div>
+            </a>
+        `).join("");
+    }
 
-    const hash = this.hash;
-
-    $('html, body').animate(
-      {
-        scrollTop: $(hash).offset().top - 100
-      },
-      800
+    const shuffleButton = document.querySelector("#shuffle-frame");
+    const surpriseImage = document.querySelector("#surprise-image");
+    const surpriseCaption = document.querySelector("#surprise-caption");
+    const surpriseAlbumLink = document.querySelector("#surprise-album-link");
+    const frames = albums.flatMap((album) =>
+        album.images.map((src, index) => ({
+            album,
+            src,
+            label: `${album.title} / frame ${index + 1}`,
+        }))
     );
-  }
-});
+    let currentFrameIndex = 0;
 
-class TypeWriter {
-  constructor(txtElement, words, wait = 3000) {
-    this.txtElement = txtElement;
-    this.words = words;
-    this.txt = '';
-    this.wordIndex = 0;
-    this.wait = parseInt(wait, 10);
-    this.type();
-    this.isDeleting = false;
-  }
+    const showSurpriseFrame = (index) => {
+        if (!frames.length || !surpriseImage || !surpriseCaption || !surpriseAlbumLink) {
+            return;
+        }
 
-  type() {
-    // Current index of word
-    const current = this.wordIndex % this.words.length;
-    // Get full text of current word
-    const fullTxt = this.words[current];
+        const frame = frames[index % frames.length];
+        currentFrameIndex = index % frames.length;
+        surpriseImage.src = frame.src;
+        surpriseImage.alt = frame.label;
+        surpriseCaption.textContent = frame.label;
+        surpriseAlbumLink.href = `album.html?album=${frame.album.id}`;
+    };
 
-    // Check if deleting
-    if (this.isDeleting) {
-      // Remove char
-      this.txt = fullTxt.substring(0, this.txt.length - 1);
-    } else {
-      // Add char
-      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    if (shuffleButton && frames.length) {
+        showSurpriseFrame(Math.floor(Math.random() * frames.length));
+        shuffleButton.addEventListener("click", () => {
+            const nextIndex = (currentFrameIndex + 1 + Math.floor(Math.random() * (frames.length - 1))) % frames.length;
+            showSurpriseFrame(nextIndex);
+            surpriseImage.animate(
+                [
+                    { opacity: 0.25, transform: "scale(0.985) rotate(-1deg)" },
+                    { opacity: 1, transform: "scale(1) rotate(0deg)" },
+                ],
+                { duration: 420, easing: "ease-out" }
+            );
+        });
     }
-
-    // Insert txt into element
-    this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
-
-    // Initial Type Speed
-    let typeSpeed = 300;
-
-    if (this.isDeleting) {
-      typeSpeed /= 2;
-    }
-
-    // If word is complete
-    if (!this.isDeleting && this.txt === fullTxt) {
-      // Make pause at end
-      typeSpeed = this.wait;
-      // Set delete to true
-      this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === '') {
-      this.isDeleting = false;
-      // Move to next word
-      this.wordIndex++;
-      // Pause before start typing
-      typeSpeed = 500;
-    }
-
-    setTimeout(() => this.type(), typeSpeed);
-  }
-}
-
-
-// Init On DOM Load
-document.addEventListener('DOMContentLoaded', init);
-
-// Init App
-function init() {
-  const txtElement = document.querySelector('.txt-type');
-  const words = JSON.parse(txtElement.getAttribute('data-words'));
-  const wait = txtElement.getAttribute('data-wait');
-  // Init TypeWriter
-  new TypeWriter(txtElement, words, wait);
-}
-
-//captcha dark theme 
-document.addEventListener('DOMContentLoaded', (event) => {
-  const recaptcha = document.querySelector('.g-recaptcha');
-  recaptcha.setAttribute("data-theme", "dark");
-});
-
+})();

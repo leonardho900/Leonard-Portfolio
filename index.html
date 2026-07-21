@@ -4,292 +4,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta help-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://kit.fontawesome.com/98de5a6083.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Welcome to my Portfolio !">
     <meta name="keywords" content="portfolio,computer science">
+    <meta property="og:title" content="Leonard Ho | Developer and Film Photographer">
+    <meta property="og:description" content="Welcome to my Portfolio !">
+    <meta property="og:image" content="img/picture1.jpg">
+    <title>Leonard Ho | Developer and Film Photographer</title>
+    <link rel="icon" href="img/menu.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
-    <link rel="stylesheet" media="screen and (min-width: 1100px)" href="css/widescreen.css">
-    <title>Leonard's Portfolio | Welcome</title>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9HQ31P6GVK"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-9HQ31P6GVK');
-    </script>
-
 </head>
 
 <body>
-    <nav id="navbar">
-        <div class="container">
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i class="fas fa-bars"></i>
-            </label>
-            <a href="index.html">
-                <h1 class="logo"><i class="fab fa-bitcoin"></i> <span class="text-primary">Leo</span>nard's</h1>
-            </a>
-            </a>
-            <ul id="menuList">
-                <li><a href="#showcase"> Home </a></li>
-                <li><a href="#who"> Who </a></li>
-                <li><a href="#gallery"> Gallery </a></li>
-                <li><a href="#skill"> Skill </a></li>
-                <li><a href="#contact"> Contact </a></li>
-            </ul>
-        </div>
-        <!--- Github ribbon ----------->
-        <a href="http://github.com/leonardho900" target="_blank" class="github-corner"
-            aria-label="View source on GitHub">
-            <svg width="50" height="50" viewBox="0 0 250 250"
-                style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
-                <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-                <path
-                    d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-                    fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-                <path
-                    d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-                    fill="currentColor" class="octo-body"></path>
-            </svg>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Leonard Ho home">
+            <span>Leonard Ho</span>
         </a>
-        <div id="colorlib-main">
-    </nav>
-
-    <header>
-        <div id="showcase">
-            <div class="container">
-                <div class="showcase-content">
-                    <h1><span class="text-primary">Leonard Ho, The <span class="txt-type" data-wait="3000"
-                                data-words='["Developer", " Hobby Photographer"]'></span></span></h1>
-                    <p class="lead"><span>
-                            My Film Gallery</span>
-                    </p>
-
-                    <a class="btn" href="#who">About Me</a>
-                </div>
-            </div>
-        </div>
+        <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#photography">Photography</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <!-- Section: Who  -->
-    <section id="who">
-        <div class="who-img"></div>
-        <div class="who-text bg-dark p-2">
-            <h2 class="m-heading"> <span class="text-primary">Who</span> I am</h2>
-            <p>Hi, I'm Leonard Ho—a Java developer by profession and a passionate film photographer in my free time.
-                This portfolio is a space where I share my favorite film shots, capturing moments through the unique
-                beauty of analog photography.</p>
-            <h3>Education</h3>
-            <ul>
-                <li> <b>Bachelor of Computer Science</b> <br><i>Taylor's University</i> 2019 - 2021 </li>
-                <li> <b>Diploma of Information Technology</b> <br><i>Taylor's University</i> 2017 - 2019 </li>
-            </ul>
-            &nbsp;
-            <h3>Current Camera</h3>
-            <ul>
-                <li> <b>Leica CL with 35mm 2.5 color skopar</b> </li>
-                <li> <b>Genba Kantoku 35wb</b> </li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="gallery" class="bg-light">
-        <h2 class="m-heading"><span class="text-primary">Gallery</span> </h2>
-        <div class="container d-flex align-items-center justify-content-center flex-wrap">
-            <div class="box">
-                <div class="body">
-                    <div class="imgContainer">
-                        <a href="japan23.html">
-                            <img src="img\japan23.JPG" alt="">
-                        </a>
-                    </div>
-                    <div class="text">Japan 2023</div>
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-media" aria-hidden="true"></div>
+            <div class="hero-content">
+                <p class="eyebrow">Java developer / film photographer</p>
+                <h1 id="hero-title">Leonard Ho</h1>
+                <p class="hero-copy">My Film Gallery</p>
+                <div class="hero-actions">
+                    <a class="button primary" href="#work">View Work</a>
+                    <a class="button secondary" href="#photography">Explore Photos</a>
                 </div>
             </div>
-            <div class="box">
-                <div class="body">
-                    <div class="imgContainer"> <a href="viet23.html">
-                            <img src="img\vietnam23.JPG" alt="">
-                        </a>
-                    </div>
-                    <div class="text">Vietnam 2023</div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="body">
-                    <div class="imgContainer"> <a href="ej23.html" >
-                            <img src="img\ej23.JPG" alt="">
-                        </a>
-                    </div>
-                    <div class="text">East Java 2023</div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="body">
-                    <div class="imgContainer"> <a href="greece23.html">
-                            <img src="img\greece23.JPG" alt="">
-                        </a>
-                    </div>
-                    <div class="text">Greece 2023</div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="body">
-                    <div class="imgContainer"> <a href="oki24.html">
-                            <img src="img\oki24.JPG" alt="">
-                        </a>
-                    </div>
-                    <div class="text">Okinawa 2024</div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="body">
-                    <div class="imgContainer"> <a href="bali24.html">
-                            <img src="img\bali24.JPG" alt="">
-                        </a>
-                    </div>
-                    <div class="text">Bali 2024</div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="skill" class="bg-light">
-        <h2 class="m-heading">My <span class="text-primary">Skill</span></h2>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="skillbar" data-percent="85%">
-                        <div class="skillbar-title">HTML5</div>
-                        <div class="skill-bar-percent">85%</div>
-                        <div class="skillbar-bar" style="width: 85%;"></div>
+        <section id="about" class="section split-section">
+            <div>
+                <p class="eyebrow">About</p>
+                <h2><span>Who</span> I am</h2>
+            </div>
+            <div class="section-copy">
+                <p>Hi, I'm Leonard Ho—a Java developer by profession and a passionate film photographer in my free time.
+                    This portfolio is a space where I share my favorite film shots, capturing moments through the unique
+                    beauty of analog photography.</p>
+                <div class="facts-grid">
+                    <div>
+                        <span class="fact-label">Education</span>
+                        <strong>Bachelor of Computer Science</strong>
+                        <p>Taylor's University, 2019 - 2021</p>
                     </div>
-
-                    <div class="skillbar" data-percent="70%">
-                        <div class="skillbar-title">CSS</div>
-                        <div class="skill-bar-percent">70%</div>
-                        <div class="skillbar-bar" style="width: 70%;"></div>
+                    <div>
+                        <span class="fact-label">Foundation</span>
+                        <strong>Diploma of Information Technology</strong>
+                        <p>Taylor's University, 2017 - 2019</p>
                     </div>
-
-                    <div class="skillbar" data-percent="70%">
-                        <div class="skillbar-title">JavaScript</div>
-                        <div class="skill-bar-percent">70%</div>
-                        <div class="skillbar-bar" style="width: 70%;"></div>
-                    </div>
-
-                    <div class="skillbar" data-percent="85%">
-                        <div class="skillbar-title">Java</div>
-                        <div class="skill-bar-percent">85%</div>
-                        <div class="skillbar-bar" style="width: 85%;"></div>
-                    </div>
-
-                    <div class="skillbar" data-percent="85%">
-                        <div class="skillbar-title">SQL</div>
-                        <div class="skill-bar-percent">85%</div>
-                        <div class="skillbar-bar" style="width: 85%;"></div>
+                    <div>
+                        <span class="fact-label">Current Cameras</span>
+                        <strong>Leica CL / Genba Kantoku 35WB</strong>
+                        <p>35mm 2.5 Color-Skopar and Genba Kantoku 35WB.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <section id="work" class="section work-section">
+            <div class="section-heading">
+                <p class="eyebrow">Software</p>
+                <h2>Developer Profile</h2>
+            </div>
+            <div class="work-grid">
+                <article class="work-card">
+                    <span>01</span>
+                    <h3>Backend Development</h3>
+                    <p>Java, SQL, and service-oriented thinking for business systems that need clarity and reliability.</p>
+                </article>
+                <article class="work-card">
+                    <span>02</span>
+                    <h3>Frontend Delivery</h3>
+                    <p>HTML, CSS, and JavaScript foundations for responsive interfaces, dashboards, and portfolio work.</p>
+                </article>
+                <article class="work-card">
+                    <span>03</span>
+                    <h3>Product Mindset</h3>
+                    <p>A practical focus on making tools usable, maintainable, and easy to understand for real people.</p>
+                </article>
+            </div>
+            <div class="skills-list" aria-label="Skills">
+                <span>Java</span>
+                <span>SQL</span>
+                <span>JavaScript</span>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Responsive UI</span>
+            </div>
+        </section>
 
-
-    <section id="contact" class="background">
-        <div class="container">
-            <div class="screen">
-                <div class="screen-header">
-                    <div class="screen-header-left">
-                        <div class="screen-header-button close"></div>
-                        <div class="screen-header-button maximize"></div>
-                        <div class="screen-header-button minimize"></div>
-                    </div>
-                    <div class="screen-header-right">
-                        <div class="screen-header-ellipsis"></div>
-                        <div class="screen-header-ellipsis"></div>
-                        <div class="screen-header-ellipsis"></div>
-                    </div>
-                </div>
-                <div class="screen-body">
-                    <div class="screen-body-item left">
-                        <div class="app-title">
-                            <span>CONTACT </span>
-                        </div>
-                        <div class="app-contact">CONTACT INFO : <br>(+60) 12-7287900</div>
-                    </div>
-                    <div class="screen-body-item">
-                        <form method="POST" data-netlify="true" data-netlify-recaptcha="true">
-                            <div class="app-form">
-                                <div class="app-form-group">
-                                    <input type="text" class="app-form-control" placeholder="NAME" name="name"
-                                        autocomplete="nope">
-                                </div>
-                                <div class="app-form-group">
-                                    <input type="email" class="app-form-control" placeholder="EMAIL" name="email"
-                                        autocomplete="nope">
-                                </div>
-                                <div class="app-form-group">
-                                    <input type="tel" class="app-form-control" placeholder="CONTACT NO" name="contact"
-                                        autocomplete="nope">
-                                </div>
-                                <div class="app-form-group message">
-                                    <textarea class="app-form-control" placeholder="MESSAGE" name="message"
-                                        autocomplete="off"></textarea>
-                                    <div class="my-2">
-                                        <div data-netlify-recaptcha="true"></div>
-                                    </div>
-                                </div>
-                                <div class="app-form-group buttons">
-                                    <button type="submit" class="app-form-button">SEND</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+        <section class="section surprise-section" aria-labelledby="surprise-title">
+            <div>
+                <p class="eyebrow">Film Surprise</p>
+                <h2 id="surprise-title">Pick a random frame.</h2>
+                <p class="surprise-copy">A small lucky draw from the gallery.</p>
+                <div class="surprise-actions">
+                    <button id="shuffle-frame" class="button primary" type="button">Shuffle Frame</button>
+                    <a id="surprise-album-link" class="button secondary" href="album.html?album=japan23">Open Album</a>
                 </div>
             </div>
-        </div>
-    </section>
+            <figure class="film-frame">
+                <img id="surprise-image" src="img/japan23/1.jpg" alt="Random film frame" loading="eager">
+                <figcaption id="surprise-caption">Japan 2023</figcaption>
+            </figure>
+        </section>
 
+        <section id="photography" class="section photo-section">
+            <div class="section-heading">
+                <p class="eyebrow">Photography</p>
+                <h2>Film Diaries</h2>
+                <p>My Film Gallery</p>
+            </div>
+            <div id="album-grid" class="album-grid" aria-live="polite"></div>
+        </section>
 
+        <section id="contact" class="section contact-section">
+            <div>
+                <p class="eyebrow">Contact</p>
+                <h2>Let’s build something useful, memorable, or both.</h2>
+            </div>
+            <div class="contact-panel">
+                <a href="mailto:Leonardho900@gmail.com">Leonardho900@gmail.com</a>
+                <a href="tel:+60127287900">+60 12-728 7900</a>
+                <div class="social-links" aria-label="Social links">
+                    <a href="https://github.com/leonardho900" target="_blank" rel="noreferrer">GitHub</a>
+                    <a href="https://linkedin.com/in/leonardho900/" target="_blank" rel="noreferrer">LinkedIn</a>
+                    <a href="https://instagram.com/leonardho.900/" target="_blank" rel="noreferrer">Instagram</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <div class="clr"></div>
-
-    <footer id="main-footer">
-
-        <div class="container p-4 pb-0">
-            <section class="mb-4">
-                <p>Leonardho900@gmail.com</p>
-                <a class="footer-btn" href="http://facebook.com/LeonardHo900/" target="_blank" role="button"><i
-                        class="fab fa-facebook-f "></i></a>
-
-                <a class="footer-btn" href="http://twitter.com/LeonardHo900" target="_blank" role="button"><i
-                        class="fab fa-twitter"></i></a>
-
-                <a class="footer-btn" href="http://instagram.com/leonardho.900/" target="_blank" role="button"><i
-                        class="fab fa-instagram"></i></a>
-
-                <a class="footer-btn" href="http://linkedin.com/in/leonardho900/" target="_blank" role="button"><i
-                        class="fab fa-linkedin-in"></i></a>
-
-                <a class="footer-btn" href="http://github.com/leonardho900" targ t="_blank" role="button"><i
-                        class="fab fa-github"></i></a>
-                <p>Leonard Ho © 2021. All Rights Reserved</p>
-            </section>
-        </div>
-
+    <footer class="site-footer">
+        <span>Leonard Ho</span>
+        <span>© 2026</span>
     </footer>
-    <!-- JQuery CDN -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <!-- Local JS File -->
+    <script src="js/portfolio-data.js"></script>
     <script src="js/main.js"></script>
-
 </body>
 
 </html>
