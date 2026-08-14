@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f1110">
     <title>Album Admin | Leonard Ho</title>
-    <link rel="icon" href="img/menu.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
     <link rel="stylesheet" href="css/style.css">
     <style>
         .admin-page {
@@ -187,7 +190,10 @@
 
 <body>
     <header class="site-header">
-        <a class="brand" href="index.html">Leonard Ho</a>
+        <a class="brand" href="index.html" aria-label="Leonard Ho home">
+            <img class="brand-mark" src="img/logo-wa.png" alt="" width="34" height="34" decoding="async">
+            <span>Leonard Ho</span>
+        </a>
         <nav id="site-nav" class="site-nav" aria-label="Admin navigation">
             <a href="index.html#photography">Photography</a>
             <a href="album.html?album=japan23">Albums</a>

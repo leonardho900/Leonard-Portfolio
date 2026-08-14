@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Film photography album by Leonard Ho.">
+    <meta name="theme-color" content="#0f1110">
     <title>Film Album | Leonard Ho</title>
-    <link rel="icon" href="img/menu.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -23,7 +26,10 @@
 
 <body>
     <header class="site-header">
-        <a class="brand" href="index.html">Leonard Ho</a>
+        <a class="brand" href="index.html" aria-label="Leonard Ho home">
+            <img class="brand-mark" src="img/logo-wa.png" alt="" width="34" height="34" decoding="async">
+            <span>Leonard Ho</span>
+        </a>
         <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
             <span></span>
             <span></span>
@@ -31,8 +37,8 @@
         </button>
         <nav id="site-nav" class="site-nav" aria-label="Album navigation">
             <a href="index.html#about">About</a>
-            <a href="index.html#work">Work</a>
             <a href="index.html#photography">Photography</a>
+            <a href="index.html#work">Work</a>
             <a href="index.html#contact">Contact</a>
         </nav>
     </header>

@@ -29,7 +29,7 @@
 
         albumGrid.innerHTML = albums.map((album) => `
             <a class="album-card" href="album.html?album=${album.id}" aria-label="Open ${album.title}">
-                <img src="${album.source === "supabase" ? album.cover : previewSrc(album.cover)}" alt="${album.title}" loading="lazy">
+                <img src="${album.source === "supabase" ? album.cover : previewSrc(album.cover)}" alt="${album.title}" loading="lazy" decoding="async">
                 <div class="album-info">
                     <span class="album-meta">${album.meta}</span>
                     <h3>${album.title}</h3>

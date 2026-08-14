@@ -56,10 +56,19 @@ img {
 }
 
 .brand {
+    display: inline-flex;
+    gap: 0.55rem;
+    align-items: center;
     font-size: 0.95rem;
     font-weight: 800;
     letter-spacing: 0;
     text-transform: uppercase;
+}
+
+.brand-mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
 }
 
 .site-nav {
@@ -128,7 +137,7 @@ img {
 .hero-media {
     position: absolute;
     inset: 0;
-    background: url("../img/picture1.jpg") center / cover no-repeat;
+    background: url("../img/picture1-hero.jpg") center / cover no-repeat;
     transform: scale(1.02);
 }
 
@@ -267,6 +276,17 @@ h3 {
     50% {
         transform: scale(1.06);
         opacity: 0.52;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
 
@@ -1101,13 +1121,5 @@ h3 {
 
     .gallery-grid {
         column-count: 1;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .hero h1,
-    .hero h1 .letter,
-    .hero h1:hover .letter {
-        animation: none;
     }
 }

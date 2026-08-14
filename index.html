@@ -7,20 +7,49 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Welcome to my Portfolio !">
     <meta name="keywords" content="portfolio,computer science">
+    <meta name="author" content="Leonard Ho">
+    <meta name="theme-color" content="#0f1110">
     <meta property="og:title" content="Leonard Ho | Developer and Film Photographer">
     <meta property="og:description" content="Welcome to my Portfolio !">
-    <meta property="og:image" content="img/picture1.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/picture1-hero.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Leonard Ho | Developer and Film Photographer</title>
-    <link rel="icon" href="img/menu.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="preload" as="image" href="img/picture1-hero.jpg" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Leonard Ho",
+            "jobTitle": "Java Developer",
+            "image": "img/logo-wa.png",
+            "sameAs": [
+                "https://github.com/leonardho900",
+                "https://linkedin.com/in/leonardho900/",
+                "https://instagram.com/leonardho.900/"
+            ],
+            "knowsAbout": [
+                "Java",
+                "SQL",
+                "JavaScript",
+                "Film photography",
+                "Responsive UI"
+            ]
+        }
+    </script>
 </head>
 
 <body>
     <header class="site-header">
         <a class="brand" href="index.html" aria-label="Leonard Ho home">
+            <img class="brand-mark" src="img/logo-wa.png" alt="" width="34" height="34" decoding="async">
             <span>Leonard Ho</span>
         </a>
         <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
@@ -57,7 +86,7 @@
             <div class="about-intro">
                 <p class="eyebrow">About</p>
                 <h2><span>Who</span> I am</h2>
-                <img class="about-photo" src="img/picture2.jpg" alt="Leonard Ho" loading="lazy">
+                <img class="about-photo" src="img/picture2.jpg" alt="Leonard Ho" width="810" height="945" loading="lazy" decoding="async">
             </div>
             <div class="section-copy">
                 <p>Hi, I'm Leonard Ho—a Java developer by profession and a passionate film photographer in my free time.
@@ -131,7 +160,7 @@
             </div>
             <article class="project-card">
                 <figure class="project-preview">
-                    <img src="img/reefradar-screenshot.jpg" alt="ReefRadar app showing dive-site filters and location cards">
+                    <img src="img/reefradar-screenshot.jpg" alt="ReefRadar app showing dive-site filters and location cards" width="599" height="1783" loading="lazy" decoding="async">
                     <button class="project-demo-trigger" type="button" aria-haspopup="dialog" aria-controls="reefradar-demo">
                         <span>Watch Demo</span>
                     </button>
