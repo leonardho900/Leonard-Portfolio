@@ -637,6 +637,13 @@ h3 {
     background: #151713;
 }
 
+.photo-section .surprise-section {
+    margin-top: 3rem;
+    padding: 1.35rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
 .surprise-copy {
     color: var(--muted);
     font-size: 1.05rem;

@@ -30,8 +30,8 @@
         </button>
         <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
             <a href="#about">About</a>
-            <a href="#work">Work</a>
             <a href="#photography">Photography</a>
+            <a href="#work">Work</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -47,8 +47,8 @@
                 </h1>
                 <p class="hero-copy">My Film Gallery</p>
                 <div class="hero-actions">
-                    <a class="button primary" href="#work">View Work</a>
-                    <a class="button secondary" href="#photography">Explore Photos</a>
+                    <a class="button primary" href="#photography">Explore Photos</a>
+                    <a class="button secondary" href="#work">View Work</a>
                 </div>
             </div>
         </section>
@@ -80,6 +80,30 @@
                         <p>35mm 2.5 Color-Skopar and Genba Kantoku 35WB.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="photography" class="section photo-section">
+            <div class="section-heading">
+                <p class="eyebrow">Photography</p>
+                <h2>Film Diaries</h2>
+                <p>My Film Gallery</p>
+            </div>
+            <div id="album-grid" class="album-grid" aria-live="polite"></div>
+            <div class="surprise-section" aria-labelledby="surprise-title">
+                <div>
+                    <p class="eyebrow">Film Surprise</p>
+                    <h2 id="surprise-title">Pick a random frame.</h2>
+                    <p class="surprise-copy">A small lucky draw from the gallery.</p>
+                    <div class="surprise-actions">
+                        <button id="shuffle-frame" class="button primary" type="button">Shuffle Frame</button>
+                        <a id="surprise-album-link" class="button secondary" href="album.html?album=japan23">Open Album</a>
+                    </div>
+                </div>
+                <figure class="film-frame">
+                    <img id="surprise-image" src="img/japan23/1.jpg" alt="Random film frame" loading="eager">
+                    <figcaption id="surprise-caption">Japan 2023</figcaption>
+                </figure>
             </div>
         </section>
 
@@ -131,31 +155,6 @@
                 <span>CSS</span>
                 <span>Responsive UI</span>
             </div>
-        </section>
-
-        <section class="section surprise-section" aria-labelledby="surprise-title">
-            <div>
-                <p class="eyebrow">Film Surprise</p>
-                <h2 id="surprise-title">Pick a random frame.</h2>
-                <p class="surprise-copy">A small lucky draw from the gallery.</p>
-                <div class="surprise-actions">
-                    <button id="shuffle-frame" class="button primary" type="button">Shuffle Frame</button>
-                    <a id="surprise-album-link" class="button secondary" href="album.html?album=japan23">Open Album</a>
-                </div>
-            </div>
-            <figure class="film-frame">
-                <img id="surprise-image" src="img/japan23/1.jpg" alt="Random film frame" loading="eager">
-                <figcaption id="surprise-caption">Japan 2023</figcaption>
-            </figure>
-        </section>
-
-        <section id="photography" class="section photo-section">
-            <div class="section-heading">
-                <p class="eyebrow">Photography</p>
-                <h2>Film Diaries</h2>
-                <p>My Film Gallery</p>
-            </div>
-            <div id="album-grid" class="album-grid" aria-live="polite"></div>
         </section>
 
         <section id="contact" class="section contact-section">
