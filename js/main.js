@@ -22,7 +22,7 @@
     const albumImageSrc = (album, src) => album.source === "supabase" ? src : previewSrc(src);
     const albumGrid = document.querySelector("#album-grid");
     const albumPagination = document.querySelector("#album-pagination");
-    const albumsPerPage = 5;
+    const albumsPerPage = 6;
     let currentAlbumPage = 1;
 
     const renderAlbumGrid = () => {
