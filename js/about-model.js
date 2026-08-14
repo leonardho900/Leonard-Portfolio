@@ -20,9 +20,9 @@ async function initAboutModel() {
     const modelSrc = container.dataset.modelSrc;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const canTrackPointer = !reduceMotion;
-    const horizontalLimit = THREE.MathUtils.degToRad(14);
-    const verticalLimit = THREE.MathUtils.degToRad(6);
-    const damping = 0.1;
+    const horizontalLimit = THREE.MathUtils.degToRad(22);
+    const verticalLimit = THREE.MathUtils.degToRad(9);
+    const damping = 0.16;
     const modelScale = 2.48;
     const modelCenterY = 0.18;
     const baseRotation = { x: 0, y: 0, z: 0 };
