@@ -12,10 +12,10 @@ async function initAboutModel() {
     const { GLTFLoader } = await import("three/addons/loaders/GLTFLoader.js");
     const modelSrc = container.dataset.modelSrc;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const canTrackPointer = window.matchMedia("(pointer: fine)").matches && !reduceMotion;
-    const horizontalLimit = THREE.MathUtils.degToRad(10);
-    const verticalLimit = THREE.MathUtils.degToRad(4);
-    const damping = 0.08;
+    const canTrackPointer = !reduceMotion;
+    const horizontalLimit = THREE.MathUtils.degToRad(14);
+    const verticalLimit = THREE.MathUtils.degToRad(6);
+    const damping = 0.1;
     const baseRotation = { x: 0, y: 0, z: 0 };
     const targetRotation = { x: baseRotation.x, y: baseRotation.y };
 
@@ -85,6 +85,8 @@ async function initAboutModel() {
             modelGroup.rotation.y += (targetRotation.y - modelGroup.rotation.y) * damping;
             modelGroup.rotation.x += (targetRotation.x - modelGroup.rotation.x) * damping;
             modelGroup.position.y = -0.08 + Math.sin(performance.now() * 0.0011) * 0.018;
+            container.dataset.rotationX = modelGroup.rotation.x.toFixed(4);
+            container.dataset.rotationY = modelGroup.rotation.y.toFixed(4);
         }
 
         renderOnce();
@@ -104,15 +106,22 @@ async function initAboutModel() {
         }
     };
 
+    const updateTargetFromPoint = (clientX, clientY) => {
+        const rect = container.getBoundingClientRect();
+        const normalizedX = THREE.MathUtils.clamp(((clientX - rect.left) / rect.width - 0.5) * 2, -1, 1);
+        const normalizedY = THREE.MathUtils.clamp(((clientY - rect.top) / rect.height - 0.5) * 2, -1, 1);
+        targetRotation.y = baseRotation.y + normalizedX * horizontalLimit;
+        targetRotation.x = baseRotation.x - normalizedY * verticalLimit;
+        startLoop();
+    };
+
     if (canTrackPointer) {
-        container.addEventListener("pointermove", (event) => {
-            const rect = container.getBoundingClientRect();
-            const normalizedX = THREE.MathUtils.clamp(((event.clientX - rect.left) / rect.width - 0.5) * 2, -1, 1);
-            const normalizedY = THREE.MathUtils.clamp(((event.clientY - rect.top) / rect.height - 0.5) * 2, -1, 1);
-            targetRotation.y = baseRotation.y + normalizedX * horizontalLimit;
-            targetRotation.x = baseRotation.x + normalizedY * verticalLimit;
-            startLoop();
-        });
+        const updateFromEvent = (event) => {
+            updateTargetFromPoint(event.clientX, event.clientY);
+        };
+
+        container.addEventListener("pointermove", updateFromEvent);
+        container.addEventListener("mousemove", updateFromEvent);
 
         container.addEventListener("pointerleave", () => {
             targetRotation.y = baseRotation.y;
