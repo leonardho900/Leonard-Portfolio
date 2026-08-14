@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Admin | Leonard Ho</title>
+    <link rel="icon" href="img/menu.png">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .admin-page {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 6rem 6vw;
+        }
+
+        .admin-panel {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding: 1.35rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface);
+        }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .admin-field {
+            display: grid;
+            gap: 0.45rem;
+        }
+
+        .admin-field span {
+            color: var(--muted);
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+
+        .admin-field input,
+        .admin-field textarea {
+            width: 100%;
+            min-height: 44px;
+            padding: 0.75rem 0.85rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text);
+            font: inherit;
+        }
+
+        .admin-field textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .admin-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+        }
+
+        .admin-status {
+            color: var(--muted);
+            white-space: pre-wrap;
+        }
+
+        @media (max-width: 720px) {
+            .admin-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">Leonard Ho</a>
+        <nav id="site-nav" class="site-nav" aria-label="Admin navigation">
+            <a href="index.html#photography">Photography</a>
+            <a href="album.html?album=japan23">Albums</a>
+        </nav>
+    </header>
+
+    <main class="admin-page">
+        <p class="eyebrow">Private Admin</p>
+        <h1>Upload a New Album</h1>
+        <p class="admin-status">This first admin version adds new Supabase albums only. Existing local albums and image folders are left untouched.</p>
+
+        <form id="admin-form" class="admin-panel">
+            <div class="admin-grid">
+                <label class="admin-field">
+                    <span>Supabase URL</span>
+                    <input id="supabase-url" name="supabaseUrl" placeholder="https://your-project.supabase.co" required>
+                </label>
+                <label class="admin-field">
+                    <span>Supabase anon key</span>
+                    <input id="supabase-anon-key" name="supabaseAnonKey" required>
+                </label>
+                <label class="admin-field">
+                    <span>Storage bucket</span>
+                    <input id="photo-bucket" name="photoBucket" value="album-photos" required>
+                </label>
+                <label class="admin-field">
+                    <span>Admin email</span>
+                    <input id="admin-email" name="adminEmail" type="email" placeholder="you@example.com">
+                </label>
+                <label class="admin-field">
+                    <span>Slug</span>
+                    <input id="slug" name="slug" placeholder="japan-2026" required>
+                </label>
+                <label class="admin-field">
+                    <span>Album title</span>
+                    <input id="title" name="title" placeholder="Japan 2026" required>
+                </label>
+                <label class="admin-field">
+                    <span>Location / meta</span>
+                    <input id="location" name="location" placeholder="Tokyo / Kyoto / Osaka">
+                </label>
+                <label class="admin-field">
+                    <span>Date</span>
+                    <input id="album-date" name="albumDate" type="date">
+                </label>
+                <label class="admin-field">
+                    <span>Camera</span>
+                    <input id="camera" name="camera" placeholder="Leica CL">
+                </label>
+                <label class="admin-field">
+                    <span>Film stock</span>
+                    <input id="film" name="film" placeholder="Kodak Gold 200">
+                </label>
+                <label class="admin-field">
+                    <span>Cover image number</span>
+                    <input id="cover-index" name="coverIndex" type="number" min="1" value="1">
+                </label>
+            </div>
+            <label class="admin-field">
+                <span>Description</span>
+                <textarea id="description" name="description" placeholder="Short album description"></textarea>
+            </label>
+            <label class="admin-field">
+                <span>Photos</span>
+                <input id="photos" name="photos" type="file" accept="image/*" multiple required>
+            </label>
+            <div class="admin-actions">
+                <button id="send-login" class="button secondary" type="button">Send Login Link</button>
+                <button class="button primary" type="submit">Upload Album</button>
+                <button id="save-config" class="button secondary" type="button">Save Config Only</button>
+            </div>
+            <p id="admin-status" class="admin-status" role="status"></p>
+        </form>
+    </main>
+
+    <script type="module">
+        import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
+        const form = document.querySelector("#admin-form");
+        const status = document.querySelector("#admin-status");
+        const configFields = {
+            url: document.querySelector("#supabase-url"),
+            anonKey: document.querySelector("#supabase-anon-key"),
+            photoBucket: document.querySelector("#photo-bucket"),
+        };
+        const adminEmail = document.querySelector("#admin-email");
+        const stored = (key, fallback = "") => {
+            try {
+                return localStorage.getItem(key) || fallback;
+            } catch {
+                return fallback;
+            }
+        };
+        const store = (key, value) => {
+            try {
+                localStorage.setItem(key, value);
+            } catch {
+                // The admin page can still upload even when browser storage is unavailable.
+            }
+        };
+
+        configFields.url.value = stored("portfolio.supabaseUrl");
+        configFields.anonKey.value = stored("portfolio.supabaseAnonKey");
+        configFields.photoBucket.value = stored("portfolio.supabasePhotoBucket", "album-photos");
+        adminEmail.value = stored("portfolio.adminEmail");
+
+        const setStatus = (message) => {
+            status.textContent = message;
+        };
+
+        const saveConfig = () => {
+            store("portfolio.supabaseUrl", configFields.url.value.trim());
+            store("portfolio.supabaseAnonKey", configFields.anonKey.value.trim());
+            store("portfolio.supabasePhotoBucket", configFields.photoBucket.value.trim() || "album-photos");
+            store("portfolio.adminEmail", adminEmail.value.trim());
+            setStatus("Config saved in this browser. Public pages can now load Supabase albums for local testing.");
+        };
+
+        document.querySelector("#save-config").addEventListener("click", saveConfig);
+        document.querySelector("#send-login").addEventListener("click", async () => {
+            saveConfig();
+            const supabase = createClient(configFields.url.value.trim(), configFields.anonKey.value.trim());
+            const { error } = await supabase.auth.signInWithOtp({
+                email: adminEmail.value.trim(),
+                options: { emailRedirectTo: window.location.href },
+            });
+            setStatus(error ? `Login email failed:\n${error.message}` : "Check your email for the Supabase login link, then return to this page.");
+        });
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            saveConfig();
+
+            const data = new FormData(form);
+            const files = [...document.querySelector("#photos").files];
+            const slug = String(data.get("slug")).trim();
+            const bucket = String(data.get("photoBucket")).trim() || "album-photos";
+
+            if (!files.length) {
+                setStatus("Choose at least one photo.");
+                return;
+            }
+
+            const supabase = createClient(String(data.get("supabaseUrl")).trim(), String(data.get("supabaseAnonKey")).trim());
+            const { data: sessionData } = await supabase.auth.getSession();
+            if (!sessionData.session) {
+                setStatus("Please send yourself a login link and sign in before uploading.");
+                return;
+            }
+
+            setStatus(`Creating album ${slug}...`);
+
+            const albumPayload = {
+                slug,
+                title: String(data.get("title")).trim(),
+                description: String(data.get("description")).trim(),
+                location: String(data.get("location")).trim(),
+                album_date: data.get("albumDate") || null,
+                camera: String(data.get("camera")).trim(),
+                film: String(data.get("film")).trim(),
+                published: true,
+                sort_order: 100,
+            };
+
+            const { data: album, error: albumError } = await supabase
+                .from("albums")
+                .insert(albumPayload)
+                .select()
+                .single();
+
+            if (albumError) {
+                setStatus(`Album create failed:\n${albumError.message}`);
+                return;
+            }
+
+            const coverIndex = Math.max(1, Number(data.get("coverIndex")) || 1) - 1;
+            const rows = [];
+
+            for (const [index, file] of files.entries()) {
+                const extension = file.name.split(".").pop() || "jpg";
+                const safeName = `${String(index + 1).padStart(3, "0")}.${extension.toLowerCase()}`;
+                const storagePath = `${slug}/${safeName}`;
+                setStatus(`Uploading ${index + 1} of ${files.length}: ${file.name}`);
+
+                const { error: uploadError } = await supabase.storage
+                    .from(bucket)
+                    .upload(storagePath, file, {
+                        cacheControl: "31536000",
+                        upsert: false,
+                    });
+
+                if (uploadError) {
+                    setStatus(`Upload failed for ${file.name}:\n${uploadError.message}`);
+                    return;
+                }
+
+                rows.push({
+                    album_id: album.id,
+                    storage_path: storagePath,
+                    alt_text: `${albumPayload.title} frame ${index + 1}`,
+                    file_size_bytes: file.size,
+                    sort_order: index + 1,
+                });
+            }
+
+            const { error: photoError } = await supabase.from("photos").insert(rows);
+            if (photoError) {
+                setStatus(`Photo records failed:\n${photoError.message}`);
+                return;
+            }
+
+            const cover = rows[Math.min(coverIndex, rows.length - 1)];
+            await supabase.from("albums").update({ cover_url: cover.storage_path }).eq("id", album.id);
+            setStatus(`Done. Album uploaded with ${rows.length} photos.\nOpen: album.html?album=${slug}`);
+        });
+    </script>
+</body>
+
+</html>

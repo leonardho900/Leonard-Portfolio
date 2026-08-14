@@ -18,14 +18,18 @@
         });
     }
 
-    const albums = window.portfolioAlbums || [];
     const previewSrc = (src) => `img/thumbs/${src.replace(/^img\//, "")}`;
     const albumGrid = document.querySelector("#album-grid");
 
-    if (albumGrid) {
+    const renderAlbumGrid = () => {
+        const albums = window.portfolioAlbums || [];
+        if (!albumGrid) {
+            return;
+        }
+
         albumGrid.innerHTML = albums.map((album) => `
             <a class="album-card" href="album.html?album=${album.id}" aria-label="Open ${album.title}">
-                <img src="${previewSrc(album.cover)}" alt="${album.title}" loading="lazy">
+                <img src="${album.source === "supabase" ? album.cover : previewSrc(album.cover)}" alt="${album.title}" loading="lazy">
                 <div class="album-info">
                     <span class="album-meta">${album.meta}</span>
                     <h3>${album.title}</h3>
@@ -34,13 +38,16 @@
                 </div>
             </a>
         `).join("");
-    }
+    };
+
+    renderAlbumGrid();
+    window.addEventListener("portfolio-albums:updated", renderAlbumGrid);
 
     const shuffleButton = document.querySelector("#shuffle-frame");
     const surpriseImage = document.querySelector("#surprise-image");
     const surpriseCaption = document.querySelector("#surprise-caption");
     const surpriseAlbumLink = document.querySelector("#surprise-album-link");
-    const frames = albums.flatMap((album) =>
+    const frames = (window.portfolioAlbums || []).flatMap((album) =>
         album.images.map((src, index) => ({
             album,
             src,

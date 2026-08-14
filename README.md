@@ -23,3 +23,15 @@ To add a new album:
 3. Add one new object to `window.portfolioAlbums`.
 
 The reusable album page is `album.html?album=album-id`.
+
+## Supabase Album CMS
+
+The Supabase CMS is additive and backward-compatible. Existing albums still use the current local `img/` folders and legacy gallery pages still exist.
+
+- New upload admin: `admin.html`
+- Supabase schema: `supabase/schema.sql`
+- Setup and migration notes: `docs/supabase-cms.md`
+- Audit existing albums: `node tools/audit-existing-albums.mjs`
+- Export a dry-run migration payload: `node tools/export-local-albums-for-supabase.mjs`
+
+Do not bulk-upload or move existing full-resolution photos until the audit output has been reviewed.

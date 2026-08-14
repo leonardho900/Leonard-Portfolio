@@ -1,0 +1,2048 @@
+[
+  {
+    "id": "japan23",
+    "title": "Japan 2023",
+    "currentUrl": "album.html?album=japan23",
+    "legacyPages": [
+      "japan23.html"
+    ],
+    "meta": "Sendai / Yamagata / Nikko / Tokyo",
+    "description": "Shot on FND NIJI cam.",
+    "camera": "FND NIJI cam",
+    "film": "Kodak Gold 200 / Fujifilm Superia 400 / Kodak Ultramax 400",
+    "cover": "img/japan23.JPG",
+    "imageCount": 26,
+    "totalMb": 61.69,
+    "largestImage": {
+      "order": 11,
+      "src": "img/japan23/11.jpg",
+      "exists": true,
+      "extension": ".jpg",
+      "sizeBytes": 3577506,
+      "sizeMb": 3.41,
+      "dimensions": {
+        "width": 5397,
+        "height": 3602
+      }
+    },
+    "images": [
+      {
+        "order": 1,
+        "src": "img/japan23/1.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3263461,
+        "sizeMb": 3.11,
+        "dimensions": {
+          "width": 4096,
+          "height": 2732
+        }
+      },
+      {
+        "order": 2,
+        "src": "img/japan23/2.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3019767,
+        "sizeMb": 2.88,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 3,
+        "src": "img/japan23/3.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2455131,
+        "sizeMb": 2.34,
+        "dimensions": {
+          "width": 4096,
+          "height": 2732
+        }
+      },
+      {
+        "order": 4,
+        "src": "img/japan23/4.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2284404,
+        "sizeMb": 2.18,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 5,
+        "src": "img/japan23/5.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3100775,
+        "sizeMb": 2.96,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 6,
+        "src": "img/japan23/6.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3152200,
+        "sizeMb": 3.01,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 7,
+        "src": "img/japan23/7.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3532794,
+        "sizeMb": 3.37,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 8,
+        "src": "img/japan23/8.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2540511,
+        "sizeMb": 2.42,
+        "dimensions": {
+          "width": 4674,
+          "height": 3119
+        }
+      },
+      {
+        "order": 9,
+        "src": "img/japan23/9.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3575686,
+        "sizeMb": 3.41,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 10,
+        "src": "img/japan23/10.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2204902,
+        "sizeMb": 2.1,
+        "dimensions": {
+          "width": 4539,
+          "height": 3029
+        }
+      },
+      {
+        "order": 11,
+        "src": "img/japan23/11.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3577506,
+        "sizeMb": 3.41,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 12,
+        "src": "img/japan23/12.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2848380,
+        "sizeMb": 2.72,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 13,
+        "src": "img/japan23/13.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2796900,
+        "sizeMb": 2.67,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 14,
+        "src": "img/japan23/14.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2602683,
+        "sizeMb": 2.48,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 15,
+        "src": "img/japan23/15.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1885216,
+        "sizeMb": 1.8,
+        "dimensions": {
+          "width": 3089,
+          "height": 2048
+        }
+      },
+      {
+        "order": 16,
+        "src": "img/japan23/16.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1608371,
+        "sizeMb": 1.53,
+        "dimensions": {
+          "width": 3089,
+          "height": 2048
+        }
+      },
+      {
+        "order": 17,
+        "src": "img/japan23/17.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1726750,
+        "sizeMb": 1.65,
+        "dimensions": {
+          "width": 3089,
+          "height": 2048
+        }
+      },
+      {
+        "order": 18,
+        "src": "img/japan23/18.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1263052,
+        "sizeMb": 1.2,
+        "dimensions": {
+          "width": 2630,
+          "height": 1796
+        }
+      },
+      {
+        "order": 19,
+        "src": "img/japan23/19.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1467818,
+        "sizeMb": 1.4,
+        "dimensions": {
+          "width": 3089,
+          "height": 2048
+        }
+      },
+      {
+        "order": 20,
+        "src": "img/japan23/20.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1627035,
+        "sizeMb": 1.55,
+        "dimensions": {
+          "width": 2048,
+          "height": 3087
+        }
+      },
+      {
+        "order": 21,
+        "src": "img/japan23/21.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1083907,
+        "sizeMb": 1.03,
+        "dimensions": {
+          "width": 2805,
+          "height": 1842
+        }
+      },
+      {
+        "order": 22,
+        "src": "img/japan23/22.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1826922,
+        "sizeMb": 1.74,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 23,
+        "src": "img/japan23/23.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2365479,
+        "sizeMb": 2.26,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 24,
+        "src": "img/japan23/24.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3154160,
+        "sizeMb": 3.01,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 25,
+        "src": "img/japan23/25.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2232559,
+        "sizeMb": 2.13,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 26,
+        "src": "img/japan23/26.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3493323,
+        "sizeMb": 3.33,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      }
+    ]
+  },
+  {
+    "id": "viet23",
+    "title": "Vietnam 2023",
+    "currentUrl": "album.html?album=viet23",
+    "legacyPages": [
+      "viet23.html"
+    ],
+    "meta": "Markets / streets / coastal light",
+    "description": "Film gallery.",
+    "camera": "35mm film camera",
+    "film": "Color negative film",
+    "cover": "img/vietnam23.JPG",
+    "imageCount": 25,
+    "totalMb": 30.53,
+    "largestImage": {
+      "order": 1,
+      "src": "img/vietnam23/1.JPG",
+      "exists": true,
+      "extension": ".JPG",
+      "sizeBytes": 2218950,
+      "sizeMb": 2.12,
+      "dimensions": {
+        "width": 5397,
+        "height": 3602
+      }
+    },
+    "images": [
+      {
+        "order": 1,
+        "src": "img/vietnam23/1.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 2218950,
+        "sizeMb": 2.12,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 2,
+        "src": "img/vietnam23/2.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 2145514,
+        "sizeMb": 2.05,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 3,
+        "src": "img/vietnam23/3.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1333124,
+        "sizeMb": 1.27,
+        "dimensions": {
+          "width": 3601,
+          "height": 5397
+        }
+      },
+      {
+        "order": 4,
+        "src": "img/vietnam23/4.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1284224,
+        "sizeMb": 1.22,
+        "dimensions": {
+          "width": 3601,
+          "height": 5397
+        }
+      },
+      {
+        "order": 5,
+        "src": "img/vietnam23/5.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1147430,
+        "sizeMb": 1.09,
+        "dimensions": {
+          "width": 3601,
+          "height": 5397
+        }
+      },
+      {
+        "order": 6,
+        "src": "img/vietnam23/6.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1166724,
+        "sizeMb": 1.11,
+        "dimensions": {
+          "width": 3601,
+          "height": 5397
+        }
+      },
+      {
+        "order": 7,
+        "src": "img/vietnam23/7.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1154876,
+        "sizeMb": 1.1,
+        "dimensions": {
+          "width": 3601,
+          "height": 5397
+        }
+      },
+      {
+        "order": 8,
+        "src": "img/vietnam23/8.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1135847,
+        "sizeMb": 1.08,
+        "dimensions": {
+          "width": 3601,
+          "height": 5397
+        }
+      },
+      {
+        "order": 9,
+        "src": "img/vietnam23/9.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1961527,
+        "sizeMb": 1.87,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 10,
+        "src": "img/vietnam23/10.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1110042,
+        "sizeMb": 1.06,
+        "dimensions": {
+          "width": 3601,
+          "height": 5397
+        }
+      },
+      {
+        "order": 11,
+        "src": "img/vietnam23/11.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1180465,
+        "sizeMb": 1.13,
+        "dimensions": {
+          "width": 3601,
+          "height": 5397
+        }
+      },
+      {
+        "order": 12,
+        "src": "img/vietnam23/12.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1113940,
+        "sizeMb": 1.06,
+        "dimensions": {
+          "width": 3601,
+          "height": 5397
+        }
+      },
+      {
+        "order": 13,
+        "src": "img/vietnam23/13.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1036340,
+        "sizeMb": 0.99,
+        "dimensions": {
+          "width": 3601,
+          "height": 5397
+        }
+      },
+      {
+        "order": 14,
+        "src": "img/vietnam23/14.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1011184,
+        "sizeMb": 0.96,
+        "dimensions": {
+          "width": 3601,
+          "height": 5397
+        }
+      },
+      {
+        "order": 15,
+        "src": "img/vietnam23/15.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 978860,
+        "sizeMb": 0.93,
+        "dimensions": {
+          "width": 3601,
+          "height": 5397
+        }
+      },
+      {
+        "order": 16,
+        "src": "img/vietnam23/16.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 987595,
+        "sizeMb": 0.94,
+        "dimensions": {
+          "width": 3601,
+          "height": 5397
+        }
+      },
+      {
+        "order": 17,
+        "src": "img/vietnam23/17.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 906689,
+        "sizeMb": 0.86,
+        "dimensions": {
+          "width": 3601,
+          "height": 5397
+        }
+      },
+      {
+        "order": 18,
+        "src": "img/vietnam23/18.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 853135,
+        "sizeMb": 0.81,
+        "dimensions": {
+          "width": 3601,
+          "height": 5397
+        }
+      },
+      {
+        "order": 19,
+        "src": "img/vietnam23/19.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1467179,
+        "sizeMb": 1.4,
+        "dimensions": {
+          "width": 4705,
+          "height": 3012
+        }
+      },
+      {
+        "order": 20,
+        "src": "img/vietnam23/20.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1426376,
+        "sizeMb": 1.36,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 21,
+        "src": "img/vietnam23/21.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1981780,
+        "sizeMb": 1.89,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 22,
+        "src": "img/vietnam23/22.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 951943,
+        "sizeMb": 0.91,
+        "dimensions": {
+          "width": 3004,
+          "height": 4750
+        }
+      },
+      {
+        "order": 23,
+        "src": "img/vietnam23/23.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1156416,
+        "sizeMb": 1.1,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 24,
+        "src": "img/vietnam23/24.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1201454,
+        "sizeMb": 1.15,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 25,
+        "src": "img/vietnam23/25.JPG",
+        "exists": true,
+        "extension": ".JPG",
+        "sizeBytes": 1102741,
+        "sizeMb": 1.05,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      }
+    ]
+  },
+  {
+    "id": "ej23",
+    "title": "East Java 2023",
+    "currentUrl": "album.html?album=ej23",
+    "legacyPages": [
+      "ej23.html"
+    ],
+    "meta": "Volcanic landscapes / road days",
+    "description": "Film gallery.",
+    "camera": "35mm film camera",
+    "film": "Color negative film",
+    "cover": "img/ej23.jpg",
+    "imageCount": 27,
+    "totalMb": 69.88,
+    "largestImage": {
+      "order": 7,
+      "src": "img/eastjava23/7.jpg",
+      "exists": true,
+      "extension": ".jpg",
+      "sizeBytes": 3715100,
+      "sizeMb": 3.54,
+      "dimensions": {
+        "width": 5397,
+        "height": 3602
+      }
+    },
+    "images": [
+      {
+        "order": 1,
+        "src": "img/eastjava23/1.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2157820,
+        "sizeMb": 2.06,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 2,
+        "src": "img/eastjava23/2.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2759395,
+        "sizeMb": 2.63,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 3,
+        "src": "img/eastjava23/3.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2217152,
+        "sizeMb": 2.11,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 4,
+        "src": "img/eastjava23/4.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2571931,
+        "sizeMb": 2.45,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 5,
+        "src": "img/eastjava23/5.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2391190,
+        "sizeMb": 2.28,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 6,
+        "src": "img/eastjava23/6.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1660707,
+        "sizeMb": 1.58,
+        "dimensions": {
+          "width": 2917,
+          "height": 4372
+        }
+      },
+      {
+        "order": 7,
+        "src": "img/eastjava23/7.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3715100,
+        "sizeMb": 3.54,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 8,
+        "src": "img/eastjava23/8.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2823294,
+        "sizeMb": 2.69,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 9,
+        "src": "img/eastjava23/9.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2689772,
+        "sizeMb": 2.57,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 10,
+        "src": "img/eastjava23/10.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2811335,
+        "sizeMb": 2.68,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 11,
+        "src": "img/eastjava23/11.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2710561,
+        "sizeMb": 2.58,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 12,
+        "src": "img/eastjava23/12.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2813653,
+        "sizeMb": 2.68,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 13,
+        "src": "img/eastjava23/13.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2783035,
+        "sizeMb": 2.65,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 14,
+        "src": "img/eastjava23/14.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2447156,
+        "sizeMb": 2.33,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 15,
+        "src": "img/eastjava23/15.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3311835,
+        "sizeMb": 3.16,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 16,
+        "src": "img/eastjava23/16.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2663734,
+        "sizeMb": 2.54,
+        "dimensions": {
+          "width": 3601,
+          "height": 5397
+        }
+      },
+      {
+        "order": 17,
+        "src": "img/eastjava23/17.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2645421,
+        "sizeMb": 2.52,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 18,
+        "src": "img/eastjava23/18.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2853438,
+        "sizeMb": 2.72,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 19,
+        "src": "img/eastjava23/19.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2781228,
+        "sizeMb": 2.65,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 20,
+        "src": "img/eastjava23/20.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2998062,
+        "sizeMb": 2.86,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 21,
+        "src": "img/eastjava23/21.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2697198,
+        "sizeMb": 2.57,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 22,
+        "src": "img/eastjava23/22.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3312538,
+        "sizeMb": 3.16,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 23,
+        "src": "img/eastjava23/23.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2260617,
+        "sizeMb": 2.16,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 24,
+        "src": "img/eastjava23/24.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2807142,
+        "sizeMb": 2.68,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 25,
+        "src": "img/eastjava23/25.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2651694,
+        "sizeMb": 2.53,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 26,
+        "src": "img/eastjava23/26.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3113457,
+        "sizeMb": 2.97,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 27,
+        "src": "img/eastjava23/27.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2623542,
+        "sizeMb": 2.5,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      }
+    ]
+  },
+  {
+    "id": "greece23",
+    "title": "Greece 2023",
+    "currentUrl": "album.html?album=greece23",
+    "legacyPages": [
+      "greece23.html"
+    ],
+    "meta": "Sea / stone / summer contrast",
+    "description": "Film gallery.",
+    "camera": "35mm film camera",
+    "film": "Color negative film",
+    "cover": "img/greece23.jpg",
+    "imageCount": 25,
+    "totalMb": 71.4,
+    "largestImage": {
+      "order": 18,
+      "src": "img/greece23/18.jpg",
+      "exists": true,
+      "extension": ".jpg",
+      "sizeBytes": 3841143,
+      "sizeMb": 3.66,
+      "dimensions": {
+        "width": 5397,
+        "height": 3602
+      }
+    },
+    "images": [
+      {
+        "order": 1,
+        "src": "img/greece23/1.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2409257,
+        "sizeMb": 2.3,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 2,
+        "src": "img/greece23/2.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2632361,
+        "sizeMb": 2.51,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 3,
+        "src": "img/greece23/3.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2613055,
+        "sizeMb": 2.49,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 4,
+        "src": "img/greece23/4.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2699971,
+        "sizeMb": 2.57,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 5,
+        "src": "img/greece23/5.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2058298,
+        "sizeMb": 1.96,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 6,
+        "src": "img/greece23/6.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3133856,
+        "sizeMb": 2.99,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 7,
+        "src": "img/greece23/7.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2719693,
+        "sizeMb": 2.59,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 8,
+        "src": "img/greece23/8.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3449493,
+        "sizeMb": 3.29,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 9,
+        "src": "img/greece23/9.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3617319,
+        "sizeMb": 3.45,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 10,
+        "src": "img/greece23/10.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2152457,
+        "sizeMb": 2.05,
+        "dimensions": {
+          "width": 5001,
+          "height": 3338
+        }
+      },
+      {
+        "order": 11,
+        "src": "img/greece23/11.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2716425,
+        "sizeMb": 2.59,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 12,
+        "src": "img/greece23/12.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2526291,
+        "sizeMb": 2.41,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 13,
+        "src": "img/greece23/13.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3827362,
+        "sizeMb": 3.65,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 14,
+        "src": "img/greece23/14.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3465671,
+        "sizeMb": 3.31,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 15,
+        "src": "img/greece23/15.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3379902,
+        "sizeMb": 3.22,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 16,
+        "src": "img/greece23/16.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3292372,
+        "sizeMb": 3.14,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 17,
+        "src": "img/greece23/17.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3192581,
+        "sizeMb": 3.04,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 18,
+        "src": "img/greece23/18.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3841143,
+        "sizeMb": 3.66,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 19,
+        "src": "img/greece23/19.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3024220,
+        "sizeMb": 2.88,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 20,
+        "src": "img/greece23/20.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3008168,
+        "sizeMb": 2.87,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 21,
+        "src": "img/greece23/21.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3051417,
+        "sizeMb": 2.91,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 22,
+        "src": "img/greece23/22.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3083531,
+        "sizeMb": 2.94,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 23,
+        "src": "img/greece23/23.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2966077,
+        "sizeMb": 2.83,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 24,
+        "src": "img/greece23/24.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 3112473,
+        "sizeMb": 2.97,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 25,
+        "src": "img/greece23/25.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2896687,
+        "sizeMb": 2.76,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      }
+    ]
+  },
+  {
+    "id": "oki24",
+    "title": "Okinawa 2024",
+    "currentUrl": "album.html?album=oki24",
+    "legacyPages": [
+      "oki24.html"
+    ],
+    "meta": "Island roads / sea air",
+    "description": "Film gallery.",
+    "camera": "35mm film camera",
+    "film": "Color negative film",
+    "cover": "img/oki24.jpg",
+    "imageCount": 28,
+    "totalMb": 40.13,
+    "largestImage": {
+      "order": 26,
+      "src": "img/okinawa24/26.jpg",
+      "exists": true,
+      "extension": ".jpg",
+      "sizeBytes": 2584820,
+      "sizeMb": 2.47,
+      "dimensions": {
+        "width": 5397,
+        "height": 3602
+      }
+    },
+    "images": [
+      {
+        "order": 1,
+        "src": "img/okinawa24/1.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1312522,
+        "sizeMb": 1.25,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 2,
+        "src": "img/okinawa24/2.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1384608,
+        "sizeMb": 1.32,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 3,
+        "src": "img/okinawa24/3.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1659906,
+        "sizeMb": 1.58,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 4,
+        "src": "img/okinawa24/4.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1511907,
+        "sizeMb": 1.44,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 5,
+        "src": "img/okinawa24/5.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2568018,
+        "sizeMb": 2.45,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 6,
+        "src": "img/okinawa24/6.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 994822,
+        "sizeMb": 0.95,
+        "dimensions": {
+          "width": 3602,
+          "height": 5397
+        }
+      },
+      {
+        "order": 7,
+        "src": "img/okinawa24/7.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1077747,
+        "sizeMb": 1.03,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 8,
+        "src": "img/okinawa24/8.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1029031,
+        "sizeMb": 0.98,
+        "dimensions": {
+          "width": 3232,
+          "height": 4843
+        }
+      },
+      {
+        "order": 9,
+        "src": "img/okinawa24/9.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1586440,
+        "sizeMb": 1.51,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 10,
+        "src": "img/okinawa24/10.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1155480,
+        "sizeMb": 1.1,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 11,
+        "src": "img/okinawa24/11.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1184102,
+        "sizeMb": 1.13,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 12,
+        "src": "img/okinawa24/12.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1733878,
+        "sizeMb": 1.65,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 13,
+        "src": "img/okinawa24/13.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1488183,
+        "sizeMb": 1.42,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 14,
+        "src": "img/okinawa24/14.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1459076,
+        "sizeMb": 1.39,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 15,
+        "src": "img/okinawa24/15.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1423635,
+        "sizeMb": 1.36,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 16,
+        "src": "img/okinawa24/16.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2242346,
+        "sizeMb": 2.14,
+        "dimensions": {
+          "width": 3602,
+          "height": 5397
+        }
+      },
+      {
+        "order": 17,
+        "src": "img/okinawa24/17.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1115084,
+        "sizeMb": 1.06,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 18,
+        "src": "img/okinawa24/18.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1350960,
+        "sizeMb": 1.29,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 19,
+        "src": "img/okinawa24/19.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1290047,
+        "sizeMb": 1.23,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 20,
+        "src": "img/okinawa24/20.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1167211,
+        "sizeMb": 1.11,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 21,
+        "src": "img/okinawa24/21.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1038684,
+        "sizeMb": 0.99,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 22,
+        "src": "img/okinawa24/22.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1754462,
+        "sizeMb": 1.67,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 23,
+        "src": "img/okinawa24/23.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1292763,
+        "sizeMb": 1.23,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 24,
+        "src": "img/okinawa24/24.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1035743,
+        "sizeMb": 0.99,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 25,
+        "src": "img/okinawa24/25.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1807741,
+        "sizeMb": 1.72,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 26,
+        "src": "img/okinawa24/26.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2584820,
+        "sizeMb": 2.47,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 27,
+        "src": "img/okinawa24/27.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1890562,
+        "sizeMb": 1.8,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      },
+      {
+        "order": 28,
+        "src": "img/okinawa24/28.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1940406,
+        "sizeMb": 1.85,
+        "dimensions": {
+          "width": 5397,
+          "height": 3602
+        }
+      }
+    ]
+  },
+  {
+    "id": "bali24",
+    "title": "Bali 2024",
+    "currentUrl": "album.html?album=bali24",
+    "legacyPages": [
+      "bali24.html"
+    ],
+    "meta": "Warm weather / daily rituals",
+    "description": "Film gallery.",
+    "camera": "35mm film camera",
+    "film": "Color negative film",
+    "cover": "img/bali24.jpg",
+    "imageCount": 25,
+    "totalMb": 51.81,
+    "largestImage": {
+      "order": 14,
+      "src": "img/bali24/14.jpg",
+      "exists": true,
+      "extension": ".jpg",
+      "sizeBytes": 2928357,
+      "sizeMb": 2.79,
+      "dimensions": {
+        "width": 3602,
+        "height": 5397
+      }
+    },
+    "images": [
+      {
+        "order": 1,
+        "src": "img/bali24/1.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2231288,
+        "sizeMb": 2.13,
+        "dimensions": {
+          "width": 3391,
+          "height": 5081
+        }
+      },
+      {
+        "order": 2,
+        "src": "img/bali24/2.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2232119,
+        "sizeMb": 2.13,
+        "dimensions": {
+          "width": 3602,
+          "height": 5397
+        }
+      },
+      {
+        "order": 3,
+        "src": "img/bali24/3.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2119032,
+        "sizeMb": 2.02,
+        "dimensions": {
+          "width": 3602,
+          "height": 5397
+        }
+      },
+      {
+        "order": 4,
+        "src": "img/bali24/4.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2578410,
+        "sizeMb": 2.46,
+        "dimensions": {
+          "width": 3602,
+          "height": 5397
+        }
+      },
+      {
+        "order": 5,
+        "src": "img/bali24/5.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2228614,
+        "sizeMb": 2.13,
+        "dimensions": {
+          "width": 3602,
+          "height": 5397
+        }
+      },
+      {
+        "order": 6,
+        "src": "img/bali24/6.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2244593,
+        "sizeMb": 2.14,
+        "dimensions": {
+          "width": 3602,
+          "height": 5397
+        }
+      },
+      {
+        "order": 7,
+        "src": "img/bali24/7.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1838770,
+        "sizeMb": 1.75,
+        "dimensions": {
+          "width": 3384,
+          "height": 5070
+        }
+      },
+      {
+        "order": 8,
+        "src": "img/bali24/8.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1729050,
+        "sizeMb": 1.65,
+        "dimensions": {
+          "width": 3384,
+          "height": 5070
+        }
+      },
+      {
+        "order": 9,
+        "src": "img/bali24/9.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1782052,
+        "sizeMb": 1.7,
+        "dimensions": {
+          "width": 3082,
+          "height": 4976
+        }
+      },
+      {
+        "order": 10,
+        "src": "img/bali24/10.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1963622,
+        "sizeMb": 1.87,
+        "dimensions": {
+          "width": 3287,
+          "height": 4925
+        }
+      },
+      {
+        "order": 11,
+        "src": "img/bali24/11.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2143880,
+        "sizeMb": 2.04,
+        "dimensions": {
+          "width": 3602,
+          "height": 5397
+        }
+      },
+      {
+        "order": 12,
+        "src": "img/bali24/12.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2345014,
+        "sizeMb": 2.24,
+        "dimensions": {
+          "width": 3460,
+          "height": 5184
+        }
+      },
+      {
+        "order": 13,
+        "src": "img/bali24/13.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2323128,
+        "sizeMb": 2.22,
+        "dimensions": {
+          "width": 3602,
+          "height": 5397
+        }
+      },
+      {
+        "order": 14,
+        "src": "img/bali24/14.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2928357,
+        "sizeMb": 2.79,
+        "dimensions": {
+          "width": 3602,
+          "height": 5397
+        }
+      },
+      {
+        "order": 15,
+        "src": "img/bali24/15.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2162149,
+        "sizeMb": 2.06,
+        "dimensions": {
+          "width": 3602,
+          "height": 5397
+        }
+      },
+      {
+        "order": 16,
+        "src": "img/bali24/16.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1834510,
+        "sizeMb": 1.75,
+        "dimensions": {
+          "width": 3602,
+          "height": 5397
+        }
+      },
+      {
+        "order": 17,
+        "src": "img/bali24/17.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1909728,
+        "sizeMb": 1.82,
+        "dimensions": {
+          "width": 3602,
+          "height": 5397
+        }
+      },
+      {
+        "order": 18,
+        "src": "img/bali24/18.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2183223,
+        "sizeMb": 2.08,
+        "dimensions": {
+          "width": 3602,
+          "height": 5397
+        }
+      },
+      {
+        "order": 19,
+        "src": "img/bali24/19.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2909579,
+        "sizeMb": 2.77,
+        "dimensions": {
+          "width": 3602,
+          "height": 5397
+        }
+      },
+      {
+        "order": 20,
+        "src": "img/bali24/20.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1877658,
+        "sizeMb": 1.79,
+        "dimensions": {
+          "width": 3602,
+          "height": 5397
+        }
+      },
+      {
+        "order": 21,
+        "src": "img/bali24/21.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2609418,
+        "sizeMb": 2.49,
+        "dimensions": {
+          "width": 3602,
+          "height": 5397
+        }
+      },
+      {
+        "order": 22,
+        "src": "img/bali24/22.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2179092,
+        "sizeMb": 2.08,
+        "dimensions": {
+          "width": 3602,
+          "height": 5397
+        }
+      },
+      {
+        "order": 23,
+        "src": "img/bali24/23.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2080716,
+        "sizeMb": 1.98,
+        "dimensions": {
+          "width": 3602,
+          "height": 5397
+        }
+      },
+      {
+        "order": 24,
+        "src": "img/bali24/24.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 1678988,
+        "sizeMb": 1.6,
+        "dimensions": {
+          "width": 3453,
+          "height": 5174
+        }
+      },
+      {
+        "order": 25,
+        "src": "img/bali24/25.jpg",
+        "exists": true,
+        "extension": ".jpg",
+        "sizeBytes": 2215552,
+        "sizeMb": 2.11,
+        "dimensions": {
+          "width": 3602,
+          "height": 5397
+        }
+      }
+    ]
+  }
+]

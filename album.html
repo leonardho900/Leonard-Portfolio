@@ -58,27 +58,67 @@
     </footer>
 
     <script src="js/portfolio-data.js"></script>
+    <script src="js/cms-albums.js"></script>
     <script src="js/main.js"></script>
     <script type="module" src="js/three-album.js?v=4"></script>
     <script>
         const params = new URLSearchParams(window.location.search);
         const albumId = params.get("album") || "japan23";
-        const album = (window.portfolioAlbums || []).find((item) => item.id === albumId);
         const hero = document.querySelector("#album-hero");
         const grid = document.querySelector("#gallery-grid");
+        const lightbox = document.querySelector("#lightbox");
+        const lightboxImage = lightbox.querySelector("img");
+        const closeButton = lightbox.querySelector(".lightbox-close");
+        const previousButton = lightbox.querySelector(".lightbox-prev");
+        const nextButton = lightbox.querySelector(".lightbox-next");
         const previewSrc = (src) => `img/thumbs/${src.replace(/^img\//, "")}`;
+        let activeAlbum = null;
+        let activeIndex = 0;
 
-        if (!album) {
-            document.title = "Album Not Found | Leonard Ho";
-            hero.innerHTML = `
-                <div>
-                    <p class="eyebrow">Photography</p>
-                    <h1>Album not found</h1>
-                </div>
-                <p>The album link does not match an available gallery.</p>
-            `;
-            grid.innerHTML = '<p class="empty-state">Return to the photography section and choose another album.</p>';
-        } else {
+        const imageSrc = (album, src) => album.source === "supabase" ? src : previewSrc(src);
+
+        const showImage = (index) => {
+            if (!activeAlbum) {
+                return;
+            }
+
+            activeIndex = (index + activeAlbum.images.length) % activeAlbum.images.length;
+            lightboxImage.src = "";
+            lightboxImage.src = activeAlbum.images[activeIndex];
+            lightboxImage.alt = `${activeAlbum.title} frame ${activeIndex + 1}`;
+        };
+
+        const openLightbox = (index) => {
+            showImage(index);
+            lightbox.classList.add("is-open");
+            lightbox.setAttribute("aria-hidden", "false");
+            document.body.classList.add("nav-open");
+            closeButton.focus();
+        };
+
+        const closeLightbox = () => {
+            lightbox.classList.remove("is-open");
+            lightbox.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("nav-open");
+        };
+
+        const renderAlbum = () => {
+            const album = (window.portfolioAlbums || []).find((item) => item.id === albumId);
+            activeAlbum = album || null;
+
+            if (!album) {
+                document.title = "Album Not Found | Leonard Ho";
+                hero.innerHTML = `
+                    <div>
+                        <p class="eyebrow">Photography</p>
+                        <h1>Album not found</h1>
+                    </div>
+                    <p>The album link does not match an available gallery.</p>
+                `;
+                grid.innerHTML = '<p class="empty-state">Return to the photography section and choose another album.</p>';
+                return;
+            }
+
             document.title = `${album.title} | Leonard Ho`;
             hero.innerHTML = `
                 <div>
@@ -93,68 +133,42 @@
             `;
             grid.innerHTML = album.images.map((src, index) => `
                 <button class="photo-button" type="button" data-index="${index}" aria-label="View ${album.title} frame ${index + 1}">
-                    <img src="${previewSrc(src)}" alt="${album.title} frame ${index + 1}" loading="lazy" decoding="async">
+                    <img src="${imageSrc(album, src)}" alt="${album.title} frame ${index + 1}" loading="lazy" decoding="async">
                 </button>
             `).join("");
+        };
 
-            const lightbox = document.querySelector("#lightbox");
-            const lightboxImage = lightbox.querySelector("img");
-            const closeButton = lightbox.querySelector(".lightbox-close");
-            const previousButton = lightbox.querySelector(".lightbox-prev");
-            const nextButton = lightbox.querySelector(".lightbox-next");
-            let activeIndex = 0;
+        grid.addEventListener("click", (event) => {
+            const button = event.target.closest(".photo-button");
+            if (button) {
+                openLightbox(Number(button.dataset.index));
+            }
+        });
 
-            const showImage = (index) => {
-                activeIndex = (index + album.images.length) % album.images.length;
-                lightboxImage.src = "";
-                lightboxImage.src = album.images[activeIndex];
-                lightboxImage.alt = `${album.title} frame ${activeIndex + 1}`;
-            };
-
-            const openLightbox = (index) => {
-                showImage(index);
-                lightbox.classList.add("is-open");
-                lightbox.setAttribute("aria-hidden", "false");
-                document.body.classList.add("nav-open");
-                closeButton.focus();
-            };
-
-            const closeLightbox = () => {
-                lightbox.classList.remove("is-open");
-                lightbox.setAttribute("aria-hidden", "true");
-                document.body.classList.remove("nav-open");
-            };
-
-            grid.addEventListener("click", (event) => {
-                const button = event.target.closest(".photo-button");
-                if (button) {
-                    openLightbox(Number(button.dataset.index));
-                }
-            });
-
-            closeButton.addEventListener("click", closeLightbox);
-            previousButton.addEventListener("click", () => showImage(activeIndex - 1));
-            nextButton.addEventListener("click", () => showImage(activeIndex + 1));
-            lightbox.addEventListener("click", (event) => {
-                if (event.target === lightbox) {
-                    closeLightbox();
-                }
-            });
-            document.addEventListener("keydown", (event) => {
-                if (!lightbox.classList.contains("is-open")) {
-                    return;
-                }
-                if (event.key === "Escape") {
-                    closeLightbox();
-                }
-                if (event.key === "ArrowLeft") {
-                    showImage(activeIndex - 1);
-                }
-                if (event.key === "ArrowRight") {
-                    showImage(activeIndex + 1);
-                }
-            });
-        }
+        closeButton.addEventListener("click", closeLightbox);
+        previousButton.addEventListener("click", () => showImage(activeIndex - 1));
+        nextButton.addEventListener("click", () => showImage(activeIndex + 1));
+        lightbox.addEventListener("click", (event) => {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+        document.addEventListener("keydown", (event) => {
+            if (!lightbox.classList.contains("is-open")) {
+                return;
+            }
+            if (event.key === "Escape") {
+                closeLightbox();
+            }
+            if (event.key === "ArrowLeft") {
+                showImage(activeIndex - 1);
+            }
+            if (event.key === "ArrowRight") {
+                showImage(activeIndex + 1);
+            }
+        });
+        renderAlbum();
+        window.addEventListener("portfolio-albums:updated", renderAlbum);
     </script>
 </body>
 

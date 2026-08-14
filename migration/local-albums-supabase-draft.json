@@ -1,0 +1,1190 @@
+[
+  {
+    "album": {
+      "slug": "japan23",
+      "title": "Japan 2023",
+      "description": "Shot on FND NIJI cam.",
+      "location": "Sendai / Yamagata / Nikko / Tokyo",
+      "album_date": null,
+      "camera": "FND NIJI cam",
+      "film": "Kodak Gold 200 / Fujifilm Superia 400 / Kodak Ultramax 400",
+      "cover_url": "img/japan23.JPG",
+      "published": true,
+      "sort_order": 1
+    },
+    "photos": [
+      {
+        "storage_path": "img/japan23/1.jpg",
+        "public_url": "img/japan23/1.jpg",
+        "alt_text": "Japan 2023 frame 1",
+        "file_size_bytes": 3263461,
+        "sort_order": 1
+      },
+      {
+        "storage_path": "img/japan23/2.jpg",
+        "public_url": "img/japan23/2.jpg",
+        "alt_text": "Japan 2023 frame 2",
+        "file_size_bytes": 3019767,
+        "sort_order": 2
+      },
+      {
+        "storage_path": "img/japan23/3.jpg",
+        "public_url": "img/japan23/3.jpg",
+        "alt_text": "Japan 2023 frame 3",
+        "file_size_bytes": 2455131,
+        "sort_order": 3
+      },
+      {
+        "storage_path": "img/japan23/4.jpg",
+        "public_url": "img/japan23/4.jpg",
+        "alt_text": "Japan 2023 frame 4",
+        "file_size_bytes": 2284404,
+        "sort_order": 4
+      },
+      {
+        "storage_path": "img/japan23/5.jpg",
+        "public_url": "img/japan23/5.jpg",
+        "alt_text": "Japan 2023 frame 5",
+        "file_size_bytes": 3100775,
+        "sort_order": 5
+      },
+      {
+        "storage_path": "img/japan23/6.jpg",
+        "public_url": "img/japan23/6.jpg",
+        "alt_text": "Japan 2023 frame 6",
+        "file_size_bytes": 3152200,
+        "sort_order": 6
+      },
+      {
+        "storage_path": "img/japan23/7.jpg",
+        "public_url": "img/japan23/7.jpg",
+        "alt_text": "Japan 2023 frame 7",
+        "file_size_bytes": 3532794,
+        "sort_order": 7
+      },
+      {
+        "storage_path": "img/japan23/8.jpg",
+        "public_url": "img/japan23/8.jpg",
+        "alt_text": "Japan 2023 frame 8",
+        "file_size_bytes": 2540511,
+        "sort_order": 8
+      },
+      {
+        "storage_path": "img/japan23/9.jpg",
+        "public_url": "img/japan23/9.jpg",
+        "alt_text": "Japan 2023 frame 9",
+        "file_size_bytes": 3575686,
+        "sort_order": 9
+      },
+      {
+        "storage_path": "img/japan23/10.jpg",
+        "public_url": "img/japan23/10.jpg",
+        "alt_text": "Japan 2023 frame 10",
+        "file_size_bytes": 2204902,
+        "sort_order": 10
+      },
+      {
+        "storage_path": "img/japan23/11.jpg",
+        "public_url": "img/japan23/11.jpg",
+        "alt_text": "Japan 2023 frame 11",
+        "file_size_bytes": 3577506,
+        "sort_order": 11
+      },
+      {
+        "storage_path": "img/japan23/12.jpg",
+        "public_url": "img/japan23/12.jpg",
+        "alt_text": "Japan 2023 frame 12",
+        "file_size_bytes": 2848380,
+        "sort_order": 12
+      },
+      {
+        "storage_path": "img/japan23/13.jpg",
+        "public_url": "img/japan23/13.jpg",
+        "alt_text": "Japan 2023 frame 13",
+        "file_size_bytes": 2796900,
+        "sort_order": 13
+      },
+      {
+        "storage_path": "img/japan23/14.jpg",
+        "public_url": "img/japan23/14.jpg",
+        "alt_text": "Japan 2023 frame 14",
+        "file_size_bytes": 2602683,
+        "sort_order": 14
+      },
+      {
+        "storage_path": "img/japan23/15.JPG",
+        "public_url": "img/japan23/15.JPG",
+        "alt_text": "Japan 2023 frame 15",
+        "file_size_bytes": 1885216,
+        "sort_order": 15
+      },
+      {
+        "storage_path": "img/japan23/16.JPG",
+        "public_url": "img/japan23/16.JPG",
+        "alt_text": "Japan 2023 frame 16",
+        "file_size_bytes": 1608371,
+        "sort_order": 16
+      },
+      {
+        "storage_path": "img/japan23/17.JPG",
+        "public_url": "img/japan23/17.JPG",
+        "alt_text": "Japan 2023 frame 17",
+        "file_size_bytes": 1726750,
+        "sort_order": 17
+      },
+      {
+        "storage_path": "img/japan23/18.JPG",
+        "public_url": "img/japan23/18.JPG",
+        "alt_text": "Japan 2023 frame 18",
+        "file_size_bytes": 1263052,
+        "sort_order": 18
+      },
+      {
+        "storage_path": "img/japan23/19.JPG",
+        "public_url": "img/japan23/19.JPG",
+        "alt_text": "Japan 2023 frame 19",
+        "file_size_bytes": 1467818,
+        "sort_order": 19
+      },
+      {
+        "storage_path": "img/japan23/20.JPG",
+        "public_url": "img/japan23/20.JPG",
+        "alt_text": "Japan 2023 frame 20",
+        "file_size_bytes": 1627035,
+        "sort_order": 20
+      },
+      {
+        "storage_path": "img/japan23/21.JPG",
+        "public_url": "img/japan23/21.JPG",
+        "alt_text": "Japan 2023 frame 21",
+        "file_size_bytes": 1083907,
+        "sort_order": 21
+      },
+      {
+        "storage_path": "img/japan23/22.jpg",
+        "public_url": "img/japan23/22.jpg",
+        "alt_text": "Japan 2023 frame 22",
+        "file_size_bytes": 1826922,
+        "sort_order": 22
+      },
+      {
+        "storage_path": "img/japan23/23.jpg",
+        "public_url": "img/japan23/23.jpg",
+        "alt_text": "Japan 2023 frame 23",
+        "file_size_bytes": 2365479,
+        "sort_order": 23
+      },
+      {
+        "storage_path": "img/japan23/24.jpg",
+        "public_url": "img/japan23/24.jpg",
+        "alt_text": "Japan 2023 frame 24",
+        "file_size_bytes": 3154160,
+        "sort_order": 24
+      },
+      {
+        "storage_path": "img/japan23/25.jpg",
+        "public_url": "img/japan23/25.jpg",
+        "alt_text": "Japan 2023 frame 25",
+        "file_size_bytes": 2232559,
+        "sort_order": 25
+      },
+      {
+        "storage_path": "img/japan23/26.jpg",
+        "public_url": "img/japan23/26.jpg",
+        "alt_text": "Japan 2023 frame 26",
+        "file_size_bytes": 3493323,
+        "sort_order": 26
+      }
+    ]
+  },
+  {
+    "album": {
+      "slug": "viet23",
+      "title": "Vietnam 2023",
+      "description": "Film gallery.",
+      "location": "Markets / streets / coastal light",
+      "album_date": null,
+      "camera": "35mm film camera",
+      "film": "Color negative film",
+      "cover_url": "img/vietnam23.JPG",
+      "published": true,
+      "sort_order": 2
+    },
+    "photos": [
+      {
+        "storage_path": "img/vietnam23/1.JPG",
+        "public_url": "img/vietnam23/1.JPG",
+        "alt_text": "Vietnam 2023 frame 1",
+        "file_size_bytes": 2218950,
+        "sort_order": 1
+      },
+      {
+        "storage_path": "img/vietnam23/2.JPG",
+        "public_url": "img/vietnam23/2.JPG",
+        "alt_text": "Vietnam 2023 frame 2",
+        "file_size_bytes": 2145514,
+        "sort_order": 2
+      },
+      {
+        "storage_path": "img/vietnam23/3.JPG",
+        "public_url": "img/vietnam23/3.JPG",
+        "alt_text": "Vietnam 2023 frame 3",
+        "file_size_bytes": 1333124,
+        "sort_order": 3
+      },
+      {
+        "storage_path": "img/vietnam23/4.JPG",
+        "public_url": "img/vietnam23/4.JPG",
+        "alt_text": "Vietnam 2023 frame 4",
+        "file_size_bytes": 1284224,
+        "sort_order": 4
+      },
+      {
+        "storage_path": "img/vietnam23/5.JPG",
+        "public_url": "img/vietnam23/5.JPG",
+        "alt_text": "Vietnam 2023 frame 5",
+        "file_size_bytes": 1147430,
+        "sort_order": 5
+      },
+      {
+        "storage_path": "img/vietnam23/6.JPG",
+        "public_url": "img/vietnam23/6.JPG",
+        "alt_text": "Vietnam 2023 frame 6",
+        "file_size_bytes": 1166724,
+        "sort_order": 6
+      },
+      {
+        "storage_path": "img/vietnam23/7.JPG",
+        "public_url": "img/vietnam23/7.JPG",
+        "alt_text": "Vietnam 2023 frame 7",
+        "file_size_bytes": 1154876,
+        "sort_order": 7
+      },
+      {
+        "storage_path": "img/vietnam23/8.JPG",
+        "public_url": "img/vietnam23/8.JPG",
+        "alt_text": "Vietnam 2023 frame 8",
+        "file_size_bytes": 1135847,
+        "sort_order": 8
+      },
+      {
+        "storage_path": "img/vietnam23/9.JPG",
+        "public_url": "img/vietnam23/9.JPG",
+        "alt_text": "Vietnam 2023 frame 9",
+        "file_size_bytes": 1961527,
+        "sort_order": 9
+      },
+      {
+        "storage_path": "img/vietnam23/10.JPG",
+        "public_url": "img/vietnam23/10.JPG",
+        "alt_text": "Vietnam 2023 frame 10",
+        "file_size_bytes": 1110042,
+        "sort_order": 10
+      },
+      {
+        "storage_path": "img/vietnam23/11.JPG",
+        "public_url": "img/vietnam23/11.JPG",
+        "alt_text": "Vietnam 2023 frame 11",
+        "file_size_bytes": 1180465,
+        "sort_order": 11
+      },
+      {
+        "storage_path": "img/vietnam23/12.JPG",
+        "public_url": "img/vietnam23/12.JPG",
+        "alt_text": "Vietnam 2023 frame 12",
+        "file_size_bytes": 1113940,
+        "sort_order": 12
+      },
+      {
+        "storage_path": "img/vietnam23/13.JPG",
+        "public_url": "img/vietnam23/13.JPG",
+        "alt_text": "Vietnam 2023 frame 13",
+        "file_size_bytes": 1036340,
+        "sort_order": 13
+      },
+      {
+        "storage_path": "img/vietnam23/14.JPG",
+        "public_url": "img/vietnam23/14.JPG",
+        "alt_text": "Vietnam 2023 frame 14",
+        "file_size_bytes": 1011184,
+        "sort_order": 14
+      },
+      {
+        "storage_path": "img/vietnam23/15.JPG",
+        "public_url": "img/vietnam23/15.JPG",
+        "alt_text": "Vietnam 2023 frame 15",
+        "file_size_bytes": 978860,
+        "sort_order": 15
+      },
+      {
+        "storage_path": "img/vietnam23/16.JPG",
+        "public_url": "img/vietnam23/16.JPG",
+        "alt_text": "Vietnam 2023 frame 16",
+        "file_size_bytes": 987595,
+        "sort_order": 16
+      },
+      {
+        "storage_path": "img/vietnam23/17.JPG",
+        "public_url": "img/vietnam23/17.JPG",
+        "alt_text": "Vietnam 2023 frame 17",
+        "file_size_bytes": 906689,
+        "sort_order": 17
+      },
+      {
+        "storage_path": "img/vietnam23/18.JPG",
+        "public_url": "img/vietnam23/18.JPG",
+        "alt_text": "Vietnam 2023 frame 18",
+        "file_size_bytes": 853135,
+        "sort_order": 18
+      },
+      {
+        "storage_path": "img/vietnam23/19.JPG",
+        "public_url": "img/vietnam23/19.JPG",
+        "alt_text": "Vietnam 2023 frame 19",
+        "file_size_bytes": 1467179,
+        "sort_order": 19
+      },
+      {
+        "storage_path": "img/vietnam23/20.JPG",
+        "public_url": "img/vietnam23/20.JPG",
+        "alt_text": "Vietnam 2023 frame 20",
+        "file_size_bytes": 1426376,
+        "sort_order": 20
+      },
+      {
+        "storage_path": "img/vietnam23/21.JPG",
+        "public_url": "img/vietnam23/21.JPG",
+        "alt_text": "Vietnam 2023 frame 21",
+        "file_size_bytes": 1981780,
+        "sort_order": 21
+      },
+      {
+        "storage_path": "img/vietnam23/22.JPG",
+        "public_url": "img/vietnam23/22.JPG",
+        "alt_text": "Vietnam 2023 frame 22",
+        "file_size_bytes": 951943,
+        "sort_order": 22
+      },
+      {
+        "storage_path": "img/vietnam23/23.JPG",
+        "public_url": "img/vietnam23/23.JPG",
+        "alt_text": "Vietnam 2023 frame 23",
+        "file_size_bytes": 1156416,
+        "sort_order": 23
+      },
+      {
+        "storage_path": "img/vietnam23/24.JPG",
+        "public_url": "img/vietnam23/24.JPG",
+        "alt_text": "Vietnam 2023 frame 24",
+        "file_size_bytes": 1201454,
+        "sort_order": 24
+      },
+      {
+        "storage_path": "img/vietnam23/25.JPG",
+        "public_url": "img/vietnam23/25.JPG",
+        "alt_text": "Vietnam 2023 frame 25",
+        "file_size_bytes": 1102741,
+        "sort_order": 25
+      }
+    ]
+  },
+  {
+    "album": {
+      "slug": "ej23",
+      "title": "East Java 2023",
+      "description": "Film gallery.",
+      "location": "Volcanic landscapes / road days",
+      "album_date": null,
+      "camera": "35mm film camera",
+      "film": "Color negative film",
+      "cover_url": "img/ej23.jpg",
+      "published": true,
+      "sort_order": 3
+    },
+    "photos": [
+      {
+        "storage_path": "img/eastjava23/1.jpg",
+        "public_url": "img/eastjava23/1.jpg",
+        "alt_text": "East Java 2023 frame 1",
+        "file_size_bytes": 2157820,
+        "sort_order": 1
+      },
+      {
+        "storage_path": "img/eastjava23/2.jpg",
+        "public_url": "img/eastjava23/2.jpg",
+        "alt_text": "East Java 2023 frame 2",
+        "file_size_bytes": 2759395,
+        "sort_order": 2
+      },
+      {
+        "storage_path": "img/eastjava23/3.jpg",
+        "public_url": "img/eastjava23/3.jpg",
+        "alt_text": "East Java 2023 frame 3",
+        "file_size_bytes": 2217152,
+        "sort_order": 3
+      },
+      {
+        "storage_path": "img/eastjava23/4.jpg",
+        "public_url": "img/eastjava23/4.jpg",
+        "alt_text": "East Java 2023 frame 4",
+        "file_size_bytes": 2571931,
+        "sort_order": 4
+      },
+      {
+        "storage_path": "img/eastjava23/5.jpg",
+        "public_url": "img/eastjava23/5.jpg",
+        "alt_text": "East Java 2023 frame 5",
+        "file_size_bytes": 2391190,
+        "sort_order": 5
+      },
+      {
+        "storage_path": "img/eastjava23/6.jpg",
+        "public_url": "img/eastjava23/6.jpg",
+        "alt_text": "East Java 2023 frame 6",
+        "file_size_bytes": 1660707,
+        "sort_order": 6
+      },
+      {
+        "storage_path": "img/eastjava23/7.jpg",
+        "public_url": "img/eastjava23/7.jpg",
+        "alt_text": "East Java 2023 frame 7",
+        "file_size_bytes": 3715100,
+        "sort_order": 7
+      },
+      {
+        "storage_path": "img/eastjava23/8.jpg",
+        "public_url": "img/eastjava23/8.jpg",
+        "alt_text": "East Java 2023 frame 8",
+        "file_size_bytes": 2823294,
+        "sort_order": 8
+      },
+      {
+        "storage_path": "img/eastjava23/9.jpg",
+        "public_url": "img/eastjava23/9.jpg",
+        "alt_text": "East Java 2023 frame 9",
+        "file_size_bytes": 2689772,
+        "sort_order": 9
+      },
+      {
+        "storage_path": "img/eastjava23/10.jpg",
+        "public_url": "img/eastjava23/10.jpg",
+        "alt_text": "East Java 2023 frame 10",
+        "file_size_bytes": 2811335,
+        "sort_order": 10
+      },
+      {
+        "storage_path": "img/eastjava23/11.jpg",
+        "public_url": "img/eastjava23/11.jpg",
+        "alt_text": "East Java 2023 frame 11",
+        "file_size_bytes": 2710561,
+        "sort_order": 11
+      },
+      {
+        "storage_path": "img/eastjava23/12.jpg",
+        "public_url": "img/eastjava23/12.jpg",
+        "alt_text": "East Java 2023 frame 12",
+        "file_size_bytes": 2813653,
+        "sort_order": 12
+      },
+      {
+        "storage_path": "img/eastjava23/13.jpg",
+        "public_url": "img/eastjava23/13.jpg",
+        "alt_text": "East Java 2023 frame 13",
+        "file_size_bytes": 2783035,
+        "sort_order": 13
+      },
+      {
+        "storage_path": "img/eastjava23/14.jpg",
+        "public_url": "img/eastjava23/14.jpg",
+        "alt_text": "East Java 2023 frame 14",
+        "file_size_bytes": 2447156,
+        "sort_order": 14
+      },
+      {
+        "storage_path": "img/eastjava23/15.jpg",
+        "public_url": "img/eastjava23/15.jpg",
+        "alt_text": "East Java 2023 frame 15",
+        "file_size_bytes": 3311835,
+        "sort_order": 15
+      },
+      {
+        "storage_path": "img/eastjava23/16.jpg",
+        "public_url": "img/eastjava23/16.jpg",
+        "alt_text": "East Java 2023 frame 16",
+        "file_size_bytes": 2663734,
+        "sort_order": 16
+      },
+      {
+        "storage_path": "img/eastjava23/17.jpg",
+        "public_url": "img/eastjava23/17.jpg",
+        "alt_text": "East Java 2023 frame 17",
+        "file_size_bytes": 2645421,
+        "sort_order": 17
+      },
+      {
+        "storage_path": "img/eastjava23/18.jpg",
+        "public_url": "img/eastjava23/18.jpg",
+        "alt_text": "East Java 2023 frame 18",
+        "file_size_bytes": 2853438,
+        "sort_order": 18
+      },
+      {
+        "storage_path": "img/eastjava23/19.jpg",
+        "public_url": "img/eastjava23/19.jpg",
+        "alt_text": "East Java 2023 frame 19",
+        "file_size_bytes": 2781228,
+        "sort_order": 19
+      },
+      {
+        "storage_path": "img/eastjava23/20.jpg",
+        "public_url": "img/eastjava23/20.jpg",
+        "alt_text": "East Java 2023 frame 20",
+        "file_size_bytes": 2998062,
+        "sort_order": 20
+      },
+      {
+        "storage_path": "img/eastjava23/21.jpg",
+        "public_url": "img/eastjava23/21.jpg",
+        "alt_text": "East Java 2023 frame 21",
+        "file_size_bytes": 2697198,
+        "sort_order": 21
+      },
+      {
+        "storage_path": "img/eastjava23/22.jpg",
+        "public_url": "img/eastjava23/22.jpg",
+        "alt_text": "East Java 2023 frame 22",
+        "file_size_bytes": 3312538,
+        "sort_order": 22
+      },
+      {
+        "storage_path": "img/eastjava23/23.jpg",
+        "public_url": "img/eastjava23/23.jpg",
+        "alt_text": "East Java 2023 frame 23",
+        "file_size_bytes": 2260617,
+        "sort_order": 23
+      },
+      {
+        "storage_path": "img/eastjava23/24.jpg",
+        "public_url": "img/eastjava23/24.jpg",
+        "alt_text": "East Java 2023 frame 24",
+        "file_size_bytes": 2807142,
+        "sort_order": 24
+      },
+      {
+        "storage_path": "img/eastjava23/25.jpg",
+        "public_url": "img/eastjava23/25.jpg",
+        "alt_text": "East Java 2023 frame 25",
+        "file_size_bytes": 2651694,
+        "sort_order": 25
+      },
+      {
+        "storage_path": "img/eastjava23/26.jpg",
+        "public_url": "img/eastjava23/26.jpg",
+        "alt_text": "East Java 2023 frame 26",
+        "file_size_bytes": 3113457,
+        "sort_order": 26
+      },
+      {
+        "storage_path": "img/eastjava23/27.jpg",
+        "public_url": "img/eastjava23/27.jpg",
+        "alt_text": "East Java 2023 frame 27",
+        "file_size_bytes": 2623542,
+        "sort_order": 27
+      }
+    ]
+  },
+  {
+    "album": {
+      "slug": "greece23",
+      "title": "Greece 2023",
+      "description": "Film gallery.",
+      "location": "Sea / stone / summer contrast",
+      "album_date": null,
+      "camera": "35mm film camera",
+      "film": "Color negative film",
+      "cover_url": "img/greece23.jpg",
+      "published": true,
+      "sort_order": 4
+    },
+    "photos": [
+      {
+        "storage_path": "img/greece23/1.jpg",
+        "public_url": "img/greece23/1.jpg",
+        "alt_text": "Greece 2023 frame 1",
+        "file_size_bytes": 2409257,
+        "sort_order": 1
+      },
+      {
+        "storage_path": "img/greece23/2.jpg",
+        "public_url": "img/greece23/2.jpg",
+        "alt_text": "Greece 2023 frame 2",
+        "file_size_bytes": 2632361,
+        "sort_order": 2
+      },
+      {
+        "storage_path": "img/greece23/3.jpg",
+        "public_url": "img/greece23/3.jpg",
+        "alt_text": "Greece 2023 frame 3",
+        "file_size_bytes": 2613055,
+        "sort_order": 3
+      },
+      {
+        "storage_path": "img/greece23/4.jpg",
+        "public_url": "img/greece23/4.jpg",
+        "alt_text": "Greece 2023 frame 4",
+        "file_size_bytes": 2699971,
+        "sort_order": 4
+      },
+      {
+        "storage_path": "img/greece23/5.jpg",
+        "public_url": "img/greece23/5.jpg",
+        "alt_text": "Greece 2023 frame 5",
+        "file_size_bytes": 2058298,
+        "sort_order": 5
+      },
+      {
+        "storage_path": "img/greece23/6.jpg",
+        "public_url": "img/greece23/6.jpg",
+        "alt_text": "Greece 2023 frame 6",
+        "file_size_bytes": 3133856,
+        "sort_order": 6
+      },
+      {
+        "storage_path": "img/greece23/7.jpg",
+        "public_url": "img/greece23/7.jpg",
+        "alt_text": "Greece 2023 frame 7",
+        "file_size_bytes": 2719693,
+        "sort_order": 7
+      },
+      {
+        "storage_path": "img/greece23/8.jpg",
+        "public_url": "img/greece23/8.jpg",
+        "alt_text": "Greece 2023 frame 8",
+        "file_size_bytes": 3449493,
+        "sort_order": 8
+      },
+      {
+        "storage_path": "img/greece23/9.jpg",
+        "public_url": "img/greece23/9.jpg",
+        "alt_text": "Greece 2023 frame 9",
+        "file_size_bytes": 3617319,
+        "sort_order": 9
+      },
+      {
+        "storage_path": "img/greece23/10.jpg",
+        "public_url": "img/greece23/10.jpg",
+        "alt_text": "Greece 2023 frame 10",
+        "file_size_bytes": 2152457,
+        "sort_order": 10
+      },
+      {
+        "storage_path": "img/greece23/11.jpg",
+        "public_url": "img/greece23/11.jpg",
+        "alt_text": "Greece 2023 frame 11",
+        "file_size_bytes": 2716425,
+        "sort_order": 11
+      },
+      {
+        "storage_path": "img/greece23/12.jpg",
+        "public_url": "img/greece23/12.jpg",
+        "alt_text": "Greece 2023 frame 12",
+        "file_size_bytes": 2526291,
+        "sort_order": 12
+      },
+      {
+        "storage_path": "img/greece23/13.jpg",
+        "public_url": "img/greece23/13.jpg",
+        "alt_text": "Greece 2023 frame 13",
+        "file_size_bytes": 3827362,
+        "sort_order": 13
+      },
+      {
+        "storage_path": "img/greece23/14.jpg",
+        "public_url": "img/greece23/14.jpg",
+        "alt_text": "Greece 2023 frame 14",
+        "file_size_bytes": 3465671,
+        "sort_order": 14
+      },
+      {
+        "storage_path": "img/greece23/15.jpg",
+        "public_url": "img/greece23/15.jpg",
+        "alt_text": "Greece 2023 frame 15",
+        "file_size_bytes": 3379902,
+        "sort_order": 15
+      },
+      {
+        "storage_path": "img/greece23/16.jpg",
+        "public_url": "img/greece23/16.jpg",
+        "alt_text": "Greece 2023 frame 16",
+        "file_size_bytes": 3292372,
+        "sort_order": 16
+      },
+      {
+        "storage_path": "img/greece23/17.jpg",
+        "public_url": "img/greece23/17.jpg",
+        "alt_text": "Greece 2023 frame 17",
+        "file_size_bytes": 3192581,
+        "sort_order": 17
+      },
+      {
+        "storage_path": "img/greece23/18.jpg",
+        "public_url": "img/greece23/18.jpg",
+        "alt_text": "Greece 2023 frame 18",
+        "file_size_bytes": 3841143,
+        "sort_order": 18
+      },
+      {
+        "storage_path": "img/greece23/19.jpg",
+        "public_url": "img/greece23/19.jpg",
+        "alt_text": "Greece 2023 frame 19",
+        "file_size_bytes": 3024220,
+        "sort_order": 19
+      },
+      {
+        "storage_path": "img/greece23/20.jpg",
+        "public_url": "img/greece23/20.jpg",
+        "alt_text": "Greece 2023 frame 20",
+        "file_size_bytes": 3008168,
+        "sort_order": 20
+      },
+      {
+        "storage_path": "img/greece23/21.jpg",
+        "public_url": "img/greece23/21.jpg",
+        "alt_text": "Greece 2023 frame 21",
+        "file_size_bytes": 3051417,
+        "sort_order": 21
+      },
+      {
+        "storage_path": "img/greece23/22.jpg",
+        "public_url": "img/greece23/22.jpg",
+        "alt_text": "Greece 2023 frame 22",
+        "file_size_bytes": 3083531,
+        "sort_order": 22
+      },
+      {
+        "storage_path": "img/greece23/23.jpg",
+        "public_url": "img/greece23/23.jpg",
+        "alt_text": "Greece 2023 frame 23",
+        "file_size_bytes": 2966077,
+        "sort_order": 23
+      },
+      {
+        "storage_path": "img/greece23/24.jpg",
+        "public_url": "img/greece23/24.jpg",
+        "alt_text": "Greece 2023 frame 24",
+        "file_size_bytes": 3112473,
+        "sort_order": 24
+      },
+      {
+        "storage_path": "img/greece23/25.jpg",
+        "public_url": "img/greece23/25.jpg",
+        "alt_text": "Greece 2023 frame 25",
+        "file_size_bytes": 2896687,
+        "sort_order": 25
+      }
+    ]
+  },
+  {
+    "album": {
+      "slug": "oki24",
+      "title": "Okinawa 2024",
+      "description": "Film gallery.",
+      "location": "Island roads / sea air",
+      "album_date": null,
+      "camera": "35mm film camera",
+      "film": "Color negative film",
+      "cover_url": "img/oki24.jpg",
+      "published": true,
+      "sort_order": 5
+    },
+    "photos": [
+      {
+        "storage_path": "img/okinawa24/1.jpg",
+        "public_url": "img/okinawa24/1.jpg",
+        "alt_text": "Okinawa 2024 frame 1",
+        "file_size_bytes": 1312522,
+        "sort_order": 1
+      },
+      {
+        "storage_path": "img/okinawa24/2.jpg",
+        "public_url": "img/okinawa24/2.jpg",
+        "alt_text": "Okinawa 2024 frame 2",
+        "file_size_bytes": 1384608,
+        "sort_order": 2
+      },
+      {
+        "storage_path": "img/okinawa24/3.jpg",
+        "public_url": "img/okinawa24/3.jpg",
+        "alt_text": "Okinawa 2024 frame 3",
+        "file_size_bytes": 1659906,
+        "sort_order": 3
+      },
+      {
+        "storage_path": "img/okinawa24/4.jpg",
+        "public_url": "img/okinawa24/4.jpg",
+        "alt_text": "Okinawa 2024 frame 4",
+        "file_size_bytes": 1511907,
+        "sort_order": 4
+      },
+      {
+        "storage_path": "img/okinawa24/5.jpg",
+        "public_url": "img/okinawa24/5.jpg",
+        "alt_text": "Okinawa 2024 frame 5",
+        "file_size_bytes": 2568018,
+        "sort_order": 5
+      },
+      {
+        "storage_path": "img/okinawa24/6.jpg",
+        "public_url": "img/okinawa24/6.jpg",
+        "alt_text": "Okinawa 2024 frame 6",
+        "file_size_bytes": 994822,
+        "sort_order": 6
+      },
+      {
+        "storage_path": "img/okinawa24/7.jpg",
+        "public_url": "img/okinawa24/7.jpg",
+        "alt_text": "Okinawa 2024 frame 7",
+        "file_size_bytes": 1077747,
+        "sort_order": 7
+      },
+      {
+        "storage_path": "img/okinawa24/8.jpg",
+        "public_url": "img/okinawa24/8.jpg",
+        "alt_text": "Okinawa 2024 frame 8",
+        "file_size_bytes": 1029031,
+        "sort_order": 8
+      },
+      {
+        "storage_path": "img/okinawa24/9.jpg",
+        "public_url": "img/okinawa24/9.jpg",
+        "alt_text": "Okinawa 2024 frame 9",
+        "file_size_bytes": 1586440,
+        "sort_order": 9
+      },
+      {
+        "storage_path": "img/okinawa24/10.jpg",
+        "public_url": "img/okinawa24/10.jpg",
+        "alt_text": "Okinawa 2024 frame 10",
+        "file_size_bytes": 1155480,
+        "sort_order": 10
+      },
+      {
+        "storage_path": "img/okinawa24/11.jpg",
+        "public_url": "img/okinawa24/11.jpg",
+        "alt_text": "Okinawa 2024 frame 11",
+        "file_size_bytes": 1184102,
+        "sort_order": 11
+      },
+      {
+        "storage_path": "img/okinawa24/12.jpg",
+        "public_url": "img/okinawa24/12.jpg",
+        "alt_text": "Okinawa 2024 frame 12",
+        "file_size_bytes": 1733878,
+        "sort_order": 12
+      },
+      {
+        "storage_path": "img/okinawa24/13.jpg",
+        "public_url": "img/okinawa24/13.jpg",
+        "alt_text": "Okinawa 2024 frame 13",
+        "file_size_bytes": 1488183,
+        "sort_order": 13
+      },
+      {
+        "storage_path": "img/okinawa24/14.jpg",
+        "public_url": "img/okinawa24/14.jpg",
+        "alt_text": "Okinawa 2024 frame 14",
+        "file_size_bytes": 1459076,
+        "sort_order": 14
+      },
+      {
+        "storage_path": "img/okinawa24/15.jpg",
+        "public_url": "img/okinawa24/15.jpg",
+        "alt_text": "Okinawa 2024 frame 15",
+        "file_size_bytes": 1423635,
+        "sort_order": 15
+      },
+      {
+        "storage_path": "img/okinawa24/16.jpg",
+        "public_url": "img/okinawa24/16.jpg",
+        "alt_text": "Okinawa 2024 frame 16",
+        "file_size_bytes": 2242346,
+        "sort_order": 16
+      },
+      {
+        "storage_path": "img/okinawa24/17.jpg",
+        "public_url": "img/okinawa24/17.jpg",
+        "alt_text": "Okinawa 2024 frame 17",
+        "file_size_bytes": 1115084,
+        "sort_order": 17
+      },
+      {
+        "storage_path": "img/okinawa24/18.jpg",
+        "public_url": "img/okinawa24/18.jpg",
+        "alt_text": "Okinawa 2024 frame 18",
+        "file_size_bytes": 1350960,
+        "sort_order": 18
+      },
+      {
+        "storage_path": "img/okinawa24/19.jpg",
+        "public_url": "img/okinawa24/19.jpg",
+        "alt_text": "Okinawa 2024 frame 19",
+        "file_size_bytes": 1290047,
+        "sort_order": 19
+      },
+      {
+        "storage_path": "img/okinawa24/20.jpg",
+        "public_url": "img/okinawa24/20.jpg",
+        "alt_text": "Okinawa 2024 frame 20",
+        "file_size_bytes": 1167211,
+        "sort_order": 20
+      },
+      {
+        "storage_path": "img/okinawa24/21.jpg",
+        "public_url": "img/okinawa24/21.jpg",
+        "alt_text": "Okinawa 2024 frame 21",
+        "file_size_bytes": 1038684,
+        "sort_order": 21
+      },
+      {
+        "storage_path": "img/okinawa24/22.jpg",
+        "public_url": "img/okinawa24/22.jpg",
+        "alt_text": "Okinawa 2024 frame 22",
+        "file_size_bytes": 1754462,
+        "sort_order": 22
+      },
+      {
+        "storage_path": "img/okinawa24/23.jpg",
+        "public_url": "img/okinawa24/23.jpg",
+        "alt_text": "Okinawa 2024 frame 23",
+        "file_size_bytes": 1292763,
+        "sort_order": 23
+      },
+      {
+        "storage_path": "img/okinawa24/24.jpg",
+        "public_url": "img/okinawa24/24.jpg",
+        "alt_text": "Okinawa 2024 frame 24",
+        "file_size_bytes": 1035743,
+        "sort_order": 24
+      },
+      {
+        "storage_path": "img/okinawa24/25.jpg",
+        "public_url": "img/okinawa24/25.jpg",
+        "alt_text": "Okinawa 2024 frame 25",
+        "file_size_bytes": 1807741,
+        "sort_order": 25
+      },
+      {
+        "storage_path": "img/okinawa24/26.jpg",
+        "public_url": "img/okinawa24/26.jpg",
+        "alt_text": "Okinawa 2024 frame 26",
+        "file_size_bytes": 2584820,
+        "sort_order": 26
+      },
+      {
+        "storage_path": "img/okinawa24/27.jpg",
+        "public_url": "img/okinawa24/27.jpg",
+        "alt_text": "Okinawa 2024 frame 27",
+        "file_size_bytes": 1890562,
+        "sort_order": 27
+      },
+      {
+        "storage_path": "img/okinawa24/28.jpg",
+        "public_url": "img/okinawa24/28.jpg",
+        "alt_text": "Okinawa 2024 frame 28",
+        "file_size_bytes": 1940406,
+        "sort_order": 28
+      }
+    ]
+  },
+  {
+    "album": {
+      "slug": "bali24",
+      "title": "Bali 2024",
+      "description": "Film gallery.",
+      "location": "Warm weather / daily rituals",
+      "album_date": null,
+      "camera": "35mm film camera",
+      "film": "Color negative film",
+      "cover_url": "img/bali24.jpg",
+      "published": true,
+      "sort_order": 6
+    },
+    "photos": [
+      {
+        "storage_path": "img/bali24/1.jpg",
+        "public_url": "img/bali24/1.jpg",
+        "alt_text": "Bali 2024 frame 1",
+        "file_size_bytes": 2231288,
+        "sort_order": 1
+      },
+      {
+        "storage_path": "img/bali24/2.jpg",
+        "public_url": "img/bali24/2.jpg",
+        "alt_text": "Bali 2024 frame 2",
+        "file_size_bytes": 2232119,
+        "sort_order": 2
+      },
+      {
+        "storage_path": "img/bali24/3.jpg",
+        "public_url": "img/bali24/3.jpg",
+        "alt_text": "Bali 2024 frame 3",
+        "file_size_bytes": 2119032,
+        "sort_order": 3
+      },
+      {
+        "storage_path": "img/bali24/4.jpg",
+        "public_url": "img/bali24/4.jpg",
+        "alt_text": "Bali 2024 frame 4",
+        "file_size_bytes": 2578410,
+        "sort_order": 4
+      },
+      {
+        "storage_path": "img/bali24/5.jpg",
+        "public_url": "img/bali24/5.jpg",
+        "alt_text": "Bali 2024 frame 5",
+        "file_size_bytes": 2228614,
+        "sort_order": 5
+      },
+      {
+        "storage_path": "img/bali24/6.jpg",
+        "public_url": "img/bali24/6.jpg",
+        "alt_text": "Bali 2024 frame 6",
+        "file_size_bytes": 2244593,
+        "sort_order": 6
+      },
+      {
+        "storage_path": "img/bali24/7.jpg",
+        "public_url": "img/bali24/7.jpg",
+        "alt_text": "Bali 2024 frame 7",
+        "file_size_bytes": 1838770,
+        "sort_order": 7
+      },
+      {
+        "storage_path": "img/bali24/8.jpg",
+        "public_url": "img/bali24/8.jpg",
+        "alt_text": "Bali 2024 frame 8",
+        "file_size_bytes": 1729050,
+        "sort_order": 8
+      },
+      {
+        "storage_path": "img/bali24/9.jpg",
+        "public_url": "img/bali24/9.jpg",
+        "alt_text": "Bali 2024 frame 9",
+        "file_size_bytes": 1782052,
+        "sort_order": 9
+      },
+      {
+        "storage_path": "img/bali24/10.jpg",
+        "public_url": "img/bali24/10.jpg",
+        "alt_text": "Bali 2024 frame 10",
+        "file_size_bytes": 1963622,
+        "sort_order": 10
+      },
+      {
+        "storage_path": "img/bali24/11.jpg",
+        "public_url": "img/bali24/11.jpg",
+        "alt_text": "Bali 2024 frame 11",
+        "file_size_bytes": 2143880,
+        "sort_order": 11
+      },
+      {
+        "storage_path": "img/bali24/12.jpg",
+        "public_url": "img/bali24/12.jpg",
+        "alt_text": "Bali 2024 frame 12",
+        "file_size_bytes": 2345014,
+        "sort_order": 12
+      },
+      {
+        "storage_path": "img/bali24/13.jpg",
+        "public_url": "img/bali24/13.jpg",
+        "alt_text": "Bali 2024 frame 13",
+        "file_size_bytes": 2323128,
+        "sort_order": 13
+      },
+      {
+        "storage_path": "img/bali24/14.jpg",
+        "public_url": "img/bali24/14.jpg",
+        "alt_text": "Bali 2024 frame 14",
+        "file_size_bytes": 2928357,
+        "sort_order": 14
+      },
+      {
+        "storage_path": "img/bali24/15.jpg",
+        "public_url": "img/bali24/15.jpg",
+        "alt_text": "Bali 2024 frame 15",
+        "file_size_bytes": 2162149,
+        "sort_order": 15
+      },
+      {
+        "storage_path": "img/bali24/16.jpg",
+        "public_url": "img/bali24/16.jpg",
+        "alt_text": "Bali 2024 frame 16",
+        "file_size_bytes": 1834510,
+        "sort_order": 16
+      },
+      {
+        "storage_path": "img/bali24/17.jpg",
+        "public_url": "img/bali24/17.jpg",
+        "alt_text": "Bali 2024 frame 17",
+        "file_size_bytes": 1909728,
+        "sort_order": 17
+      },
+      {
+        "storage_path": "img/bali24/18.jpg",
+        "public_url": "img/bali24/18.jpg",
+        "alt_text": "Bali 2024 frame 18",
+        "file_size_bytes": 2183223,
+        "sort_order": 18
+      },
+      {
+        "storage_path": "img/bali24/19.jpg",
+        "public_url": "img/bali24/19.jpg",
+        "alt_text": "Bali 2024 frame 19",
+        "file_size_bytes": 2909579,
+        "sort_order": 19
+      },
+      {
+        "storage_path": "img/bali24/20.jpg",
+        "public_url": "img/bali24/20.jpg",
+        "alt_text": "Bali 2024 frame 20",
+        "file_size_bytes": 1877658,
+        "sort_order": 20
+      },
+      {
+        "storage_path": "img/bali24/21.jpg",
+        "public_url": "img/bali24/21.jpg",
+        "alt_text": "Bali 2024 frame 21",
+        "file_size_bytes": 2609418,
+        "sort_order": 21
+      },
+      {
+        "storage_path": "img/bali24/22.jpg",
+        "public_url": "img/bali24/22.jpg",
+        "alt_text": "Bali 2024 frame 22",
+        "file_size_bytes": 2179092,
+        "sort_order": 22
+      },
+      {
+        "storage_path": "img/bali24/23.jpg",
+        "public_url": "img/bali24/23.jpg",
+        "alt_text": "Bali 2024 frame 23",
+        "file_size_bytes": 2080716,
+        "sort_order": 23
+      },
+      {
+        "storage_path": "img/bali24/24.jpg",
+        "public_url": "img/bali24/24.jpg",
+        "alt_text": "Bali 2024 frame 24",
+        "file_size_bytes": 1678988,
+        "sort_order": 24
+      },
+      {
+        "storage_path": "img/bali24/25.jpg",
+        "public_url": "img/bali24/25.jpg",
+        "alt_text": "Bali 2024 frame 25",
+        "file_size_bytes": 2215552,
+        "sort_order": 25
+      }
+    ]
+  }
+]
