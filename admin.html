@@ -193,6 +193,7 @@
         </section>
     </main>
 
+    <script src="js/cms-config.js"></script>
     <script type="module">
         import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
@@ -200,9 +201,10 @@
         const status = document.querySelector("#admin-status");
         const manageStatus = document.querySelector("#manage-status");
         const manageList = document.querySelector("#manage-list");
-        const bucket = stored("portfolio.supabasePhotoBucket", "album-photos");
-        const supabaseUrl = stored("portfolio.supabaseUrl");
-        const supabaseAnonKey = stored("portfolio.supabaseAnonKey");
+        const siteConfig = window.SUPABASE_CONFIG || {};
+        const bucket = siteConfig.photoBucket || stored("portfolio.supabasePhotoBucket", "album-photos");
+        const supabaseUrl = siteConfig.url || stored("portfolio.supabaseUrl");
+        const supabaseAnonKey = siteConfig.anonKey || stored("portfolio.supabaseAnonKey");
 
         function stored(key, fallback = "") {
             try {

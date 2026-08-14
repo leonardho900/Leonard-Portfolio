@@ -30,6 +30,7 @@ The Supabase CMS is additive and backward-compatible. Existing albums still use 
 
 - Admin login: `admin-login.html`
 - Authenticated upload/manage admin: `admin.html`
+- Supabase browser config: `js/cms-config.js`
 - Supabase schema: `supabase/schema.sql`
 - Setup and migration notes: `docs/supabase-cms.md`
 - Audit existing albums: `node tools/audit-existing-albums.mjs`

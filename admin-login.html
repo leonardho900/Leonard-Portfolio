@@ -69,6 +69,12 @@
             color: var(--muted);
             white-space: pre-wrap;
         }
+
+        .setup-note {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 
@@ -101,12 +107,13 @@
             </div>
             <details>
                 <summary class="muted-label">Supabase setup</summary>
+                <p id="setup-note" class="setup-note"></p>
                 <label class="login-field">
                     <span>Supabase URL</span>
                     <input id="supabase-url" name="supabaseUrl" placeholder="https://your-project.supabase.co" required>
                 </label>
                 <label class="login-field">
-                    <span>Supabase anon key</span>
+                    <span>Supabase publishable key</span>
                     <input id="supabase-anon-key" name="supabaseAnonKey" required>
                 </label>
                 <label class="login-field">
@@ -121,11 +128,15 @@
         </form>
     </main>
 
+    <script src="js/cms-config.js"></script>
     <script type="module">
         import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
         const form = document.querySelector("#login-form");
         const status = document.querySelector("#login-status");
+        const setupNote = document.querySelector("#setup-note");
+        const siteConfig = window.SUPABASE_CONFIG || {};
+        const hasSiteConfig = Boolean(siteConfig.url && siteConfig.anonKey);
         const fields = {
             url: document.querySelector("#supabase-url"),
             anonKey: document.querySelector("#supabase-anon-key"),
@@ -157,10 +168,13 @@
             store("portfolio.adminUsername", fields.username.value.trim());
         }
 
-        fields.url.value = stored("portfolio.supabaseUrl");
-        fields.anonKey.value = stored("portfolio.supabaseAnonKey");
-        fields.bucket.value = stored("portfolio.supabasePhotoBucket", "album-photos");
+        fields.url.value = siteConfig.url || stored("portfolio.supabaseUrl");
+        fields.anonKey.value = siteConfig.anonKey || stored("portfolio.supabaseAnonKey");
+        fields.bucket.value = siteConfig.photoBucket || stored("portfolio.supabasePhotoBucket", "album-photos");
         fields.username.value = stored("portfolio.adminUsername") || stored("portfolio.adminEmail");
+        setupNote.textContent = hasSiteConfig
+            ? "Supabase setup is already loaded from the site config."
+            : "Fill this once if the site config has not been added yet.";
 
         document.querySelector("#save-config").addEventListener("click", () => {
             saveConfig();
@@ -170,6 +184,10 @@
         form.addEventListener("submit", async (event) => {
             event.preventDefault();
             saveConfig();
+            if (!fields.url.value.trim() || !fields.anonKey.value.trim()) {
+                status.textContent = "Add the Supabase URL and publishable key in Supabase setup first.";
+                return;
+            }
             const supabase = createClient(fields.url.value.trim(), fields.anonKey.value.trim());
             const { error } = await supabase.auth.signInWithPassword({
                 email: fields.username.value.trim(),

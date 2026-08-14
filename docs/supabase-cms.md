@@ -47,13 +47,15 @@ Observed sample dimensions are large, around `4096x2732`, `5397x3602`, and `3391
 4. Enable email/password login in Supabase Auth.
 5. Open `/admin-login.html`.
 6. Create an admin user in Supabase Auth with an email and password.
-7. Enter the Supabase URL, anon key, and storage bucket in the setup section.
+7. Add the Supabase URL and publishable key to `js/cms-config.js`.
 8. Sign in with the admin email and password.
 9. Return to `/admin.html`, fill in album details, choose photos, and upload.
 
-The public portfolio loads CMS albums only when a Supabase URL and anon key are configured through `window.SUPABASE_CONFIG` or local browser storage. Without that config, it falls back to local albums.
+The public portfolio loads CMS albums only when a Supabase URL and publishable key are configured through `window.SUPABASE_CONFIG` or local browser storage. Without that config, it falls back to local albums.
 
-For production, copy `js/cms-config.example.js` to a non-committed config delivery method or inject these values during deployment. Do not commit private service role keys. The anon key is okay for browser use when Row Level Security policies are correct.
+For production, `js/cms-config.js` can contain the Project URL, publishable key, and bucket name. The publishable key is okay for browser use when Row Level Security policies are correct. Do not commit private secret keys, service role keys, or database passwords.
+
+If `js/cms-config.js` is not filled yet, `/admin-login.html` still has a Supabase setup section that saves those values in the current browser.
 
 ## Admin Features
 
