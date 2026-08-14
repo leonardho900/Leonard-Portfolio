@@ -73,6 +73,31 @@
             white-space: pre-wrap;
         }
 
+        .photo-picker {
+            display: grid;
+            gap: 0.65rem;
+        }
+
+        .photo-picker input[type="file"] {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            clip-path: inset(50%);
+            white-space: nowrap;
+        }
+
+        .photo-picker-button {
+            justify-self: start;
+        }
+
+        .photo-picker-hint {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
         .danger-button {
             border-color: rgba(255, 105, 97, 0.55);
             color: #ffb4ad;
@@ -168,9 +193,11 @@
                     <span>Description</span>
                     <textarea id="description" name="description" placeholder="Short album description"></textarea>
                 </label>
-                <label class="admin-field">
+                <label class="admin-field photo-picker">
                     <span>Photos</span>
-                    <input id="photos" name="photos" type="file" accept="image/*" multiple required>
+                    <span class="button secondary photo-picker-button">Choose Photos</span>
+                    <input id="photos" name="photos" type="file" accept="image/*,.heic,.heif" multiple required>
+                    <p id="photo-picker-hint" class="photo-picker-hint">On iPhone, choose Photo Library and select multiple photos.</p>
                 </label>
                 <div class="admin-actions">
                     <button class="button primary" type="submit">Upload Album</button>
@@ -201,6 +228,8 @@
         const status = document.querySelector("#admin-status");
         const manageStatus = document.querySelector("#manage-status");
         const manageList = document.querySelector("#manage-list");
+        const photosInput = document.querySelector("#photos");
+        const photoPickerHint = document.querySelector("#photo-picker-hint");
         const siteConfig = window.SUPABASE_CONFIG || {};
         const bucket = siteConfig.photoBucket || stored("portfolio.supabasePhotoBucket", "album-photos");
         const supabaseUrl = siteConfig.url || stored("portfolio.supabaseUrl");
@@ -255,6 +284,13 @@
 
         const requireConfirm = (message) => window.confirm(message);
 
+        photosInput.addEventListener("change", () => {
+            const count = photosInput.files.length;
+            photoPickerHint.textContent = count
+                ? `${count} photo${count === 1 ? "" : "s"} selected.`
+                : "On iPhone, choose Photo Library and select multiple photos.";
+        });
+
         document.querySelector("#sign-out").addEventListener("click", async () => {
             await supabase.auth.signOut();
             window.location.href = "admin-login.html";
@@ -264,7 +300,7 @@
             event.preventDefault();
 
             const data = new FormData(form);
-            const files = [...document.querySelector("#photos").files];
+            const files = [...photosInput.files];
             const slug = String(data.get("slug")).trim();
 
             if (!files.length) {
@@ -336,6 +372,7 @@
             const cover = rows[Math.min(coverIndex, rows.length - 1)];
             await supabase.from("albums").update({ cover_url: cover.storage_path }).eq("id", album.id);
             form.reset();
+            photoPickerHint.textContent = "On iPhone, choose Photo Library and select multiple photos.";
             setStatus(`Done. Album uploaded with ${rows.length} photos.\nOpen: album.html?album=${slug}`);
             await loadManagedAlbums();
         });
