@@ -35,6 +35,7 @@ The Supabase CMS is additive and backward-compatible. Existing albums still use 
 - Setup and migration notes: `docs/supabase-cms.md`
 - Audit existing albums: `node tools/audit-existing-albums.mjs`
 - Export a dry-run migration payload: `node tools/export-local-albums-for-supabase.mjs`
+- Migrate local albums to Supabase: `node tools/migrate-local-albums-to-supabase.mjs --apply`
 
 Do not bulk-upload or move existing full-resolution photos until the audit output has been reviewed.
 

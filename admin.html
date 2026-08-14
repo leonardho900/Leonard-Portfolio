@@ -340,6 +340,10 @@
         }[char]));
 
         const requireConfirm = (message) => window.confirm(message);
+        const extractYear = (title) => {
+            const match = String(title || "").match(/\b(20\d{2})\b/);
+            return match ? Number(match[1]) : null;
+        };
 
         photosInput.addEventListener("change", () => {
             const count = photosInput.files.length;
@@ -373,6 +377,7 @@
                 description: String(data.get("description")).trim(),
                 location: String(data.get("location")).trim(),
                 album_date: data.get("albumDate") || null,
+                year: extractYear(data.get("title")),
                 camera: String(data.get("camera")).trim(),
                 film: String(data.get("film")).trim(),
                 published: true,
@@ -439,7 +444,9 @@
             const { data: albums, error: albumError } = await supabase
                 .from("albums")
                 .select("*")
-                .order("created_at", { ascending: false });
+                .order("year", { ascending: false, nullsFirst: false })
+                .order("sort_order", { ascending: true })
+                .order("created_at", { ascending: true });
             const { data: photos, error: photoError } = await supabase
                 .from("photos")
                 .select("*")
@@ -462,7 +469,7 @@
                 const albumSlug = escapeHtml(album.slug);
                 const albumUrl = `album.html?album=${encodeURIComponent(album.slug)}`;
                 return `
-                    <details class="manage-card" data-album-id="${album.id}" data-album-title="${albumTitle}">
+                    <details class="manage-card" data-album-id="${album.id}" data-album-title="${albumTitle}" data-cover-path="${escapeHtml(album.cover_url || "")}">
                         <summary>
                             <div>
                                 <span class="muted-label">${albumSlug}</span>
@@ -526,13 +533,17 @@
                 const card = albumButton.closest(".manage-card");
                 const albumId = card.dataset.albumId;
                 const albumTitle = card.dataset.albumTitle;
+                const coverPath = card.dataset.coverPath;
                 if (!requireConfirm(`Delete "${albumTitle}" and all its Supabase photos? This cannot be undone.`)) {
                     return;
                 }
 
                 setManageStatus(`Deleting ${albumTitle}...`);
                 const { data: photos } = await supabase.from("photos").select("storage_path").eq("album_id", albumId);
-                const paths = (photos || []).map((photo) => photo.storage_path).filter(Boolean);
+                const paths = [...new Set([
+                    ...(photos || []).map((photo) => photo.storage_path),
+                    coverPath,
+                ].filter(Boolean))];
                 if (paths.length) {
                     await supabase.storage.from(bucket).remove(paths);
                 }

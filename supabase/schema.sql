@@ -7,6 +7,7 @@ create table if not exists public.albums (
     description text,
     location text,
     album_date date,
+    year integer,
     camera text,
     film text,
     cover_url text,
@@ -31,6 +32,9 @@ create table if not exists public.photos (
 
 create index if not exists photos_album_id_sort_order_idx
     on public.photos (album_id, sort_order);
+
+create index if not exists albums_year_sort_order_created_at_idx
+    on public.albums (year desc nulls last, sort_order asc, created_at asc);
 
 alter table public.albums enable row level security;
 alter table public.photos enable row level security;

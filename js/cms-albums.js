@@ -15,6 +15,30 @@
 
     const cleanUrl = (value) => String(value || "").replace(/\/+$/, "");
     const hasSupabaseConfig = Boolean(config.url && config.anonKey);
+    const extractYear = (title) => {
+        const match = String(title || "").match(/\b(20\d{2})\b/);
+        return match ? Number(match[1]) : null;
+    };
+    const normalizeLocalAlbum = (album, index) => ({
+        ...album,
+        year: album.year ?? extractYear(album.title),
+        sortOrder: album.sortOrder ?? index + 1,
+        source: album.source || "local",
+    });
+    const sortAlbums = (albums) => [...albums].sort((a, b) => {
+        const yearA = a.year ?? -Infinity;
+        const yearB = b.year ?? -Infinity;
+        if (yearA !== yearB) {
+            return yearB - yearA;
+        }
+        const sortA = a.sortOrder ?? 100;
+        const sortB = b.sortOrder ?? 100;
+        if (sortA !== sortB) {
+            return sortA - sortB;
+        }
+        return String(a.title).localeCompare(String(b.title));
+    });
+    const normalizedLocalAlbums = sortAlbums(localAlbums.map(normalizeLocalAlbum));
 
     const notify = () => {
         window.dispatchEvent(new CustomEvent("portfolio-albums:updated", {
@@ -64,6 +88,8 @@
             camera: album.camera || "Camera details coming soon",
             film: album.film || "Film stock coming soon",
             date: album.album_date || "",
+            year: album.year ?? extractYear(album.title),
+            sortOrder: album.sort_order ?? 100,
             source: "supabase",
             images: imageUrls,
         };
@@ -71,25 +97,27 @@
 
     const loadSupabaseAlbums = async () => {
         if (!hasSupabaseConfig) {
-            return localAlbums;
+            window.portfolioAlbums = normalizedLocalAlbums;
+            notify();
+            return normalizedLocalAlbums;
         }
 
         try {
             const [albums, photos] = await Promise.all([
-                request("/rest/v1/albums?select=*&published=eq.true&order=sort_order.asc.nullslast,created_at.desc"),
+                request("/rest/v1/albums?select=*&published=eq.true&order=year.desc.nullslast,sort_order.asc,created_at.asc"),
                 request("/rest/v1/photos?select=*&order=sort_order.asc"),
             ]);
             const remoteAlbums = albums
                 .map((album) => normalizeAlbum(album, photos))
                 .filter((album) => album.images.length > 0);
-            const localIds = new Set(localAlbums.map((album) => album.id));
-            window.portfolioAlbums = [
-                ...localAlbums,
-                ...remoteAlbums.filter((album) => !localIds.has(album.id)),
-            ];
+            const remoteIds = new Set(remoteAlbums.map((album) => album.id));
+            window.portfolioAlbums = sortAlbums([
+                ...remoteAlbums,
+                ...normalizedLocalAlbums.filter((album) => !remoteIds.has(album.id)),
+            ]);
         } catch (error) {
             console.warn("Supabase albums unavailable. Showing local albums only.", error);
-            window.portfolioAlbums = localAlbums;
+            window.portfolioAlbums = normalizedLocalAlbums;
         }
 
         notify();

@@ -92,29 +92,61 @@ This reports:
 - Dimensions from `sips`
 - Camera and film metadata from `portfolio-data.js`
 
-Create a draft import payload:
+Create a dry-run migration report:
 
 ```sh
-node tools/export-local-albums-for-supabase.mjs
+node tools/migrate-local-albums-to-supabase.mjs
 ```
 
 This writes:
 
 ```text
-migration/local-albums-supabase-draft.json
+migration/local-albums-migration-report.json
 ```
 
-The export keeps the original image paths and ordering. It does not upload files to Supabase.
+The dry run keeps the original image paths and ordering. It does not upload files to Supabase.
+
+Before applying the migration, run the latest schema in Supabase SQL editor:
+
+```sql
+alter table public.albums
+    add column if not exists year integer;
+
+create index if not exists albums_year_sort_order_created_at_idx
+    on public.albums (year desc nulls last, sort_order asc, created_at asc);
+```
+
+Apply the migration with either a service role key or a temporary admin password login:
+
+```sh
+SUPABASE_SERVICE_ROLE_KEY="..." node tools/migrate-local-albums-to-supabase.mjs --apply
+```
+
+or:
+
+```sh
+SUPABASE_EMAIL="you@example.com" SUPABASE_PASSWORD="..." node tools/migrate-local-albums-to-supabase.mjs --apply
+```
+
+The migration is idempotent where practical:
+
+- Albums are matched by existing public slug, such as `japan23`, to preserve current URLs.
+- Album year is extracted from the title using `20XX`.
+- Photo storage paths use the existing admin convention, such as `japan23/001.jpg`.
+- Existing storage objects are skipped.
+- Existing `photos` rows with the same album and storage path are skipped.
+- Files are uploaded as-is, with no recompression.
 
 ## Safe Migration Recommendation
 
-For the existing albums, migrate in small batches:
+For the existing albums:
 
 1. Run the audit script.
 2. Review image sizes and dimensions.
-3. Decide per album whether to keep serving local images or upload to Supabase Storage.
-4. Import one album into Supabase as a draft.
-5. Compare local `album.html?album=...` and CMS-loaded version visually.
-6. Only then consider redirects or removing legacy pages.
+3. Run the dry-run migration report.
+4. Run the Supabase `year` schema migration.
+5. Apply the migration.
+6. Compare `album.html?album=...` pages after Supabase loads.
+7. Only then consider redirects or removing legacy pages.
 
 Do not remove local image folders until the Supabase version has been verified and backed up.

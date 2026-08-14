@@ -19,7 +19,11 @@
     }
 
     const previewSrc = (src) => `img/thumbs/${src.replace(/^img\//, "")}`;
+    const albumImageSrc = (album, src) => album.source === "supabase" ? src : previewSrc(src);
     const albumGrid = document.querySelector("#album-grid");
+    const albumPagination = document.querySelector("#album-pagination");
+    const albumsPerPage = 5;
+    let currentAlbumPage = 1;
 
     const renderAlbumGrid = () => {
         const albums = window.portfolioAlbums || [];
@@ -27,9 +31,14 @@
             return;
         }
 
-        albumGrid.innerHTML = albums.map((album) => `
+        const totalPages = Math.max(1, Math.ceil(albums.length / albumsPerPage));
+        currentAlbumPage = Math.min(currentAlbumPage, totalPages);
+        const start = (currentAlbumPage - 1) * albumsPerPage;
+        const visibleAlbums = albums.slice(start, start + albumsPerPage);
+
+        albumGrid.innerHTML = visibleAlbums.map((album) => `
             <a class="album-card" href="album.html?album=${album.id}" aria-label="Open ${album.title}">
-                <img src="${album.source === "supabase" ? album.cover : previewSrc(album.cover)}" alt="${album.title}" loading="lazy" decoding="async">
+                <img src="${albumImageSrc(album, album.cover)}" alt="${album.title}" loading="lazy" decoding="async">
                 <div class="album-info">
                     <span class="album-meta">${album.meta}</span>
                     <h3>${album.title}</h3>
@@ -38,22 +47,40 @@
                 </div>
             </a>
         `).join("");
+
+        if (!albumPagination) {
+            return;
+        }
+
+        albumPagination.innerHTML = totalPages > 1
+            ? Array.from({ length: totalPages }, (_, index) => {
+                const page = index + 1;
+                return `
+                    <button class="album-page-button" type="button" data-page="${page}" aria-label="Show album page ${page}" ${page === currentAlbumPage ? 'aria-current="page"' : ""}>
+                        ${page}
+                    </button>
+                `;
+            }).join("")
+            : "";
     };
 
     renderAlbumGrid();
     window.addEventListener("portfolio-albums:updated", renderAlbumGrid);
 
+    albumPagination?.addEventListener("click", (event) => {
+        const button = event.target.closest(".album-page-button");
+        if (!button) {
+            return;
+        }
+        currentAlbumPage = Number(button.dataset.page) || 1;
+        renderAlbumGrid();
+    });
+
     const shuffleButton = document.querySelector("#shuffle-frame");
     const surpriseImage = document.querySelector("#surprise-image");
     const surpriseCaption = document.querySelector("#surprise-caption");
     const surpriseAlbumLink = document.querySelector("#surprise-album-link");
-    const frames = (window.portfolioAlbums || []).flatMap((album) =>
-        album.images.map((src, index) => ({
-            album,
-            src,
-            label: `${album.title} / frame ${index + 1}`,
-        }))
-    );
+    let frames = [];
     let currentFrameIndex = 0;
     let nextFrameIndex = 0;
     let nextFrame = null;
@@ -83,7 +110,7 @@
         image.onerror = () => {
             shuffleButton.disabled = false;
         };
-        image.src = previewSrc(frame.src);
+        image.src = albumImageSrc(frame.album, frame.src);
     };
 
     const showSurpriseFrame = (index, preloadedImage) => {
@@ -94,15 +121,30 @@
         const safeIndex = frameIndex(index);
         const frame = frames[safeIndex];
         currentFrameIndex = safeIndex;
-        surpriseImage.src = preloadedImage?.src || previewSrc(frame.src);
+        surpriseImage.src = preloadedImage?.src || albumImageSrc(frame.album, frame.src);
         surpriseImage.alt = frame.label;
         surpriseCaption.textContent = frame.label;
         surpriseAlbumLink.href = `album.html?album=${frame.album.id}`;
     };
 
-    if (shuffleButton && frames.length) {
-        showSurpriseFrame(Math.floor(Math.random() * frames.length));
-        preloadFrame(randomFrameIndex());
+    const rebuildFrames = () => {
+        frames = (window.portfolioAlbums || []).flatMap((album) =>
+            album.images.map((src, index) => ({
+                album,
+                src,
+                label: `${album.title} / frame ${index + 1}`,
+            }))
+        );
+        nextFrame = null;
+        if (shuffleButton && frames.length) {
+            showSurpriseFrame(Math.floor(Math.random() * frames.length));
+            preloadFrame(randomFrameIndex());
+        }
+    };
+
+    if (shuffleButton) {
+        rebuildFrames();
+        window.addEventListener("portfolio-albums:updated", rebuildFrames);
         shuffleButton.addEventListener("click", () => {
             if (shuffleButton.disabled || !nextFrame) {
                 return;
