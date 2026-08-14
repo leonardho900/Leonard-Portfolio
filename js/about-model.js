@@ -4,7 +4,14 @@ const isMobile = () => window.matchMedia("(max-width: 720px)").matches;
 if (container && isMobile()) {
     container.hidden = true;
 } else if (container) {
-    initAboutModel();
+    const loadWhenNearView = new IntersectionObserver(([entry], observer) => {
+        if (!entry.isIntersecting) {
+            return;
+        }
+        observer.disconnect();
+        initAboutModel();
+    }, { rootMargin: "360px" });
+    loadWhenNearView.observe(container);
 }
 
 async function initAboutModel() {
@@ -16,6 +23,8 @@ async function initAboutModel() {
     const horizontalLimit = THREE.MathUtils.degToRad(14);
     const verticalLimit = THREE.MathUtils.degToRad(6);
     const damping = 0.1;
+    const modelScale = 2.48;
+    const modelCenterY = 0.18;
     const baseRotation = { x: 0, y: 0, z: 0 };
     const targetRotation = { x: baseRotation.x, y: baseRotation.y };
 
@@ -84,7 +93,7 @@ async function initAboutModel() {
         if (!reduceMotion) {
             modelGroup.rotation.y += (targetRotation.y - modelGroup.rotation.y) * damping;
             modelGroup.rotation.x += (targetRotation.x - modelGroup.rotation.x) * damping;
-            modelGroup.position.y = -0.08 + Math.sin(performance.now() * 0.0011) * 0.018;
+            modelGroup.position.y = modelCenterY + Math.sin(performance.now() * 0.0011) * 0.018;
             container.dataset.rotationX = modelGroup.rotation.x.toFixed(4);
             container.dataset.rotationY = modelGroup.rotation.y.toFixed(4);
         }
@@ -152,8 +161,8 @@ async function initAboutModel() {
             const center = box.getCenter(new THREE.Vector3());
             gltf.scene.position.sub(center);
             modelGroup.add(gltf.scene);
-            modelGroup.position.y += 0.08;
-            modelGroup.scale.setScalar(1.65 / Math.max(size.y, 1));
+            modelGroup.position.y = modelCenterY;
+            modelGroup.scale.setScalar(modelScale / Math.max(size.y, 1));
 
             scene.add(modelGroup);
             isLoaded = true;
