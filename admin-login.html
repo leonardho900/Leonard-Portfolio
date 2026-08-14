@@ -52,6 +52,19 @@
             gap: 0.7rem;
         }
 
+        .login-panel details {
+            display: grid;
+            gap: 0.9rem;
+            padding-top: 0.35rem;
+        }
+
+        .login-panel summary {
+            cursor: pointer;
+            color: var(--muted);
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+
         .login-status {
             color: var(--muted);
             white-space: pre-wrap;
@@ -71,30 +84,39 @@
     <main class="login-page">
         <p class="eyebrow">Private Admin</p>
         <h1>Login</h1>
-        <p class="login-status">Enter your Supabase project details and email. The config is saved only in this browser.</p>
+        <p class="login-status">Sign in with your admin username and password.</p>
 
         <form id="login-form" class="login-panel">
             <label class="login-field">
-                <span>Supabase URL</span>
-                <input id="supabase-url" name="supabaseUrl" placeholder="https://your-project.supabase.co" required>
+                <span>Username / email</span>
+                <input id="admin-username" name="adminUsername" type="email" autocomplete="username" placeholder="you@example.com" required>
             </label>
             <label class="login-field">
-                <span>Supabase anon key</span>
-                <input id="supabase-anon-key" name="supabaseAnonKey" required>
-            </label>
-            <label class="login-field">
-                <span>Storage bucket</span>
-                <input id="photo-bucket" name="photoBucket" value="album-photos" required>
-            </label>
-            <label class="login-field">
-                <span>Admin email</span>
-                <input id="admin-email" name="adminEmail" type="email" placeholder="you@example.com" required>
+                <span>Password</span>
+                <input id="admin-password" name="adminPassword" type="password" autocomplete="current-password" required>
             </label>
             <div class="login-actions">
-                <button class="button primary" type="submit">Send Login Link</button>
-                <button id="save-config" class="button secondary" type="button">Save Config</button>
+                <button class="button primary" type="submit">Login</button>
                 <a class="button secondary" href="admin.html">Open Admin</a>
             </div>
+            <details>
+                <summary class="muted-label">Supabase setup</summary>
+                <label class="login-field">
+                    <span>Supabase URL</span>
+                    <input id="supabase-url" name="supabaseUrl" placeholder="https://your-project.supabase.co" required>
+                </label>
+                <label class="login-field">
+                    <span>Supabase anon key</span>
+                    <input id="supabase-anon-key" name="supabaseAnonKey" required>
+                </label>
+                <label class="login-field">
+                    <span>Storage bucket</span>
+                    <input id="photo-bucket" name="photoBucket" value="album-photos" required>
+                </label>
+                <div class="login-actions">
+                    <button id="save-config" class="button secondary" type="button">Save Setup</button>
+                </div>
+            </details>
             <p id="login-status" class="login-status" role="status"></p>
         </form>
     </main>
@@ -108,7 +130,8 @@
             url: document.querySelector("#supabase-url"),
             anonKey: document.querySelector("#supabase-anon-key"),
             bucket: document.querySelector("#photo-bucket"),
-            email: document.querySelector("#admin-email"),
+            username: document.querySelector("#admin-username"),
+            password: document.querySelector("#admin-password"),
         };
 
         function stored(key, fallback = "") {
@@ -131,13 +154,13 @@
             store("portfolio.supabaseUrl", fields.url.value.trim());
             store("portfolio.supabaseAnonKey", fields.anonKey.value.trim());
             store("portfolio.supabasePhotoBucket", fields.bucket.value.trim() || "album-photos");
-            store("portfolio.adminEmail", fields.email.value.trim());
+            store("portfolio.adminUsername", fields.username.value.trim());
         }
 
         fields.url.value = stored("portfolio.supabaseUrl");
         fields.anonKey.value = stored("portfolio.supabaseAnonKey");
         fields.bucket.value = stored("portfolio.supabasePhotoBucket", "album-photos");
-        fields.email.value = stored("portfolio.adminEmail");
+        fields.username.value = stored("portfolio.adminUsername") || stored("portfolio.adminEmail");
 
         document.querySelector("#save-config").addEventListener("click", () => {
             saveConfig();
@@ -148,11 +171,17 @@
             event.preventDefault();
             saveConfig();
             const supabase = createClient(fields.url.value.trim(), fields.anonKey.value.trim());
-            const { error } = await supabase.auth.signInWithOtp({
-                email: fields.email.value.trim(),
-                options: { emailRedirectTo: `${window.location.origin}/admin.html` },
+            const { error } = await supabase.auth.signInWithPassword({
+                email: fields.username.value.trim(),
+                password: fields.password.value,
             });
-            status.textContent = error ? `Login email failed:\n${error.message}` : "Check your email for the login link. It will return you to the admin page.";
+            if (error) {
+                status.textContent = `Login failed:\n${error.message}`;
+                return;
+            }
+            fields.password.value = "";
+            status.textContent = "Logged in. Opening admin...";
+            window.location.href = "admin.html";
         });
 
         if (fields.url.value && fields.anonKey.value) {

@@ -44,11 +44,12 @@ Observed sample dimensions are large, around `4096x2732`, `5397x3602`, and `3391
 1. Create a Supabase project.
 2. Create a public storage bucket named `album-photos`.
 3. Run `supabase/schema.sql` in the Supabase SQL editor.
-4. Enable email login for the admin account in Supabase Auth.
+4. Enable email/password login in Supabase Auth.
 5. Open `/admin-login.html`.
-6. Enter the Supabase URL, anon key, storage bucket, and admin email.
-7. Send yourself a login link.
-8. Return to `/admin.html`, fill in album details, choose photos, and upload.
+6. Create an admin user in Supabase Auth with an email and password.
+7. Enter the Supabase URL, anon key, and storage bucket in the setup section.
+8. Sign in with the admin email and password.
+9. Return to `/admin.html`, fill in album details, choose photos, and upload.
 
 The public portfolio loads CMS albums only when a Supabase URL and anon key are configured through `window.SUPABASE_CONFIG` or local browser storage. Without that config, it falls back to local albums.
 
@@ -58,7 +59,7 @@ For production, copy `js/cms-config.example.js` to a non-committed config delive
 
 The admin area is split into:
 
-- `admin-login.html` for Supabase config and magic-link login.
+- `admin-login.html` for username/password login and Supabase setup.
 - `admin.html` for authenticated album management.
 
 The admin can:
