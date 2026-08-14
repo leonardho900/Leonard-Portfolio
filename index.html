@@ -21,8 +21,17 @@
     <link rel="preload" as="image" href="img/picture1-hero.jpg" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.185.1/examples/jsm/"
+            }
+        }
+    </script>
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -109,6 +118,7 @@
                         <p>35mm 2.5 Color-Skopar and Genba Kantoku 35WB.</p>
                     </div>
                 </div>
+                <div id="about-model" class="about-model" aria-hidden="true" data-model-src="assets/models/base_basic_shaded.glb"></div>
             </div>
         </section>
 
@@ -246,6 +256,7 @@
     <script src="js/cms-config.js"></script>
     <script src="js/cms-albums.js"></script>
     <script src="js/main.js"></script>
+    <script type="module" src="js/about-model.js?v=1"></script>
 </body>
 
 </html>

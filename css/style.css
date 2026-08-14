@@ -385,6 +385,7 @@ h3 {
 }
 
 .section-copy {
+    min-width: 0;
     color: var(--muted);
     font-size: 1.05rem;
 }
@@ -402,6 +403,33 @@ h3 {
     border: 1px solid var(--line);
     border-radius: 8px;
     box-shadow: var(--shadow);
+}
+
+.about-model {
+    position: relative;
+    width: 100%;
+    max-width: 680px;
+    height: 440px;
+    margin-top: 1.25rem;
+    margin-inline: auto;
+    overflow: hidden;
+    contain: layout paint size;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(244, 240, 232, 0.045), rgba(88, 214, 179, 0.035));
+}
+
+.about-model canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    touch-action: pan-y;
+}
+
+.about-model.is-fallback {
+    display: none;
 }
 
 .facts-grid {
@@ -1100,6 +1128,11 @@ h3 {
     .work-grid,
     .album-grid {
         grid-template-columns: 1fr;
+    }
+
+    .about-model {
+        max-width: 440px;
+        height: 312px;
     }
 
     .album-card {
