@@ -1,9 +1,15 @@
-import * as THREE from "three";
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-
 const container = document.querySelector("#about-model");
+const isMobile = () => window.matchMedia("(max-width: 720px)").matches;
 
-if (container) {
+if (container && isMobile()) {
+    container.hidden = true;
+} else if (container) {
+    initAboutModel();
+}
+
+async function initAboutModel() {
+    const THREE = await import("three");
+    const { GLTFLoader } = await import("three/addons/loaders/GLTFLoader.js");
     const modelSrc = container.dataset.modelSrc;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const canTrackPointer = window.matchMedia("(pointer: fine)").matches && !reduceMotion;
@@ -15,9 +21,8 @@ if (container) {
 
     container.style.position = "relative";
     container.style.width = "100%";
-    const isMobile = () => window.matchMedia("(max-width: 720px)").matches;
-    container.style.maxWidth = isMobile() ? "440px" : "680px";
-    container.style.height = isMobile() ? "312px" : "440px";
+    container.style.maxWidth = "680px";
+    container.style.height = "440px";
     container.style.overflow = "hidden";
 
     let modelGroup = null;
@@ -53,8 +58,8 @@ if (container) {
     scene.add(fillLight);
 
     const resize = () => {
-        container.style.maxWidth = isMobile() ? "440px" : "680px";
-        container.style.height = isMobile() ? "312px" : "440px";
+        container.style.maxWidth = "680px";
+        container.style.height = "440px";
         const { width, height } = container.getBoundingClientRect();
         const renderWidth = Math.min(Math.max(width, 1), 900);
         const renderHeight = Math.min(Math.max(height, 1), 700);
