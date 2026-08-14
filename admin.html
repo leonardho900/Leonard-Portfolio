@@ -103,6 +103,49 @@
             color: #ffb4ad;
         }
 
+        .manage-card {
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .manage-card summary {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 0.9rem;
+            align-items: center;
+            padding: 1.1rem 1.35rem;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .manage-card summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .manage-card h3 {
+            margin: 0.2rem 0;
+        }
+
+        .manage-card[open] summary {
+            border-bottom: 1px solid var(--line);
+        }
+
+        .manage-toggle {
+            color: var(--muted);
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+        .manage-card[open] .manage-toggle {
+            color: var(--text);
+        }
+
+        .manage-body {
+            display: grid;
+            gap: 1rem;
+            padding: 1.1rem 1.35rem 1.35rem;
+        }
+
         .photo-manage-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -129,6 +172,14 @@
         @media (max-width: 720px) {
             .admin-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .manage-card summary {
+                grid-template-columns: 1fr;
+            }
+
+            .manage-toggle {
+                justify-self: start;
             }
         }
     </style>
@@ -405,26 +456,31 @@
                 const albumSlug = escapeHtml(album.slug);
                 const albumUrl = `album.html?album=${encodeURIComponent(album.slug)}`;
                 return `
-                    <article class="manage-card" data-album-id="${album.id}" data-album-title="${albumTitle}">
-                        <div>
-                            <span class="muted-label">${albumSlug}</span>
-                            <h3>${albumTitle}</h3>
-                            <p class="admin-status">${albumPhotos.length} Supabase photos</p>
+                    <details class="manage-card" data-album-id="${album.id}" data-album-title="${albumTitle}">
+                        <summary>
+                            <div>
+                                <span class="muted-label">${albumSlug}</span>
+                                <h3>${albumTitle}</h3>
+                                <p class="admin-status">${albumPhotos.length} Supabase photos</p>
+                            </div>
+                            <span class="manage-toggle">Show</span>
+                        </summary>
+                        <div class="manage-body">
+                            <div class="manage-actions">
+                                <a class="button secondary" href="${albumUrl}" target="_blank" rel="noreferrer">Open Album</a>
+                                <button class="button secondary danger-button delete-album" type="button">Delete Album</button>
+                            </div>
+                            <div class="photo-manage-grid">
+                                ${albumPhotos.map((photo) => `
+                                    <div class="photo-manage-item" data-photo-id="${photo.id}" data-photo-path="${escapeHtml(photo.storage_path || "")}">
+                                        <img src="${escapeHtml(publicUrl(photo.public_url || photo.storage_path))}" alt="${escapeHtml(photo.alt_text || album.title)}" loading="lazy">
+                                        <span class="muted-label">Frame ${photo.sort_order}</span>
+                                        <button class="button secondary danger-button delete-photo" type="button">Delete Photo</button>
+                                    </div>
+                                `).join("")}
+                            </div>
                         </div>
-                        <div class="manage-actions">
-                            <a class="button secondary" href="${albumUrl}" target="_blank" rel="noreferrer">Open Album</a>
-                            <button class="button secondary danger-button delete-album" type="button">Delete Album</button>
-                        </div>
-                        <div class="photo-manage-grid">
-                            ${albumPhotos.map((photo) => `
-                                <div class="photo-manage-item" data-photo-id="${photo.id}" data-photo-path="${escapeHtml(photo.storage_path || "")}">
-                                    <img src="${escapeHtml(publicUrl(photo.public_url || photo.storage_path))}" alt="${escapeHtml(photo.alt_text || album.title)}" loading="lazy">
-                                    <span class="muted-label">Frame ${photo.sort_order}</span>
-                                    <button class="button secondary danger-button delete-photo" type="button">Delete Photo</button>
-                                </div>
-                            `).join("")}
-                        </div>
-                    </article>
+                    </details>
                 `;
             }).join("");
             setManageStatus("");
@@ -433,6 +489,15 @@
         manageList.addEventListener("click", async (event) => {
             const photoButton = event.target.closest(".delete-photo");
             const albumButton = event.target.closest(".delete-album");
+            const summary = event.target.closest(".manage-card summary");
+
+            if (summary) {
+                requestAnimationFrame(() => {
+                    const card = summary.closest(".manage-card");
+                    const toggle = card.querySelector(".manage-toggle");
+                    toggle.textContent = card.open ? "Hide" : "Show";
+                });
+            }
 
             if (photoButton) {
                 const item = photoButton.closest(".photo-manage-item");
