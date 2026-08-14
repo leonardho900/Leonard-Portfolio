@@ -390,6 +390,10 @@ h3 {
     font-size: 1.05rem;
 }
 
+#about .section-copy {
+    padding-top: clamp(7.5rem, 10vw, 10.5rem);
+}
+
 .about-intro {
     display: grid;
     gap: 1.25rem;
@@ -1047,6 +1051,10 @@ h3 {
 }
 
 @media (max-width: 980px) {
+    #about .section-copy {
+        padding-top: 0;
+    }
+
     .split-section,
     .surprise-section,
     .contact-section,
