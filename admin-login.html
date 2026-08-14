@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Leonard Ho</title>
+    <link rel="icon" href="img/menu.png">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .login-page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 6rem 6vw;
+        }
+
+        .login-panel {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding: 1.35rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--surface);
+        }
+
+        .login-field {
+            display: grid;
+            gap: 0.45rem;
+        }
+
+        .login-field span {
+            color: var(--muted);
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+
+        .login-field input {
+            width: 100%;
+            min-height: 44px;
+            padding: 0.75rem 0.85rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text);
+            font: inherit;
+        }
+
+        .login-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+        }
+
+        .login-status {
+            color: var(--muted);
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html">Leonard Ho</a>
+        <nav id="site-nav" class="site-nav" aria-label="Login navigation">
+            <a href="index.html#photography">Photography</a>
+            <a href="admin.html">Admin</a>
+        </nav>
+    </header>
+
+    <main class="login-page">
+        <p class="eyebrow">Private Admin</p>
+        <h1>Login</h1>
+        <p class="login-status">Enter your Supabase project details and email. The config is saved only in this browser.</p>
+
+        <form id="login-form" class="login-panel">
+            <label class="login-field">
+                <span>Supabase URL</span>
+                <input id="supabase-url" name="supabaseUrl" placeholder="https://your-project.supabase.co" required>
+            </label>
+            <label class="login-field">
+                <span>Supabase anon key</span>
+                <input id="supabase-anon-key" name="supabaseAnonKey" required>
+            </label>
+            <label class="login-field">
+                <span>Storage bucket</span>
+                <input id="photo-bucket" name="photoBucket" value="album-photos" required>
+            </label>
+            <label class="login-field">
+                <span>Admin email</span>
+                <input id="admin-email" name="adminEmail" type="email" placeholder="you@example.com" required>
+            </label>
+            <div class="login-actions">
+                <button class="button primary" type="submit">Send Login Link</button>
+                <button id="save-config" class="button secondary" type="button">Save Config</button>
+                <a class="button secondary" href="admin.html">Open Admin</a>
+            </div>
+            <p id="login-status" class="login-status" role="status"></p>
+        </form>
+    </main>
+
+    <script type="module">
+        import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
+        const form = document.querySelector("#login-form");
+        const status = document.querySelector("#login-status");
+        const fields = {
+            url: document.querySelector("#supabase-url"),
+            anonKey: document.querySelector("#supabase-anon-key"),
+            bucket: document.querySelector("#photo-bucket"),
+            email: document.querySelector("#admin-email"),
+        };
+
+        function stored(key, fallback = "") {
+            try {
+                return localStorage.getItem(key) || fallback;
+            } catch {
+                return fallback;
+            }
+        }
+
+        function store(key, value) {
+            try {
+                localStorage.setItem(key, value);
+            } catch {
+                // Login still works for the current page even if browser storage is unavailable.
+            }
+        }
+
+        function saveConfig() {
+            store("portfolio.supabaseUrl", fields.url.value.trim());
+            store("portfolio.supabaseAnonKey", fields.anonKey.value.trim());
+            store("portfolio.supabasePhotoBucket", fields.bucket.value.trim() || "album-photos");
+            store("portfolio.adminEmail", fields.email.value.trim());
+        }
+
+        fields.url.value = stored("portfolio.supabaseUrl");
+        fields.anonKey.value = stored("portfolio.supabaseAnonKey");
+        fields.bucket.value = stored("portfolio.supabasePhotoBucket", "album-photos");
+        fields.email.value = stored("portfolio.adminEmail");
+
+        document.querySelector("#save-config").addEventListener("click", () => {
+            saveConfig();
+            status.textContent = "Config saved in this browser.";
+        });
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            saveConfig();
+            const supabase = createClient(fields.url.value.trim(), fields.anonKey.value.trim());
+            const { error } = await supabase.auth.signInWithOtp({
+                email: fields.email.value.trim(),
+                options: { emailRedirectTo: `${window.location.origin}/admin.html` },
+            });
+            status.textContent = error ? `Login email failed:\n${error.message}` : "Check your email for the login link. It will return you to the admin page.";
+        });
+
+        if (fields.url.value && fields.anonKey.value) {
+            const supabase = createClient(fields.url.value.trim(), fields.anonKey.value.trim());
+            const { data } = await supabase.auth.getSession();
+            if (data.session) {
+                status.textContent = "You are already signed in. Open the admin page.";
+            }
+        }
+    </script>
+</body>
+
+</html>

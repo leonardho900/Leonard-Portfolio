@@ -28,10 +28,13 @@ The reusable album page is `album.html?album=album-id`.
 
 The Supabase CMS is additive and backward-compatible. Existing albums still use the current local `img/` folders and legacy gallery pages still exist.
 
-- New upload admin: `admin.html`
+- Admin login: `admin-login.html`
+- Authenticated upload/manage admin: `admin.html`
 - Supabase schema: `supabase/schema.sql`
 - Setup and migration notes: `docs/supabase-cms.md`
 - Audit existing albums: `node tools/audit-existing-albums.mjs`
 - Export a dry-run migration payload: `node tools/export-local-albums-for-supabase.mjs`
 
 Do not bulk-upload or move existing full-resolution photos until the audit output has been reviewed.
+
+Delete controls in `admin.html` only apply to Supabase-managed albums and photos. Existing local image folders are not shown in the delete panel.

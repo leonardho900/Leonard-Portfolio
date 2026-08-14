@@ -65,3 +65,27 @@ on public.photos for all
 to authenticated
 using (true)
 with check (true);
+
+drop policy if exists "Public album photos are readable" on storage.objects;
+create policy "Public album photos are readable"
+on storage.objects for select
+using (bucket_id = 'album-photos');
+
+drop policy if exists "Authenticated users upload album photos" on storage.objects;
+create policy "Authenticated users upload album photos"
+on storage.objects for insert
+to authenticated
+with check (bucket_id = 'album-photos');
+
+drop policy if exists "Authenticated users update album photos" on storage.objects;
+create policy "Authenticated users update album photos"
+on storage.objects for update
+to authenticated
+using (bucket_id = 'album-photos')
+with check (bucket_id = 'album-photos');
+
+drop policy if exists "Authenticated users delete album photos" on storage.objects;
+create policy "Authenticated users delete album photos"
+on storage.objects for delete
+to authenticated
+using (bucket_id = 'album-photos');

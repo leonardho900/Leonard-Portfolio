@@ -45,7 +45,7 @@ Observed sample dimensions are large, around `4096x2732`, `5397x3602`, and `3391
 2. Create a public storage bucket named `album-photos`.
 3. Run `supabase/schema.sql` in the Supabase SQL editor.
 4. Enable email login for the admin account in Supabase Auth.
-5. Open `/admin.html`.
+5. Open `/admin-login.html`.
 6. Enter the Supabase URL, anon key, storage bucket, and admin email.
 7. Send yourself a login link.
 8. Return to `/admin.html`, fill in album details, choose photos, and upload.
@@ -53,6 +53,23 @@ Observed sample dimensions are large, around `4096x2732`, `5397x3602`, and `3391
 The public portfolio loads CMS albums only when a Supabase URL and anon key are configured through `window.SUPABASE_CONFIG` or local browser storage. Without that config, it falls back to local albums.
 
 For production, copy `js/cms-config.example.js` to a non-committed config delivery method or inject these values during deployment. Do not commit private service role keys. The anon key is okay for browser use when Row Level Security policies are correct.
+
+## Admin Features
+
+The admin area is split into:
+
+- `admin-login.html` for Supabase config and magic-link login.
+- `admin.html` for authenticated album management.
+
+The admin can:
+
+- Upload new Supabase albums.
+- View Supabase-managed albums.
+- Delete individual Supabase photos.
+- Delete an entire Supabase album and its Supabase Storage files.
+- Sign out.
+
+Delete actions are intentionally limited to Supabase rows and Supabase Storage objects. Existing local albums from `js/portfolio-data.js` and files under `img/` are not listed in the delete UI and are not touched.
 
 ## Migration Tools
 

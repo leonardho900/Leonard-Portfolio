@@ -9,15 +9,16 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         .admin-page {
-            max-width: 980px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 6rem 6vw;
         }
 
-        .admin-panel {
+        .admin-panel,
+        .manage-card {
             display: grid;
             gap: 1rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             padding: 1.35rem;
             border: 1px solid var(--line);
             border-radius: 8px;
@@ -35,7 +36,8 @@
             gap: 0.45rem;
         }
 
-        .admin-field span {
+        .admin-field span,
+        .muted-label {
             color: var(--muted);
             font-size: 0.85rem;
             font-weight: 800;
@@ -58,15 +60,45 @@
             resize: vertical;
         }
 
-        .admin-actions {
+        .admin-actions,
+        .manage-actions {
             display: flex;
             flex-wrap: wrap;
             gap: 0.7rem;
+            align-items: center;
         }
 
         .admin-status {
             color: var(--muted);
             white-space: pre-wrap;
+        }
+
+        .danger-button {
+            border-color: rgba(255, 105, 97, 0.55);
+            color: #ffb4ad;
+        }
+
+        .photo-manage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .photo-manage-item {
+            display: grid;
+            gap: 0.45rem;
+            padding: 0.55rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .photo-manage-item img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.08);
         }
 
         @media (max-width: 720px) {
@@ -83,76 +115,82 @@
         <nav id="site-nav" class="site-nav" aria-label="Admin navigation">
             <a href="index.html#photography">Photography</a>
             <a href="album.html?album=japan23">Albums</a>
+            <a href="admin-login.html">Login</a>
         </nav>
     </header>
 
     <main class="admin-page">
         <p class="eyebrow">Private Admin</p>
-        <h1>Upload a New Album</h1>
-        <p class="admin-status">This first admin version adds new Supabase albums only. Existing local albums and image folders are left untouched.</p>
+        <h1>Album Manager</h1>
+        <p class="admin-status">Supabase albums can be uploaded, managed, and deleted here. Existing local albums are protected and do not appear in the delete panel.</p>
+        <div class="admin-actions">
+            <button id="sign-out" class="button secondary" type="button">Sign Out</button>
+            <a class="button secondary" href="admin-login.html">Edit Login Config</a>
+        </div>
 
-        <form id="admin-form" class="admin-panel">
-            <div class="admin-grid">
-                <label class="admin-field">
-                    <span>Supabase URL</span>
-                    <input id="supabase-url" name="supabaseUrl" placeholder="https://your-project.supabase.co" required>
-                </label>
-                <label class="admin-field">
-                    <span>Supabase anon key</span>
-                    <input id="supabase-anon-key" name="supabaseAnonKey" required>
-                </label>
-                <label class="admin-field">
-                    <span>Storage bucket</span>
-                    <input id="photo-bucket" name="photoBucket" value="album-photos" required>
-                </label>
-                <label class="admin-field">
-                    <span>Admin email</span>
-                    <input id="admin-email" name="adminEmail" type="email" placeholder="you@example.com">
-                </label>
-                <label class="admin-field">
-                    <span>Slug</span>
-                    <input id="slug" name="slug" placeholder="japan-2026" required>
-                </label>
-                <label class="admin-field">
-                    <span>Album title</span>
-                    <input id="title" name="title" placeholder="Japan 2026" required>
-                </label>
-                <label class="admin-field">
-                    <span>Location / meta</span>
-                    <input id="location" name="location" placeholder="Tokyo / Kyoto / Osaka">
-                </label>
-                <label class="admin-field">
-                    <span>Date</span>
-                    <input id="album-date" name="albumDate" type="date">
-                </label>
-                <label class="admin-field">
-                    <span>Camera</span>
-                    <input id="camera" name="camera" placeholder="Leica CL">
-                </label>
-                <label class="admin-field">
-                    <span>Film stock</span>
-                    <input id="film" name="film" placeholder="Kodak Gold 200">
-                </label>
-                <label class="admin-field">
-                    <span>Cover image number</span>
-                    <input id="cover-index" name="coverIndex" type="number" min="1" value="1">
-                </label>
+        <section class="admin-panel" aria-labelledby="upload-title">
+            <div>
+                <p class="eyebrow">Upload</p>
+                <h2 id="upload-title">New Supabase Album</h2>
             </div>
-            <label class="admin-field">
-                <span>Description</span>
-                <textarea id="description" name="description" placeholder="Short album description"></textarea>
-            </label>
-            <label class="admin-field">
-                <span>Photos</span>
-                <input id="photos" name="photos" type="file" accept="image/*" multiple required>
-            </label>
+            <form id="admin-form">
+                <div class="admin-grid">
+                    <label class="admin-field">
+                        <span>Slug</span>
+                        <input id="slug" name="slug" placeholder="japan-2026" required>
+                    </label>
+                    <label class="admin-field">
+                        <span>Album title</span>
+                        <input id="title" name="title" placeholder="Japan 2026" required>
+                    </label>
+                    <label class="admin-field">
+                        <span>Location / meta</span>
+                        <input id="location" name="location" placeholder="Tokyo / Kyoto / Osaka">
+                    </label>
+                    <label class="admin-field">
+                        <span>Date</span>
+                        <input id="album-date" name="albumDate" type="date">
+                    </label>
+                    <label class="admin-field">
+                        <span>Camera</span>
+                        <input id="camera" name="camera" placeholder="Leica CL">
+                    </label>
+                    <label class="admin-field">
+                        <span>Film stock</span>
+                        <input id="film" name="film" placeholder="Kodak Gold 200">
+                    </label>
+                    <label class="admin-field">
+                        <span>Cover image number</span>
+                        <input id="cover-index" name="coverIndex" type="number" min="1" value="1">
+                    </label>
+                </div>
+                <label class="admin-field">
+                    <span>Description</span>
+                    <textarea id="description" name="description" placeholder="Short album description"></textarea>
+                </label>
+                <label class="admin-field">
+                    <span>Photos</span>
+                    <input id="photos" name="photos" type="file" accept="image/*" multiple required>
+                </label>
+                <div class="admin-actions">
+                    <button class="button primary" type="submit">Upload Album</button>
+                </div>
+                <p id="admin-status" class="admin-status" role="status"></p>
+            </form>
+        </section>
+
+        <section class="admin-panel" aria-labelledby="manage-title">
+            <div>
+                <p class="eyebrow">Manage</p>
+                <h2 id="manage-title">Supabase Albums</h2>
+                <p class="admin-status">Deleting an album also removes its Supabase photo records and stored files. It does not touch local `img/` folders.</p>
+            </div>
             <div class="admin-actions">
-                <button id="send-login" class="button secondary" type="button">Send Login Link</button>
-                <button class="button primary" type="submit">Upload Album</button>
-                <button id="save-config" class="button secondary" type="button">Save Config Only</button>
+                <button id="refresh-albums" class="button secondary" type="button">Refresh Albums</button>
             </div>
-            <p id="admin-status" class="admin-status" role="status"></p>
-        </form>
+            <div id="manage-list"></div>
+            <p id="manage-status" class="admin-status" role="status"></p>
+        </section>
     </main>
 
     <script type="module">
@@ -160,73 +198,75 @@
 
         const form = document.querySelector("#admin-form");
         const status = document.querySelector("#admin-status");
-        const configFields = {
-            url: document.querySelector("#supabase-url"),
-            anonKey: document.querySelector("#supabase-anon-key"),
-            photoBucket: document.querySelector("#photo-bucket"),
-        };
-        const adminEmail = document.querySelector("#admin-email");
-        const stored = (key, fallback = "") => {
+        const manageStatus = document.querySelector("#manage-status");
+        const manageList = document.querySelector("#manage-list");
+        const bucket = stored("portfolio.supabasePhotoBucket", "album-photos");
+        const supabaseUrl = stored("portfolio.supabaseUrl");
+        const supabaseAnonKey = stored("portfolio.supabaseAnonKey");
+
+        function stored(key, fallback = "") {
             try {
                 return localStorage.getItem(key) || fallback;
             } catch {
                 return fallback;
             }
-        };
-        const store = (key, value) => {
-            try {
-                localStorage.setItem(key, value);
-            } catch {
-                // The admin page can still upload even when browser storage is unavailable.
-            }
-        };
-
-        configFields.url.value = stored("portfolio.supabaseUrl");
-        configFields.anonKey.value = stored("portfolio.supabaseAnonKey");
-        configFields.photoBucket.value = stored("portfolio.supabasePhotoBucket", "album-photos");
-        adminEmail.value = stored("portfolio.adminEmail");
+        }
 
         const setStatus = (message) => {
             status.textContent = message;
         };
 
-        const saveConfig = () => {
-            store("portfolio.supabaseUrl", configFields.url.value.trim());
-            store("portfolio.supabaseAnonKey", configFields.anonKey.value.trim());
-            store("portfolio.supabasePhotoBucket", configFields.photoBucket.value.trim() || "album-photos");
-            store("portfolio.adminEmail", adminEmail.value.trim());
-            setStatus("Config saved in this browser. Public pages can now load Supabase albums for local testing.");
+        const setManageStatus = (message) => {
+            manageStatus.textContent = message;
         };
 
-        document.querySelector("#save-config").addEventListener("click", saveConfig);
-        document.querySelector("#send-login").addEventListener("click", async () => {
-            saveConfig();
-            const supabase = createClient(configFields.url.value.trim(), configFields.anonKey.value.trim());
-            const { error } = await supabase.auth.signInWithOtp({
-                email: adminEmail.value.trim(),
-                options: { emailRedirectTo: window.location.href },
-            });
-            setStatus(error ? `Login email failed:\n${error.message}` : "Check your email for the Supabase login link, then return to this page.");
+        if (!supabaseUrl || !supabaseAnonKey) {
+            window.location.href = "admin-login.html";
+            throw new Error("Missing Supabase config.");
+        }
+
+        const supabase = createClient(supabaseUrl, supabaseAnonKey);
+        const { data: sessionData } = await supabase.auth.getSession();
+        if (!sessionData.session) {
+            window.location.href = "admin-login.html";
+            throw new Error("Missing Supabase session.");
+        }
+
+        const publicUrl = (path) => {
+            if (!path) {
+                return "";
+            }
+            if (/^https?:\/\//i.test(path) || path.startsWith("img/")) {
+                return path;
+            }
+            const { data } = supabase.storage.from(bucket).getPublicUrl(path);
+            return data.publicUrl;
+        };
+
+        const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;",
+        }[char]));
+
+        const requireConfirm = (message) => window.confirm(message);
+
+        document.querySelector("#sign-out").addEventListener("click", async () => {
+            await supabase.auth.signOut();
+            window.location.href = "admin-login.html";
         });
 
         form.addEventListener("submit", async (event) => {
             event.preventDefault();
-            saveConfig();
 
             const data = new FormData(form);
             const files = [...document.querySelector("#photos").files];
             const slug = String(data.get("slug")).trim();
-            const bucket = String(data.get("photoBucket")).trim() || "album-photos";
 
             if (!files.length) {
                 setStatus("Choose at least one photo.");
-                return;
-            }
-
-            const supabase = createClient(String(data.get("supabaseUrl")).trim(), String(data.get("supabaseAnonKey")).trim());
-            const { data: sessionData } = await supabase.auth.getSession();
-            if (!sessionData.session) {
-                setStatus("Please send yourself a login link and sign in before uploading.");
                 return;
             }
 
@@ -293,8 +333,107 @@
 
             const cover = rows[Math.min(coverIndex, rows.length - 1)];
             await supabase.from("albums").update({ cover_url: cover.storage_path }).eq("id", album.id);
+            form.reset();
             setStatus(`Done. Album uploaded with ${rows.length} photos.\nOpen: album.html?album=${slug}`);
+            await loadManagedAlbums();
         });
+
+        async function loadManagedAlbums() {
+            setManageStatus("Loading Supabase albums...");
+            const { data: albums, error: albumError } = await supabase
+                .from("albums")
+                .select("*")
+                .order("created_at", { ascending: false });
+            const { data: photos, error: photoError } = await supabase
+                .from("photos")
+                .select("*")
+                .order("sort_order", { ascending: true });
+
+            if (albumError || photoError) {
+                setManageStatus(`Could not load albums:\n${albumError?.message || photoError?.message}`);
+                return;
+            }
+
+            if (!albums.length) {
+                manageList.innerHTML = '<p class="admin-status">No Supabase albums yet.</p>';
+                setManageStatus("");
+                return;
+            }
+
+            manageList.innerHTML = albums.map((album) => {
+                const albumPhotos = photos.filter((photo) => photo.album_id === album.id);
+                const albumTitle = escapeHtml(album.title);
+                const albumSlug = escapeHtml(album.slug);
+                const albumUrl = `album.html?album=${encodeURIComponent(album.slug)}`;
+                return `
+                    <article class="manage-card" data-album-id="${album.id}" data-album-title="${albumTitle}">
+                        <div>
+                            <span class="muted-label">${albumSlug}</span>
+                            <h3>${albumTitle}</h3>
+                            <p class="admin-status">${albumPhotos.length} Supabase photos</p>
+                        </div>
+                        <div class="manage-actions">
+                            <a class="button secondary" href="${albumUrl}" target="_blank" rel="noreferrer">Open Album</a>
+                            <button class="button secondary danger-button delete-album" type="button">Delete Album</button>
+                        </div>
+                        <div class="photo-manage-grid">
+                            ${albumPhotos.map((photo) => `
+                                <div class="photo-manage-item" data-photo-id="${photo.id}" data-photo-path="${escapeHtml(photo.storage_path || "")}">
+                                    <img src="${escapeHtml(publicUrl(photo.public_url || photo.storage_path))}" alt="${escapeHtml(photo.alt_text || album.title)}" loading="lazy">
+                                    <span class="muted-label">Frame ${photo.sort_order}</span>
+                                    <button class="button secondary danger-button delete-photo" type="button">Delete Photo</button>
+                                </div>
+                            `).join("")}
+                        </div>
+                    </article>
+                `;
+            }).join("");
+            setManageStatus("");
+        }
+
+        manageList.addEventListener("click", async (event) => {
+            const photoButton = event.target.closest(".delete-photo");
+            const albumButton = event.target.closest(".delete-album");
+
+            if (photoButton) {
+                const item = photoButton.closest(".photo-manage-item");
+                const photoId = item.dataset.photoId;
+                const storagePath = item.dataset.photoPath;
+                if (!requireConfirm("Delete this Supabase photo? This cannot be undone.")) {
+                    return;
+                }
+
+                setManageStatus("Deleting photo...");
+                if (storagePath) {
+                    await supabase.storage.from(bucket).remove([storagePath]);
+                }
+                const { error } = await supabase.from("photos").delete().eq("id", photoId);
+                setManageStatus(error ? `Photo delete failed:\n${error.message}` : "Photo deleted.");
+                await loadManagedAlbums();
+            }
+
+            if (albumButton) {
+                const card = albumButton.closest(".manage-card");
+                const albumId = card.dataset.albumId;
+                const albumTitle = card.dataset.albumTitle;
+                if (!requireConfirm(`Delete "${albumTitle}" and all its Supabase photos? This cannot be undone.`)) {
+                    return;
+                }
+
+                setManageStatus(`Deleting ${albumTitle}...`);
+                const { data: photos } = await supabase.from("photos").select("storage_path").eq("album_id", albumId);
+                const paths = (photos || []).map((photo) => photo.storage_path).filter(Boolean);
+                if (paths.length) {
+                    await supabase.storage.from(bucket).remove(paths);
+                }
+                const { error } = await supabase.from("albums").delete().eq("id", albumId);
+                setManageStatus(error ? `Album delete failed:\n${error.message}` : "Album deleted.");
+                await loadManagedAlbums();
+            }
+        });
+
+        document.querySelector("#refresh-albums").addEventListener("click", loadManagedAlbums);
+        await loadManagedAlbums();
     </script>
 </body>
 
