@@ -120,7 +120,7 @@ async function initAboutModel() {
         const normalizedX = THREE.MathUtils.clamp(((clientX - rect.left) / rect.width - 0.5) * 2, -1, 1);
         const normalizedY = THREE.MathUtils.clamp(((clientY - rect.top) / rect.height - 0.5) * 2, -1, 1);
         targetRotation.y = baseRotation.y + normalizedX * horizontalLimit;
-        targetRotation.x = baseRotation.x - normalizedY * verticalLimit;
+        targetRotation.x = baseRotation.x + normalizedY * verticalLimit;
         startLoop();
     };
 
