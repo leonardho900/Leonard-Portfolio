@@ -733,6 +733,7 @@ h3 {
 
 .album-card {
     position: relative;
+    scroll-margin-top: 96px;
     min-height: 430px;
     display: flex;
     align-items: end;

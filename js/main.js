@@ -74,6 +74,11 @@
         }
         currentAlbumPage = Number(button.dataset.page) || 1;
         renderAlbumGrid();
+        const firstCard = albumGrid.querySelector(".album-card");
+        if (firstCard) {
+            const top = firstCard.getBoundingClientRect().top + window.scrollY - 96;
+            window.scrollTo({ top, behavior: "smooth" });
+        }
     });
 
     const shuffleButton = document.querySelector("#shuffle-frame");
